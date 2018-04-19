@@ -5,9 +5,11 @@ import autoprefixer from 'autoprefixer';
 
 // noinspection JSUnusedGlobalSymbols
 export default {
-  getSiteData: () => ({
-    title: 'React Static',
-  }),
+  siteRoot: 'https://lambdanetwork-7b7b3.firebaseapp.com',
+  stagingSiteRoot: 'http://localhost:3000',
+  preact: true,
+  extractCssChunks: true,
+  inlineCss: true,
 
   getRoutes: () => [
     {
@@ -20,9 +22,6 @@ export default {
     },
   ],
 
-  preact: true,
-
-  extractCssChunks: true,
   webpack: (config, { defaultLoaders, stage }) => {
     const cssLoaders = [
       {
@@ -41,16 +40,7 @@ export default {
         options: {
           plugins: () => [
             postcssFlexbugsFixes,
-            autoprefixer({
-              browsers: [
-                '> 1%',
-                'last 4 versions',
-                'Firefox ESR',
-                'not ie < 9', // React doesn't support IE8 anyway
-                'not dead',
-              ],
-              flexbox: 'no-2009',
-            }),
+            autoprefixer({ flexbox: 'no-2009' }),
           ],
         },
       },
