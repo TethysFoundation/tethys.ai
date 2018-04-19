@@ -11,6 +11,9 @@ module.exports = {
     'plugin:import/errors',
     'plugin:import/warnings',
   ],
+  plugins: [
+    'compat',
+  ],
   rules: {
     'max-len': ['error', { code: 120, comments: 120 }],
     'jsx-a11y/anchor-is-valid': [
@@ -20,5 +23,6 @@ module.exports = {
         specialLink: ['to'],
       },
     ],
+    'compat/compat': 'error',
   },
 };
