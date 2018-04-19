@@ -1,5 +1,4 @@
 import React from 'react';
-import { hot } from 'react-hot-loader';
 import { Router } from 'react-static';
 // eslint-disable-next-line import/no-unresolved, import/extensions
 import Routes from 'react-static-routes';
@@ -13,4 +12,10 @@ const App = () => (
   </React.Fragment>
 );
 
-export default hot(module)(App);
+function withHotness(component) {
+  // eslint-disable-next-line import/no-extraneous-dependencies, global-require
+  const { hot } = require('react-hot-loader');
+  return hot(module)(component);
+}
+
+export default process.env.NODE_ENV === 'development' ? withHotness(App) : App;
