@@ -11,8 +11,6 @@ function connectToDB() {
 }
 
 const createSubscriber = async (request) => {
-  const body = JSON.parse(request.rawBody);
-
   const connection = await connectToDB();
 
   // TODO insert into subscribers
@@ -23,7 +21,7 @@ const createSubscriber = async (request) => {
 
   return {
     status: 201,
-    email: body.email,
+    email: request.body.email,
   };
 };
 

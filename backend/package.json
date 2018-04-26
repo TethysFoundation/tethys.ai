@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Backend API project",
   "files": [
-    "build", "database.json"
+    "build",
+    "database.json"
   ],
   "license": "UNLICENSED",
   "private": true,
@@ -12,6 +13,7 @@
   },
   "scripts": {
     "test": "jest",
+    "server": "yarn build && claudia-local-api -p 3001 --api-module build/app | bunyan --output short",
     "build": "babel src --out-dir build",
     "clean": "rm -rf build",
     "create": "yarn clean && yarn build && claudia create --profile claudia --region us-east-1 --api-module build/app --security-group-ids sg-daa8ea93 --subnet-ids subnet-38de7572,subnet-3a977066,subnet-e0f00087",
@@ -20,7 +22,9 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1",
+    "bunyan": "^1.8.12",
     "claudia": "^4.0.0",
+    "claudia-local-api": "^2.0.0",
     "db-migrate": "^0.11.1",
     "db-migrate-mysql": "^1.1.10",
     "jest": "^22.4.3"
