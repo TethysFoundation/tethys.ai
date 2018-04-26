@@ -1,9 +1,8 @@
+/* eslint-disable compat/compat */
 const mockMysql = jest.genMockFromModule('promise-mysql');
 
 const connection = {
-  query: jest.fn(() => ({
-    then: callback => callback([]),
-  })),
+  query: jest.fn(() => Promise.resolve([])),
   end: jest.fn(),
 };
 

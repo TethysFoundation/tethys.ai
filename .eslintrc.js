@@ -1,5 +1,5 @@
 module.exports = {
-  parser: "babel-eslint",
+  parser: 'babel-eslint',
   env: {
     browser: true,
     commonjs: true,
@@ -25,5 +25,6 @@ module.exports = {
       },
     ],
     'compat/compat': 'error',
+    'import/no-extraneous-dependencies': ['error', { 'devDependencies': ['**/__mocks__/*', '**/*.test.js*'] }],
   },
 };

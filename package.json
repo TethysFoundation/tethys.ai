@@ -10,7 +10,7 @@
     "serve": "serve dist -p 3000",
     "test": "jest",
     "watch": "jest --watch --notify",
-    "lint": "eslint src __tests__ __mocks__ --ext .jsx --ext .js"
+    "lint": "eslint src __tests__ __mocks__ **/src **/__tests__ **/__mocks__ --ext .jsx --ext .js"
   },
   "browserslist": [
     "> 1%",
@@ -44,6 +44,7 @@
   },
   "dependencies": {
     "airbnb-prop-types": "^2.9.0",
+    "axios": "^0.18.0",
     "prop-types": "^15.6.1",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
@@ -65,6 +66,7 @@
     "extract-css-chunks-webpack-plugin": "^2.0.18",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^22.4.3",
+    "jest-mock-axios": "^2.1.11",
     "jest-runner-eslint": "^0.4.0",
     "postcss-flexbugs-fixes": "^3.3.0",
     "postcss-loader": "^2.1.3",
