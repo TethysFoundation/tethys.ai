@@ -6,9 +6,9 @@ import autoprefixer from 'autoprefixer';
 // noinspection JSUnusedGlobalSymbols
 export default {
   siteRoot: 'https://lambdanetwork-7b7b3.firebaseapp.com',
-  preact: true,
   extractCssChunks: true,
   inlineCss: true,
+  // bundleAnalyzer: true,
 
   getRoutes: () => [
     {
