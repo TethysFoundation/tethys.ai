@@ -1,0 +1,23 @@
+{
+  "sql-file": true,
+  "dev": {
+    "host": "localhost",
+    "user": "root",
+    "password": "password",
+    "database": "lambda_dev",
+    "driver": "mysql",
+    "multipleStatements": true
+  },
+  "prod": {
+    "host": "mysqlforlambdatest.c8ca87fel8vs.us-east-1.rds.amazonaws.com",
+    "database": "lambda_prod",
+    "driver": "mysql",
+    "multipleStatements": true,
+    "user": {
+      "ENV": "DB_USERNAME"
+    },
+    "password": {
+      "ENV": "DB_PASSWORD"
+    }
+  }
+}

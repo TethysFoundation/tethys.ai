@@ -16,7 +16,7 @@ const createSubscriber = async (request) => {
   const connection = await connectToDB();
 
   // TODO insert into subscribers
-  await connection.query('SELECT * FROM Employee3')
+  await connection.query('SELECT * FROM subscribers')
     .then(res => console.log(JSON.stringify(res)));
 
   connection.end();

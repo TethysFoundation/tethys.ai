@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Backend API project",
   "files": [
-    "build"
+    "build", "database.json"
   ],
   "license": "UNLICENSED",
   "private": true,
@@ -21,6 +21,8 @@
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "claudia": "^4.0.0",
+    "db-migrate": "^0.11.1",
+    "db-migrate-mysql": "^1.1.10",
     "jest": "^22.4.3"
   },
   "dependencies": {
