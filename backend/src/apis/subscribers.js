@@ -1,17 +1,8 @@
 import mysql from 'promise-mysql';
 import config from '../dbconfig';
 
-function connectToDB() {
-  return mysql.createConnection({
-    host: config.host,
-    user: config.username,
-    password: config.password,
-    database: config.database,
-  });
-}
-
 const createSubscriber = async (request) => {
-  const connection = await connectToDB();
+  const connection = await mysql.createConnection(config);
 
   // TODO insert into subscribers
   await connection.query('SELECT * FROM subscribers')
@@ -20,7 +11,6 @@ const createSubscriber = async (request) => {
   connection.end();
 
   return {
-    status: 201,
     email: request.body.email,
   };
 };

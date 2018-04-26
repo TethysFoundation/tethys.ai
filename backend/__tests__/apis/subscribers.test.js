@@ -1,9 +1,19 @@
+import mysql from 'promise-mysql';
+import config from '../../src/dbconfig';
 import { createSubscriber } from '../../src/apis/subscribers';
 
-describe('createSubscriber', () => {
-  it('does something', async () => {
-    const response = await createSubscriber({ rawBody: '{"email": "test@example.com"}' });
+jest.mock('../../src/dbconfig');
 
-    expect(response.status).toBe(201);
+describe('createSubscriber', () => {
+  it('connects to the database', async () => {
+    await createSubscriber({ body: { email: 'test@example.com' } });
+
+    expect(mysql.createConnection).toHaveBeenCalledWith(config);
+  });
+
+  it('does something', async () => {
+    const response = await createSubscriber({ body: { email: 'test@example.com' } });
+
+    expect(response.email).toBe('test@example.com');
   });
 });

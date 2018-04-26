@@ -1,23 +1,23 @@
 import fs from 'fs';
 
-const databaseConfig = JSON.parse(fs.readFileSync('database.json'));
+function getConfig() {
+  const databaseConfig = JSON.parse(fs.readFileSync('database.json'));
 
-let config = {};
+  if (process.env.NODE_ENV === 'production') {
+    return {
+      host: databaseConfig.prod.host,
+      database: databaseConfig.prod.database,
+      user: process.env[databaseConfig.prod.user.ENV],
+      password: process.env[databaseConfig.prod.password.ENV],
+    };
+  }
 
-if (process.env.NODE_ENV === 'production') {
-  config = {
-    host: databaseConfig.prod.host,
-    database: databaseConfig.prod.database,
-    username: process.env[databaseConfig.prod.user.ENV],
-    password: process.env[databaseConfig.prod.password.ENV],
-  };
-} else {
-  config = {
+  return {
     host: databaseConfig.dev.host,
     database: databaseConfig.dev.database,
-    username: databaseConfig.dev.user,
+    user: databaseConfig.dev.user,
     password: databaseConfig.dev.password,
   };
 }
 
-export default config;
+export default getConfig();
