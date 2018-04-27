@@ -8,4 +8,11 @@ const connection = {
 
 mockMysql.createConnection = jest.fn().mockReturnValue(connection);
 
+mockMysql.getMockConnection = () => connection;
+
+mockMysql.clearMocks = () => {
+  connection.query.mockClear();
+  connection.end.mockClear();
+};
+
 module.exports = mockMysql;

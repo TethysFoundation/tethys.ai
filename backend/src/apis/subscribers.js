@@ -4,15 +4,13 @@ import config from '../dbconfig';
 const createSubscriber = async (request) => {
   const connection = await mysql.createConnection(config);
 
-  // TODO insert into subscribers
-  await connection.query('SELECT * FROM subscribers')
-    .then(res => console.log(JSON.stringify(res)));
+  const { email, country } = request.body;
+  const insertSQL = `INSERT IGNORE INTO subscribers (email, country) VALUES ('${email}', '${country.toUpperCase()}')`;
+
+  await connection.query(insertSQL);
 
   connection.end();
-
-  return {
-    email: request.body.email,
-  };
+  return {};
 };
 
 // eslint-disable-next-line import/prefer-default-export

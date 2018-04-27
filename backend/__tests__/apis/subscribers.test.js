@@ -1,19 +1,30 @@
-import mysql from 'promise-mysql';
+import mysqlMock from 'promise-mysql';
 import config from '../../src/dbconfig';
 import { createSubscriber } from '../../src/apis/subscribers';
 
 jest.mock('../../src/dbconfig');
 
 describe('createSubscriber', () => {
-  it('connects to the database', async () => {
-    await createSubscriber({ body: { email: 'test@example.com' } });
+  const request = { body: { email: 'test@example.com', country: 'ca' } };
 
-    expect(mysql.createConnection).toHaveBeenCalledWith(config);
+  afterEach(() => {
+    mysqlMock.clearMocks();
   });
 
-  it('does something', async () => {
-    const response = await createSubscriber({ body: { email: 'test@example.com' } });
+  it('connects to the database', async () => {
+    await createSubscriber(request);
 
-    expect(response.email).toBe('test@example.com');
+    expect(mysqlMock.createConnection).toHaveBeenCalledWith(config);
+  });
+
+  it('saves a new subscriber to the database, upper-casing the country code', async () => {
+    const response = await createSubscriber(request);
+
+    expect(mysqlMock.getMockConnection().query)
+      .toHaveBeenCalledWith('INSERT IGNORE INTO subscribers (email, country) VALUES (\'test@example.com\', \'CA\')');
+
+    expect(mysqlMock.getMockConnection().end).toHaveBeenCalled();
+
+    expect(response).toEqual({});
   });
 });
