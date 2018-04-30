@@ -5,7 +5,7 @@ import autoprefixer from 'autoprefixer';
 
 // noinspection JSUnusedGlobalSymbols
 export default {
-  siteRoot: 'https://lambdanetwork-7b7b3.firebaseapp.com',
+  siteRoot: 'https://tethys-86b61.firebaseapp.com/',
   extractCssChunks: true,
   inlineCss: true,
   // bundleAnalyzer: true,

@@ -4,13 +4,13 @@
     "host": "localhost",
     "user": "root",
     "password": "password",
-    "database": "lambda_dev",
+    "database": "tethys_dev",
     "driver": "mysql",
     "multipleStatements": true
   },
   "prod": {
     "host": "mysqlforlambdatest.c8ca87fel8vs.us-east-1.rds.amazonaws.com",
-    "database": "lambda_prod",
+    "database": "tethys_prod",
     "driver": "mysql",
     "multipleStatements": true,
     "user": {
