@@ -9,18 +9,9 @@ const preSaleDate = new Date(2018, 5, 1, 0, 0, 0);
 
 const Home = () => (
   <React.Fragment>
-    <nav className={styles.topNav} style={{ backgroundImage: `url(${background})` }}>
-      <span className={styles.navLogo}>Tethys Logo</span>
+    <TopNav />
 
-      <div className={styles.navLinks}>
-        <a href="/">Why Tethys</a>
-        <a href="/">Whitepaper</a>
-        <a href="/">Overview</a>
-        <a href="/">Roadmap</a>
-      </div>
-    </nav>
-
-    <picture className={styles.backgroundImage} style={{ backgroundImage: `url(${background})` }} />
+    <div className={styles.backgroundImage} style={{ backgroundImage: `url(${background})` }} />
 
     <div className={styles.homeContent}>
       <section className={styles.heroSection}>
@@ -42,8 +33,7 @@ const Home = () => (
         </h2>
 
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi at dolore ducimus esse hic neque, quae quis
-          voluptatem. Accusantium cumque excepturi illo minima quidem? At eveniet ex laborum necessitatibus repellat.
+          End users can earn Tethys tokens for sharing bandwidth and resources, enabling rapid growth at a low cost.
         </p>
       </section>
 
@@ -53,8 +43,8 @@ const Home = () => (
         </h2>
 
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. A cumque dolorum eius eligendi enim est fuga id illo
-          molestias neque praesentium qui quidem rem reprehenderit sequi sit voluptate, voluptatem voluptates.
+          Robust extraction of complex semantic information powered by an unparalleled modular deep learning model
+          designed to simplify the implementation and execution of A.I.
         </p>
       </section>
 
@@ -64,10 +54,8 @@ const Home = () => (
         </h2>
 
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aperiam atque beatae maxime, mollitia
-          officia
-          quae sapiente voluptatem. Autem cumque deserunt eligendi eos hic in possimus repellat sint tenetur
-          voluptatibus?
+          Serves as a memory base for the web in which users can monitor changes at any point in time. Supported by
+          unique blockchain technology to store vast amounts of information on the web
         </p>
       </section>
 
@@ -85,10 +73,30 @@ const Home = () => (
       </div>
     </div>
 
-    <footer>
-      © 2018 Tethys
-    </footer>
+    <Footer />
   </React.Fragment>
 );
 
 export default Home;
+
+const TopNav = () => (
+  <nav className={styles.topNav} style={{ backgroundImage: `url(${background})` }}>
+    <span className={styles.navLogo}>Tethys Logo</span>
+
+    <div className={styles.navLinks}>
+      <a href="/">Why Tethys</a>
+      <a href="/">Whitepaper</a>
+      <a href="/">Overview</a>
+      <a href="/">Roadmap</a>
+    </div>
+  </nav>
+);
+
+const Footer = () => (
+  <footer className={styles.footer}>
+    <div>
+      <a href="/">Privacy Policy</a> | <a href="/">Terms</a>
+    </div>
+    <div className={styles.copyright}>© 2018 Tethys</div>
+  </footer>
+);
