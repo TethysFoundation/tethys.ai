@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { forbidExtraProps } from 'airbnb-prop-types';
 import styles from '../assets/stylesheets/count_down_clock.pcss';
+import PieCounter from './PieCounter';
 
 export default class CountDownClock extends React.Component {
   static propTypes = forbidExtraProps({
@@ -48,25 +49,10 @@ export default class CountDownClock extends React.Component {
         <h2 className={styles.heading}>Pre-sale starts {endDate.toDateString()}</h2>
 
         <div className={styles.countDown}>
-          <div className={styles.timeComponent}>
-            <span data-testid="days">{daysRemaining}</span>
-            <div className={styles.label}>Days</div>
-          </div>
-
-          <div className={styles.timeComponent}>
-            <span data-testid="hours">{hoursRemaining}</span>
-            <div className={styles.label}>Hours</div>
-          </div>
-
-          <div className={styles.timeComponent}>
-            <span data-testid="minutes">{minutesRemaining}</span>
-            <div className={styles.label}>Minutes</div>
-          </div>
-
-          <div className={styles.timeComponent}>
-            <span data-testid="seconds">{secondsRemaining}</span>
-            <div className={styles.label}>Seconds</div>
-          </div>
+          <PieCounter value={daysRemaining} max={30} label="Days" />
+          <PieCounter value={hoursRemaining} max={24} label="Hours" />
+          <PieCounter value={minutesRemaining} max={60} label="Minutes" />
+          <PieCounter value={secondsRemaining} max={60} label="Seconds" />
         </div>
       </div>
     );

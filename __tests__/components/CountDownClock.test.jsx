@@ -10,10 +10,10 @@ describe('CountDownClock', () => {
   it('renders correctly with a future endDate', () => {
     const { getByTestId } = render(<CountDownClock endDate={endDate} />);
 
-    expect(getByTestId('days')).toHaveTextContent('14');
-    expect(getByTestId('hours')).toHaveTextContent('23');
-    expect(getByTestId('minutes')).toHaveTextContent('59');
-    expect(getByTestId('seconds')).toHaveTextContent('59');
+    expect(getByTestId('days-value')).toHaveTextContent('14');
+    expect(getByTestId('hours-value')).toHaveTextContent('23');
+    expect(getByTestId('minutes-value')).toHaveTextContent('59');
+    expect(getByTestId('seconds-value')).toHaveTextContent('59');
   });
 
   it('renders all zeros when the endDate has been reached', () => {
@@ -22,9 +22,9 @@ describe('CountDownClock', () => {
 
     const { getByTestId } = render(<CountDownClock endDate={endDate} />);
 
-    expect(getByTestId('days')).toHaveTextContent('0');
-    expect(getByTestId('hours')).toHaveTextContent('0');
-    expect(getByTestId('minutes')).toHaveTextContent('0');
-    expect(getByTestId('seconds')).toHaveTextContent('0');
+    expect(getByTestId('days-value')).toHaveTextContent('0');
+    expect(getByTestId('hours-value')).toHaveTextContent('0');
+    expect(getByTestId('minutes-value')).toHaveTextContent('0');
+    expect(getByTestId('seconds-value')).toHaveTextContent('0');
   });
 });

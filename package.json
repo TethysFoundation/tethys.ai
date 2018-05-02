@@ -24,7 +24,7 @@
         "displayName": "test",
         "moduleNameMapper": {
           "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)$": "<rootDir>/__mocks__/fileMock.js",
-          "\\.pcss$": "identity-obj-proxy"
+          "\\.(p|s)css$": "identity-obj-proxy"
         }
       },
       {
@@ -70,12 +70,13 @@
     "jest": "^22.4.3",
     "jest-mock-axios": "^2.1.11",
     "jest-runner-eslint": "^0.5.0",
-    "postcss-extend-rule": "^1.1.0",
+    "node-sass": "^4.9.0",
     "postcss-flexbugs-fixes": "^3.3.1",
     "postcss-loader": "^2.1.4",
     "postcss-nested": "^3.0.0",
     "react-hot-loader": "^4.1.2",
     "react-testing-library": "^2.3.0",
+    "sass-loader": "^7.0.1",
     "serve": "^6.5.6",
     "style-loader": "^0.21.0",
     "timekeeper": "^2.1.1"

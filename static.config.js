@@ -3,7 +3,6 @@ import ExtractCssChunks from 'extract-css-chunks-webpack-plugin';
 // PostCSS plugins
 import postcssFlexbugsFixes from 'postcss-flexbugs-fixes';
 import autoprefixer from 'autoprefixer';
-import extendRule from 'postcss-extend-rule';
 import nested from 'postcss-nested';
 
 // noinspection JSUnusedGlobalSymbols
@@ -43,7 +42,6 @@ export default {
           plugins: () => [
             postcssFlexbugsFixes,
             autoprefixer({ flexbox: 'no-2009' }),
-            extendRule,
             nested,
           ],
         },
@@ -57,6 +55,10 @@ export default {
             {
               test: /\.pcss$/,
               use: ['style-loader'].concat(cssLoaders),
+            },
+            {
+              test: /\.scss$/,
+              use: ['style-loader'].concat(cssLoaders).concat('sass-loader'),
             },
             defaultLoaders.jsLoader,
             defaultLoaders.fileLoader,
@@ -78,6 +80,19 @@ export default {
                   },
                 },
                 use: cssLoaders,
+              }),
+            },
+            {
+              test: /\.scss$/,
+              use: ExtractCssChunks.extract({
+                fallback: {
+                  loader: 'style-loader',
+                  options: {
+                    sourceMap: false,
+                    hmr: false,
+                  },
+                },
+                use: cssLoaders.concat('sass-loader'),
               }),
             },
             defaultLoaders.jsLoader,
