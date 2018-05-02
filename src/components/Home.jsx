@@ -27,7 +27,7 @@ const Home = () => (
         <Button href="#subscribe" text="Register for ICO" />
       </section>
 
-      <section className={styles.homeSection}>
+      <section className={styles.valuePropSection}>
         <h2 className={styles.heading}>
           A Share Economy for Untapped Computing Power and Human Intelligence
         </h2>
@@ -37,7 +37,7 @@ const Home = () => (
         </p>
       </section>
 
-      <section className={styles.homeSection}>
+      <section className={styles.valuePropSection}>
         <h2 className={styles.heading}>
           An Artificial Intelligence to Navigate and Organize Semantic Information
         </h2>
@@ -48,7 +48,7 @@ const Home = () => (
         </p>
       </section>
 
-      <section className={styles.homeSection}>
+      <section className={styles.valuePropSection}>
         <h2 className={styles.heading}>
           An Infinitely Scalable Blockchain to Bring Long-term Memory to the Web
         </h2>
@@ -59,18 +59,25 @@ const Home = () => (
         </p>
       </section>
 
-      <section className={styles.homeSection}>
+      <section className={styles.smallSection}>
         <h2 className={styles.heading}>Learn More About Tethys</h2>
 
         <Button href="/" text="View Whitepaper" />
         <Button href="#subscribe" text="Register for ICO" />
       </section>
 
-      <CountDownClock endDate={preSaleDate} />
+      <section className={styles.smallSection}>
+        <CountDownClock endDate={preSaleDate} />
+      </section>
 
-      <div id="subscribe">
-        <SubscribeForm />
-      </div>
+      <section id="subscribe" className={[styles.smallSection, styles.boxedSection, styles.subscribeSection].join(' ')}>
+        <h2 className={styles.heading}>Subscribe for Updates</h2>
+
+        <div className={styles.subscribeForm}>
+          <SubscribeForm />
+          <small>We won&#39;t share your email address or send you any spam</small>
+        </div>
+      </section>
     </div>
 
     <Footer />

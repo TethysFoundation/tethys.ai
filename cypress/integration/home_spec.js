@@ -16,7 +16,7 @@ describe('Tethys home page', () => {
 
       cy.get('input[name="email"]').type('test@example.com');
       cy.get('select[name="country"]').select('CA');
-      cy.contains('Subscribe').click();
+      cy.contains('Submit').click();
 
       cy.wait('@createSubscriber');
     });

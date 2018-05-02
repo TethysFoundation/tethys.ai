@@ -62,7 +62,7 @@ class SubscribeForm extends React.Component {
           <CountryOptions />
         </select>
 
-        <button ref={this.buttonRef} onClick={this.submit}>Subscribe</button>
+        <button ref={this.buttonRef} onClick={this.submit}>Submit</button>
       </div>
     );
   }

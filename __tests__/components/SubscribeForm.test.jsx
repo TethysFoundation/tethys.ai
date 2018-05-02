@@ -18,7 +18,7 @@ describe('SubscribeForm', () => {
       getByTestId('email').value = 'test@example.com';
       getByTestId('country').value = 'SG';
 
-      const subscribeButton = getByText('Subscribe');
+      const subscribeButton = getByText('Submit');
       Simulate.click(subscribeButton);
 
       expect(subscribeButton.disabled).toBeTruthy();
@@ -37,7 +37,7 @@ describe('SubscribeForm', () => {
 
       getByTestId('country').value = 'SG';
 
-      const subscribeButton = getByText('Subscribe');
+      const subscribeButton = getByText('Submit');
       Simulate.click(subscribeButton);
 
       expect(subscribeButton.disabled).toBeFalsy();
@@ -54,7 +54,7 @@ describe('SubscribeForm', () => {
       getByTestId('email').value = 'test@example';
       getByTestId('country').value = 'SG';
 
-      const subscribeButton = getByText('Subscribe');
+      const subscribeButton = getByText('Submit');
       Simulate.click(subscribeButton);
 
       expect(subscribeButton.disabled).toBeFalsy();
@@ -70,7 +70,7 @@ describe('SubscribeForm', () => {
 
       getByTestId('email').value = 'test@example.com';
 
-      const subscribeButton = getByText('Subscribe');
+      const subscribeButton = getByText('Submit');
       Simulate.click(subscribeButton);
 
       expect(subscribeButton.disabled).toBeFalsy();
@@ -84,7 +84,7 @@ describe('SubscribeForm', () => {
     it('does not make the API call and displays an error state', async () => {
       const { container, getByText } = render(<SubscribeForm />);
 
-      const subscribeButton = getByText('Subscribe');
+      const subscribeButton = getByText('Submit');
       Simulate.click(subscribeButton);
 
       expect(subscribeButton.disabled).toBeFalsy();
