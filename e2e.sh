@@ -1,11 +1,8 @@
 #!/usr/bin/env bash
 
 yarn build --staging
-
-yarn serve --silent &
-
-SERVE_PID=$!
-
+yarn serve &
 yarn run cypress run
 
-kill -9 ${SERVE_PID}
+# kill serve process
+kill %1
