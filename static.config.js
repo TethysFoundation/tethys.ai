@@ -1,7 +1,10 @@
 /* eslint-disable import/no-extraneous-dependencies,no-param-reassign */
 import ExtractCssChunks from 'extract-css-chunks-webpack-plugin';
+// PostCSS plugins
 import postcssFlexbugsFixes from 'postcss-flexbugs-fixes';
 import autoprefixer from 'autoprefixer';
+import extendRule from 'postcss-extend-rule';
+import nested from 'postcss-nested';
 
 // noinspection JSUnusedGlobalSymbols
 export default {
@@ -40,6 +43,8 @@ export default {
           plugins: () => [
             postcssFlexbugsFixes,
             autoprefixer({ flexbox: 'no-2009' }),
+            extendRule,
+            nested,
           ],
         },
       },
