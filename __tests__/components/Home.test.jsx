@@ -7,6 +7,6 @@ describe('Home', () => {
   test('renders something', () => {
     const { queryByText } = render(<Home />);
 
-    expect(queryByText('welcome')).toBeInTheDOM();
+    expect(queryByText('A decentralized currency based on blockchain technology')).toBeInTheDOM();
   });
 });

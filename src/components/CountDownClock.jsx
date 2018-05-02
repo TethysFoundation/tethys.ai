@@ -44,8 +44,8 @@ export default class CountDownClock extends React.Component {
     } = this.state;
 
     return (
-      <React.Fragment>
-        <h2 className={styles.heading}>Time until {endDate.toDateString()}</h2>
+      <div className={styles.container}>
+        <h2 className={styles.heading}>Pre-sale starts {endDate.toDateString()}</h2>
 
         <div className={styles.countDown}>
           <div className={styles.timeComponent}>
@@ -68,7 +68,7 @@ export default class CountDownClock extends React.Component {
             <div className={styles.label}>Seconds</div>
           </div>
         </div>
-      </React.Fragment>
+      </div>
     );
   }
 }

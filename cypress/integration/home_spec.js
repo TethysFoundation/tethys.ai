@@ -6,7 +6,7 @@ describe('Tethys home page', () => {
   });
 
   it('displays the main site content', () => {
-    cy.get('h1').should('contain', 'Welcome');
+    cy.contains('A decentralized currency based on blockchain technology').should('be.visible');
   });
 
   context('when user completes the subscribe form', () => {
