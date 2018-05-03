@@ -2,6 +2,7 @@ import React from 'react';
 import api from '../api';
 import CountryOptions from './CountryOptions';
 import styles from '../assets/stylesheets/subscribe_form.pcss';
+import Button from './Button';
 
 class SubscribeForm extends React.Component {
   state = { errors: [] };
@@ -62,7 +63,7 @@ class SubscribeForm extends React.Component {
           <CountryOptions />
         </select>
 
-        <button ref={this.buttonRef} onClick={this.submit}>Submit</button>
+        <Button ref={this.buttonRef} size="small" onClick={this.submit} text="Submit" />
       </div>
     );
   }

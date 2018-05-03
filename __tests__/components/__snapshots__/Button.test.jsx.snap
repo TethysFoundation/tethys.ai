@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button when given an href can render with the small size class 1`] = `
+<div>
+  <a
+    class="btn btnSmall"
+    href="/example"
+  >
+    Submit
+  </a>
+</div>
+`;
+
+exports[`Button when given an href renders an "a" tag 1`] = `
+<div>
+  <a
+    class="btn btnLarge"
+    href="/example"
+  >
+    Submit
+  </a>
+</div>
+`;
+
+exports[`Button when not given an href can render with the small size class 1`] = `
+<div>
+  <button
+    class="btn btnSmall"
+  >
+    Submit
+  </button>
+</div>
+`;
+
+exports[`Button when not given an href renders a button 1`] = `
+<div>
+  <button
+    class="btn btnLarge"
+  >
+    Submit
+  </button>
+</div>
+`;
