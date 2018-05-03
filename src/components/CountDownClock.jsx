@@ -9,50 +9,74 @@ export default class CountDownClock extends React.Component {
     endDate: PropTypes.instanceOf(Date).isRequired,
   });
 
-  state = {
-    daysRemaining: '–',
-    hoursRemaining: '–',
-    minutesRemaining: '–',
-    secondsRemaining: '–',
+  // eslint-disable-next-line react/sort-comp
+  endTime = this.props.endDate.getTime();
+
+  getDaysRemaining = () => {
+    const currentTime = new Date().getTime();
+    const msRemaining = Math.max(0, this.endTime - currentTime);
+    return msRemaining / (1000 * 60 * 60 * 24);
   };
 
-  componentDidMount() {
-    this.tick();
-    setInterval(this.tick, 1000);
-  }
+  displayDaysRemaining = () => Math.floor(this.getDaysRemaining());
 
-  tick = () => {
+  getHoursRemaining = () => {
+    const currentTime = new Date().getTime();
+    const msRemaining = Math.max(0, this.endTime - currentTime);
+    return (msRemaining / (1000 * 60 * 60)) % 24;
+  };
+
+  displayHoursRemaining = () => Math.floor(this.getHoursRemaining());
+
+  getMinutesRemaining = () => {
+    const currentTime = new Date().getTime();
+    const msRemaining = Math.max(0, this.endTime - currentTime);
+    return (msRemaining / 1000 / 60) % 60;
+  };
+
+  displayMinutesRemaining = () => Math.floor(this.getMinutesRemaining());
+
+  getMillisRemaining = () => {
     const endTime = this.props.endDate.getTime();
     const currentTime = new Date().getTime();
-    const msRemaining = Math.max(0, endTime - currentTime);
-
-    this.setState({
-      daysRemaining: Math.floor(msRemaining / (1000 * 60 * 60 * 24)),
-      hoursRemaining: Math.floor((msRemaining / (1000 * 60 * 60)) % 24),
-      minutesRemaining: Math.floor((msRemaining / 1000 / 60) % 60),
-      secondsRemaining: Math.floor((msRemaining / 1000) % 60),
-    });
-
-    if (msRemaining === 0) {
-      clearInterval(this.tick);
-    }
+    const msRemaining = (endTime - currentTime) % 60000;
+    return Math.max(0, msRemaining);
   };
+
+  displaySecondsRemaining = () => Math.floor(this.getMillisRemaining() / 1000);
 
   render() {
     const { endDate } = this.props;
-    const {
-      daysRemaining, hoursRemaining, minutesRemaining, secondsRemaining,
-    } = this.state;
 
     return (
       <div className={styles.container}>
         <h2 className={styles.heading}>Pre-sale starts {endDate.toDateString()}</h2>
 
-        <div className={styles.countDown}>
-          <PieCounter value={daysRemaining} max={30} label="Days" />
-          <PieCounter value={hoursRemaining} max={24} label="Hours" />
-          <PieCounter value={minutesRemaining} max={60} label="Minutes" />
-          <PieCounter value={secondsRemaining} max={60} label="Seconds" />
+        <div data-testid="counter-container" className={styles.countDown}>
+          <PieCounter
+            getValue={this.getDaysRemaining}
+            displayValue={this.displayDaysRemaining}
+            max={30}
+            label="Days"
+          />
+          <PieCounter
+            getValue={this.getHoursRemaining}
+            displayValue={this.displayHoursRemaining}
+            max={24}
+            label="Hours"
+          />
+          <PieCounter
+            getValue={this.getMinutesRemaining}
+            displayValue={this.displayMinutesRemaining}
+            max={60}
+            label="Minutes"
+          />
+          <PieCounter
+            getValue={this.getMillisRemaining}
+            displayValue={this.displaySecondsRemaining}
+            max={60000}
+            label="Seconds"
+          />
         </div>
       </div>
     );

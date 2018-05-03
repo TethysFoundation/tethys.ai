@@ -1,0 +1,129 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CountDownClock renders all zeros when the endDate has been reached 1`] = `
+<div
+  class="countDown"
+  data-testid="counter-container"
+>
+  <div>
+    <span>
+      0
+    </span>
+    <span>
+      0
+    </span>
+    <span>
+      30
+    </span>
+    <span>
+      Days
+    </span>
+  </div>
+  <div>
+    <span>
+      0
+    </span>
+    <span>
+      0
+    </span>
+    <span>
+      24
+    </span>
+    <span>
+      Hours
+    </span>
+  </div>
+  <div>
+    <span>
+      0
+    </span>
+    <span>
+      0
+    </span>
+    <span>
+      60
+    </span>
+    <span>
+      Minutes
+    </span>
+  </div>
+  <div>
+    <span>
+      0
+    </span>
+    <span>
+      0
+    </span>
+    <span>
+      60000
+    </span>
+    <span>
+      Seconds
+    </span>
+  </div>
+</div>
+`;
+
+exports[`CountDownClock renders correctly with a future endDate 1`] = `
+<div
+  class="countDown"
+  data-testid="counter-container"
+>
+  <div>
+    <span>
+      14.999988425925926
+    </span>
+    <span>
+      14
+    </span>
+    <span>
+      30
+    </span>
+    <span>
+      Days
+    </span>
+  </div>
+  <div>
+    <span>
+      23.999722222222204
+    </span>
+    <span>
+      23
+    </span>
+    <span>
+      24
+    </span>
+    <span>
+      Hours
+    </span>
+  </div>
+  <div>
+    <span>
+      59.983333333333576
+    </span>
+    <span>
+      59
+    </span>
+    <span>
+      60
+    </span>
+    <span>
+      Minutes
+    </span>
+  </div>
+  <div>
+    <span>
+      59000
+    </span>
+    <span>
+      59
+    </span>
+    <span>
+      60000
+    </span>
+    <span>
+      Seconds
+    </span>
+  </div>
+</div>
+`;

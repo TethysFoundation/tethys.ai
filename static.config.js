@@ -56,10 +56,6 @@ export default {
               test: /\.pcss$/,
               use: ['style-loader'].concat(cssLoaders),
             },
-            {
-              test: /\.scss$/,
-              use: ['style-loader'].concat(cssLoaders).concat('sass-loader'),
-            },
             defaultLoaders.jsLoader,
             defaultLoaders.fileLoader,
           ],
@@ -80,19 +76,6 @@ export default {
                   },
                 },
                 use: cssLoaders,
-              }),
-            },
-            {
-              test: /\.scss$/,
-              use: ExtractCssChunks.extract({
-                fallback: {
-                  loader: 'style-loader',
-                  options: {
-                    sourceMap: false,
-                    hmr: false,
-                  },
-                },
-                use: cssLoaders.concat('sass-loader'),
               }),
             },
             defaultLoaders.jsLoader,
