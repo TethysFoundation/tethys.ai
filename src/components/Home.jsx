@@ -59,7 +59,7 @@ const Home = () => (
         </p>
       </section>
 
-      <section className={styles.smallSection}>
+      <section className={[styles.smallSection, styles.boxedSection, styles.wideBoxedSection].join(' ')}>
         <h2 className={styles.heading}>Learn More About Tethys</h2>
 
         <Button href="/" text="View Whitepaper" />
@@ -70,14 +70,38 @@ const Home = () => (
         <CountDownClock endDate={preSaleDate} />
       </section>
 
-      <section id="subscribe" className={[styles.smallSection, styles.boxedSection, styles.subscribeSection].join(' ')}>
-        <h2 className={styles.heading}>Subscribe for Updates</h2>
+      <div className={styles.row}>
+        <section
+          id="subscribe"
+          className={[styles.smallSection, styles.boxedSection, styles.subscribeSection].join(' ')}
+        >
 
-        <div className={styles.subscribeForm}>
-          <SubscribeForm />
-          <small>We won&#39;t share your email address or send you any spam</small>
-        </div>
-      </section>
+          <h2 className={styles.heading}>Subscribe for Updates</h2>
+
+          <div className={styles.subscribeForm}>
+            <SubscribeForm />
+            <small>We won&#39;t share your email address or send you any spam</small>
+          </div>
+        </section>
+
+        <section className={[styles.smallSection, styles.boxedSection, styles.linksSection].join(' ')}>
+          <h2 className={styles.heading}>Links</h2>
+
+          <ul className={styles.linksList}>
+            <li>
+              <a href="https://github.com/TethysFoundation">Github</a>
+            </li>
+
+            <li>
+              <a href="/">Telegram</a>
+            </li>
+
+            <li>
+              <a href="/">Medium</a>
+            </li>
+          </ul>
+        </section>
+      </div>
     </div>
 
     <Footer />

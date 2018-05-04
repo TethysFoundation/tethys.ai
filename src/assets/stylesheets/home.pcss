@@ -85,17 +85,28 @@
   padding: 80px 50px;
 }
 
+.wide-boxed-section {
+  margin: 0 -100px 150px;
+}
+
 .small-section {
   text-align: center;
   min-height: 325px;
   margin-bottom: 150px;
 
-  &:last-of-type {
-    margin-bottom: 65px;
-  }
-
   a:first-of-type {
     margin-right: 40px;
+  }
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
+  > * {
+    margin-bottom: 0;
   }
 }
 
@@ -105,6 +116,26 @@
 
   .subscribe-form small {
     color: #B0B0B0;
+  }
+}
+
+.links-section {
+  text-align: left;
+  width: 380px;
+
+  .links-list {
+    list-style: none;
+    padding: 15px 0 0 0;
+    margin: 0;
+
+    li {
+      margin-bottom: 20px;
+    }
+
+    li > a {
+      color: #B0B0B0;
+      font-size: 18px;
+    }
   }
 }
 
