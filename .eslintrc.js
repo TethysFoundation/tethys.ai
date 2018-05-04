@@ -26,5 +26,6 @@ module.exports = {
     ],
     'compat/compat': 'error',
     'import/no-extraneous-dependencies': ['error', { 'devDependencies': ['**/__mocks__/*', '**/*.test.js*'] }],
+    'no-use-before-define': ['error', { functions: false }],
   },
 };

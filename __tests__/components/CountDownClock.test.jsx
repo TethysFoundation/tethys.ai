@@ -30,4 +30,9 @@ describe('CountDownClock', () => {
     const { getByTestId } = render(<CountDownClock endDate={endDate} />);
     expect(getByTestId('counter-container')).toMatchSnapshot();
   });
+
+  it('renders the heading with the correct end date', () => {
+    const { getByTestId } = render(<CountDownClock endDate={endDate} />);
+    expect(getByTestId('heading')).toHaveTextContent('Pre-sale starts 05/18/2018');
+  });
 });

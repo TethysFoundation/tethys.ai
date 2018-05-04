@@ -1,8 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { forbidExtraProps } from 'airbnb-prop-types';
-import styles from '../assets/stylesheets/count_down_clock.pcss';
 import PieCounter from './PieCounter';
+import styles from '../assets/stylesheets/count_down_clock.pcss';
+
+function formatDate(date) {
+  const month = padDatePart(date.getMonth() + 1);
+  const day = padDatePart(date.getDate());
+  const year = date.getFullYear();
+  return `${month}/${day}/${year}`;
+}
+
+function padDatePart(d) {
+  const str = d.toString();
+  return str.length === 1 ? `0${str}` : str;
+}
 
 export default class CountDownClock extends React.Component {
   static propTypes = forbidExtraProps({
@@ -46,11 +58,9 @@ export default class CountDownClock extends React.Component {
   displaySecondsRemaining = () => Math.floor(this.getMillisRemaining() / 1000);
 
   render() {
-    const { endDate } = this.props;
-
     return (
       <div className={styles.container}>
-        <h2 className={styles.heading}>Pre-sale starts {endDate.toDateString()}</h2>
+        <h2 data-testid="heading" className={styles.heading}>Pre-sale starts {formatDate(this.props.endDate)}</h2>
 
         <div data-testid="counter-container" className={styles.countDown}>
           <PieCounter
