@@ -3,7 +3,12 @@ import Button from './Button';
 import CountDownClock from './CountDownClock';
 import SubscribeForm from './SubscribeForm';
 import styles from '../assets/stylesheets/home.pcss';
-import background from '../assets/images/background.png';
+import background from '../assets/images/img_webBackground_textureCenterTop.jpg';
+import mainLogo from '../assets/images/img_TethysLogo_Vertical.png';
+import navLogo from '../assets/images/img_TethysLogo_Horizontal.png';
+import networkImage from '../assets/images/img_NetworkVisual.png';
+import semanticImage from '../assets/images/img_SemanticVisual.png';
+import memoryImage from '../assets/images/img_MemoryVisual.png';
 
 const preSaleDate = new Date(2018, 5, 1, 0, 0, 0);
 
@@ -15,9 +20,7 @@ const Home = () => (
 
     <div className={styles.homeContent}>
       <section className={styles.heroSection}>
-        <div className={styles.logo}>
-          TETHYS LOGO
-        </div>
+        <img className={styles.logo} src={mainLogo} alt="Tethys" />
 
         <h2 className={styles.heading}>
           A decentralized currency based on blockchain technology powering NextGen Semantic Web
@@ -27,36 +30,54 @@ const Home = () => (
         <Button href="#subscribe" text="Register for ICO" />
       </section>
 
-      <section className={styles.valuePropSection}>
-        <h2 className={styles.heading}>
-          A Share Economy for Untapped Computing Power and Human Intelligence
-        </h2>
+      <section className={[styles.valuePropSection, styles.boxedSection].join(' ')}>
+        <div>
+          <h2 className={styles.heading}>
+            A Share Economy for Untapped Computing Power and Human Intelligence
+          </h2>
 
-        <p>
-          End users can earn Tethys tokens for sharing bandwidth and resources, enabling rapid growth at a low cost.
-        </p>
+          <p>
+            End users can earn Tethys tokens for sharing bandwidth and resources, enabling rapid growth at a low cost.
+          </p>
+        </div>
+
+        <div>
+          <img src={networkImage} alt="Network" />
+        </div>
       </section>
 
       <section className={styles.valuePropSection}>
-        <h2 className={styles.heading}>
-          An Artificial Intelligence to Navigate and Organize Semantic Information
-        </h2>
+        <div>
+          <img src={semanticImage} alt="Semantic information extracted from a web page" />
+        </div>
 
-        <p>
-          Robust extraction of complex semantic information powered by an unparalleled modular deep learning model
-          designed to simplify the implementation and execution of A.I.
-        </p>
+        <div>
+          <h2 className={styles.heading}>
+            An Artificial Intelligence to Navigate and Organize Semantic Information
+          </h2>
+
+          <p>
+            Robust extraction of complex semantic information powered by an unparalleled modular deep learning model
+            designed to simplify the implementation and execution of A.I.
+          </p>
+        </div>
       </section>
 
-      <section className={styles.valuePropSection}>
-        <h2 className={styles.heading}>
-          An Infinitely Scalable Blockchain to Bring Long-term Memory to the Web
-        </h2>
+      <section className={[styles.valuePropSection, styles.boxedSection].join(' ')}>
+        <div>
+          <h2 className={styles.heading}>
+            An Infinitely Scalable Blockchain to Bring Long-term Memory to the Web
+          </h2>
 
-        <p>
-          Serves as a memory base for the web in which users can monitor changes at any point in time. Supported by
-          unique blockchain technology to store vast amounts of information on the web
-        </p>
+          <p>
+            Serves as a memory base for the web in which users can monitor changes at any point in time. Supported by
+            unique blockchain technology to store vast amounts of information on the web
+          </p>
+        </div>
+
+        <div>
+          <img src={memoryImage} alt="Human brain" />
+        </div>
       </section>
 
       <section className={[styles.smallSection, styles.boxedSection, styles.wideBoxedSection].join(' ')}>
@@ -112,7 +133,7 @@ export default Home;
 
 const TopNav = () => (
   <nav className={styles.topNav} style={{ backgroundImage: `url(${background})` }}>
-    <span className={styles.navLogo}>Tethys Logo</span>
+    <img className={styles.navLogo} src={navLogo} alt="Tethys" />
 
     <div className={styles.navLinks}>
       <a href="/">Why Tethys</a>
