@@ -44,14 +44,18 @@ class SubscribeForm extends React.Component {
   render() {
     return (
       <div className={styles.container}>
-        <input
-          data-testid="email"
-          ref={this.emailRef}
-          className={this.state.errors.includes('email') ? styles.error : null}
-          type="text"
-          name="email"
-          placeholder="email"
-        />
+        <span className={styles.row}>
+          <input
+            data-testid="email"
+            ref={this.emailRef}
+            className={this.state.errors.includes('email') ? styles.error : null}
+            type="text"
+            name="email"
+            placeholder="Enter your email"
+          />
+
+          <Button ref={this.buttonRef} size="small" onClick={this.submit} text="Submit" />
+        </span>
 
         <select
           data-testid="country"
@@ -62,8 +66,6 @@ class SubscribeForm extends React.Component {
         >
           <CountryOptions />
         </select>
-
-        <Button ref={this.buttonRef} size="small" onClick={this.submit} text="Submit" />
       </div>
     );
   }
