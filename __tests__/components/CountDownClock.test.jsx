@@ -15,8 +15,8 @@ jest.mock('../../src/components/PieCounter', () =>
   )));
 
 describe('CountDownClock', () => {
-  const endDate = new Date(new Date().getTime() + (15 * 24 * 60 * 60 * 1000));
-  tk.freeze(new Date(new Date().getTime() + 1000));
+  const endDate = new Date(2018, 4, 18, 0, 0, 0, 0);
+  tk.freeze(new Date(2018, 4, 3, 0, 0, 1, 500));
 
   it('renders correctly with a future endDate', () => {
     const { getByTestId } = render(<CountDownClock endDate={endDate} />);
@@ -24,8 +24,7 @@ describe('CountDownClock', () => {
   });
 
   it('renders all zeros when the endDate has been reached', () => {
-    const time = new Date(endDate.getTime() + 1000);
-    tk.freeze(time);
+    tk.freeze(new Date(endDate.getTime() + 1000));
 
     const { getByTestId } = render(<CountDownClock endDate={endDate} />);
     expect(getByTestId('counter-container')).toMatchSnapshot();

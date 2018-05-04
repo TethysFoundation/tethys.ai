@@ -71,7 +71,7 @@ exports[`CountDownClock renders correctly with a future endDate 1`] = `
 >
   <div>
     <span>
-      14.999988425925926
+      14.99998263888889
     </span>
     <span>
       14
@@ -85,7 +85,7 @@ exports[`CountDownClock renders correctly with a future endDate 1`] = `
   </div>
   <div>
     <span>
-      23.999722222222204
+      23.999583333333305
     </span>
     <span>
       23
@@ -99,7 +99,7 @@ exports[`CountDownClock renders correctly with a future endDate 1`] = `
   </div>
   <div>
     <span>
-      59.983333333333576
+      59.974999999998545
     </span>
     <span>
       59
@@ -113,10 +113,10 @@ exports[`CountDownClock renders correctly with a future endDate 1`] = `
   </div>
   <div>
     <span>
-      59000
+      58500
     </span>
     <span>
-      59
+      58
     </span>
     <span>
       60000
