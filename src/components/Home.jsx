@@ -1,4 +1,5 @@
 import React from 'react';
+import { Head } from 'react-static';
 import Button from './Button';
 import CountDownClock from './CountDownClock';
 import SubscribeForm from './SubscribeForm';
@@ -16,6 +17,11 @@ const preSaleDate = new Date(2018, 5, 1, 0, 0, 0);
 
 const Home = () => (
   <React.Fragment>
+    <Head>
+      { /* eslint-disable-next-line max-len */ }
+      <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=default,Array.prototype.find,Array.prototype.findIndex,Array.prototype.includes" />
+    </Head>
+
     <TopNav />
 
     <div className={styles.backgroundImage} style={{ backgroundImage: `url(${background})` }} />
