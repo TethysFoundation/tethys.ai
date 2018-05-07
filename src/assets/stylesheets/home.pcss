@@ -8,24 +8,24 @@
   background: no-repeat fixed;
   background-size: cover;
 
-  .nav-logo {
+  & .nav-logo {
     height: 45px;
   }
 
-  .nav-links {
+  & .nav-links {
     float: right;
 
-    a {
+    & a {
       color: white;
       text-transform: uppercase;
       text-decoration: none;
       font-size: 12px;
       font-weight: 500;
       margin-right: 50px;
-    }
-
-    &:last-of-type {
-      margin-right: 0;
+     
+      &:last-of-type {
+        margin-right: 0;
+      }
     }
   }
 }
@@ -54,11 +54,11 @@
   height: 100vh;
   text-align: center;
 
-  a:first-of-type {
+  & a:first-of-type {
     margin-right: 40px;
   }
 
-  h2 {
+  & h2 {
     margin-bottom: 50px;
   }
 }
@@ -68,7 +68,7 @@
   margin: 0 auto 20px;
   font-size: 24px;
   font-weight: 500;
-  color: white;
+  color: var(--headingTextColor);
 }
 
 .value-prop-section {
@@ -76,20 +76,20 @@
   display: flex;
   margin-bottom: 125px;
 
-  a:first-of-type {
+  & a:first-of-type {
     margin-right: 40px;
   }
 
-  img {
+  & img {
     margin-top: -100px;
   }
 
-  .heading {
+  & .heading {
     width: 488px;
   }
 
-  p {
-    color: #b0b0b0;
+  & p {
+    color: var(--mainTextColor);
     width: 445px;
     font-size: 16px;
     line-height: 1.5;
@@ -97,7 +97,7 @@
 }
 
 .boxed-section {
-  background: #242429;
+  background: var(--backgroundDarkColor);
   padding: 80px 50px;
 }
 
@@ -110,7 +110,7 @@
   min-height: 325px;
   margin-bottom: 150px;
 
-  a:first-of-type {
+  & a:first-of-type {
     margin-right: 40px;
   }
 }
@@ -121,7 +121,7 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
 
-  > * {
+  & > * {
     margin-bottom: 0;
   }
 }
@@ -130,8 +130,8 @@
   text-align: left;
   width: 750px;
 
-  .subscribe-form small {
-    color: #B0B0B0;
+  & .subscribe-form small {
+    color: var(--mainTextColor);
   }
 }
 
@@ -139,17 +139,17 @@
   text-align: left;
   width: 380px;
 
-  .links-list {
+  & .links-list {
     list-style: none;
     padding: 15px 0 0 0;
     margin: 0;
 
-    li {
+    & li {
       margin-bottom: 20px;
     }
 
-    li > a {
-      color: #B0B0B0;
+    & li > a {
+      color: var(--mainTextColor);
       font-size: 18px;
     }
   }
@@ -162,14 +162,14 @@
 
   height: 100px;
   text-align: center;
-  color: #B0B0B0;
-  background-color: #242429;
+  color: var(--mainTextColor);
+  background-color: var(--backgroundDarkColor);
 
-  a {
-    color: #B0B0B0;
+  & a {
+    color: var(--mainTextColor);
   }
 
-  .copyright {
+  & .copyright {
     margin-top: 20px;
   }
 }

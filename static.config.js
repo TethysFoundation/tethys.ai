@@ -3,7 +3,7 @@ import ExtractCssChunks from 'extract-css-chunks-webpack-plugin';
 // PostCSS plugins
 import postcssFlexbugsFixes from 'postcss-flexbugs-fixes';
 import autoprefixer from 'autoprefixer';
-import nested from 'postcss-nested';
+import postcssPresetEnv from 'postcss-preset-env';
 
 // noinspection JSUnusedGlobalSymbols
 export default {
@@ -40,9 +40,11 @@ export default {
         loader: 'postcss-loader',
         options: {
           plugins: () => [
-            postcssFlexbugsFixes,
+            postcssPresetEnv({
+              stage: 1,
+            }),
             autoprefixer({ flexbox: 'no-2009' }),
-            nested,
+            postcssFlexbugsFixes,
           ],
         },
       },
