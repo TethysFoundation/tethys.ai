@@ -4,6 +4,8 @@ import CountDownClock from './CountDownClock';
 import SubscribeForm from './SubscribeForm';
 import styles from '../assets/stylesheets/home.pcss';
 import background from '../assets/images/img_webBackground_textureCenterTop.jpg';
+import backgroundRedHaloImage from '../assets/images/img_webBackground_redHalo.png';
+import backgroundGreedHaloImage from '../assets/images/img_webBackground_greenHalo.png';
 import mainLogo from '../assets/images/img_TethysLogo_Vertical.png';
 import navLogo from '../assets/images/img_TethysLogo_Horizontal.png';
 import networkImage from '../assets/images/img_NetworkVisual.png';
@@ -17,6 +19,8 @@ const Home = () => (
     <TopNav />
 
     <div className={styles.backgroundImage} style={{ backgroundImage: `url(${background})` }} />
+    <img className={styles.redHalo} src={backgroundRedHaloImage} alt="" />
+    <img className={styles.greenHalo} src={backgroundGreedHaloImage} alt="" />
 
     <div className={styles.homeContent}>
       <section className={styles.heroSection}>
@@ -133,6 +137,7 @@ export default Home;
 
 const TopNav = () => (
   <nav className={styles.topNav} style={{ backgroundImage: `url(${background})` }}>
+    <img className={[styles.redHalo, styles.navHalo].join(' ')} src={backgroundRedHaloImage} alt="" />
     <img className={styles.navLogo} src={navLogo} alt="Tethys" />
 
     <div className={styles.navLinks}>
