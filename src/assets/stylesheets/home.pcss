@@ -1,15 +1,25 @@
 @import "shared/colors.pcss";
 
+@custom-media --large-desktop-screen (1024px <= width <= 1640px);
+
+@custom-media --small-desktop-screen (810px <= width < 1024px);
+
+@custom-media --tablet-screen (width < 810px);
+
 .top-nav {
   height: 80px;
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
-  padding: 0 80px;
   background: no-repeat fixed center top var(--backgroundColor);
   overflow: hidden;
   z-index: 2;
+
+  & .nav-inner {
+    padding: 0 30px;
+    height: 100%;
+  }
 
   & .nav-halo {
     position: absolute;
@@ -25,6 +35,7 @@
     display: flex;
     align-items: center;
     height: 100%;
+    padding-top: 8px;
 
     & a {
       font-family: 'Barlow Condensed', sans-serif;
@@ -67,11 +78,24 @@
 }
 
 .home-content {
-  margin: 150px auto 65px;
-  padding: 0 100px;
-  max-width: 1440px;
+  width: 100%;
+  margin: 190px 0 55px;
   overflow-x: hidden;
   z-index: 1;
+}
+
+.home-content > section:not(.wide-section), .nav-inner {
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (--large-desktop-screen) {
+    margin-left: 100px;
+    margin-right: 100px;
+  } @media (--small-desktop-screen) {
+  margin-left: 50px;
+  margin-right: 50px;
+}
 }
 
 .logo {
@@ -87,15 +111,16 @@
     margin-right: 40px;
   }
 
-  & h2 {
-    margin-bottom: 50px;
+  & .heading {
+    font-size: 28px;
+    margin: 0 auto 50px;
   }
 }
 
 .heading {
-  width: 640px;
-  margin: 0 auto 20px;
-  font-size: 24px;
+  max-width: 675px;
+  margin: 0 0 20px;
+  font-size: 30px;
   font-weight: 500;
   color: var(--headingTextColor);
 }
@@ -103,83 +128,114 @@
 .value-prop-section {
   height: 530px;
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   margin-bottom: 125px;
 
-  & a:first-of-type {
-    margin-right: 40px;
-  }
-
-  & img {
-    margin-top: -100px;
-  }
-
   & .heading {
-    width: 488px;
+    max-width: 490px;
   }
 
   & p {
     color: var(--mainTextColor);
-    width: 445px;
+    max-width: 445px;
     font-size: 16px;
     line-height: 1.5;
   }
 }
 
+.flex-text-block {
+  flex: 1 0 375px;
+  padding: 0 60px;
+  align-self: center;
+}
+
+.flex-image-block {
+  flex: 1 0 330px;
+
+  & img {
+    max-width: 110%;
+  }
+}
+
+.network-image {
+  max-height: 100%;
+}
+
 .boxed-section {
-  background: var(--backgroundDarkColor);
-  padding: 80px 50px;
+  background-color: var(--backgroundDarkColor);
 }
 
-.wide-boxed-section {
-  margin: 0 -100px 150px;
-}
-
-.small-section {
+.wide-section {
   text-align: center;
-  min-height: 325px;
   margin-bottom: 150px;
+  width: 100%;
+
+  & .heading {
+    margin-left: auto;
+    margin-right: auto;
+  }
 
   & a:first-of-type {
     margin-right: 40px;
   }
 }
 
-.row {
+.learn-more-section {
+  height: 260px;
+  padding: 0 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  & .heading {
+    margin-bottom: 50px;
+  }
+}
+
+.flex-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  margin: 0 -10px;
 
   & > * {
-    margin-bottom: 0;
+    margin: 10px;
   }
 }
 
 .subscribe-section {
+  flex: 1 0 750px;
   text-align: left;
-  width: 750px;
+  padding: 80px 60px;
 
   & .subscribe-form small {
     color: var(--mainTextColor);
+    font-size: 16px;
   }
 }
 
 .links-section {
+  flex: 1 0 300px;
   text-align: left;
-  width: 380px;
+  padding: 80px 60px;
 
   & .links-list {
+    display: flex;
+    flex-wrap: wrap;
     list-style: none;
     padding: 15px 0 0 0;
     margin: 0;
 
     & li {
+      flex: 1 0 40%;
       margin-bottom: 20px;
+      min-width: 185px;
     }
 
     & li > a {
       color: var(--mainTextColor);
-      font-size: 18px;
+      font-size: 20px;
     }
   }
 }
@@ -188,6 +244,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  font-size: 16px;
 
   height: 100px;
   text-align: center;
@@ -200,5 +257,20 @@
 
   & .copyright {
     margin-top: 20px;
+  }
+}
+
+@media (--small-desktop-screen) {
+  .value-prop-section {
+    height: 430px;
+  }
+
+  .flex-text-block {
+    flex-basis: 395px;
+    padding: 0 30px;
+  }
+
+  .flex-image-block {
+    flex-basis: 270px;
   }
 }

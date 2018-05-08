@@ -24,7 +24,7 @@ const Home = () => (
   <React.Fragment>
     <Head>
       <script src={polyfillURL} />
-      <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:500|Montserrat" rel="stylesheet" />
+      <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:500|Montserrat:400,500" rel="stylesheet" />
     </Head>
 
     <TopNav />
@@ -46,7 +46,7 @@ const Home = () => (
       </section>
 
       <section className={[styles.valuePropSection, styles.boxedSection].join(' ')}>
-        <div>
+        <div className={styles.flexTextBlock}>
           <h2 className={styles.heading}>
             A Share Economy for Untapped Computing Power and Human Intelligence
           </h2>
@@ -56,17 +56,17 @@ const Home = () => (
           </p>
         </div>
 
-        <div>
+        <div className={styles.flexImageBlock}>
           <img src={networkImage} alt="Network" />
         </div>
       </section>
 
       <section className={styles.valuePropSection}>
-        <div>
+        <div className={styles.flexImageBlock}>
           <img src={semanticImage} alt="Semantic information extracted from a web page" />
         </div>
 
-        <div>
+        <div className={styles.flexTextBlock}>
           <h2 className={styles.heading}>
             An Artificial Intelligence to Navigate and Organize Semantic Information
           </h2>
@@ -79,7 +79,7 @@ const Home = () => (
       </section>
 
       <section className={[styles.valuePropSection, styles.boxedSection].join(' ')}>
-        <div>
+        <div className={styles.flexTextBlock}>
           <h2 className={styles.heading}>
             An Infinitely Scalable Blockchain to Bring Long-term Memory to the Web
           </h2>
@@ -90,54 +90,58 @@ const Home = () => (
           </p>
         </div>
 
-        <div>
+        <div className={styles.flexImageBlock}>
           <img src={memoryImage} alt="Human brain" />
         </div>
       </section>
 
-      <section className={[styles.smallSection, styles.boxedSection, styles.wideBoxedSection].join(' ')}>
+      <section className={[styles.boxedSection, styles.wideSection, styles.learnMoreSection].join(' ')}>
         <h2 className={styles.heading}>Learn More About Tethys</h2>
 
-        <Button href={whitepaperURL} newTab text="View Whitepaper" />
-        <Button href="#subscribe" text="Register for ICO" />
+        <span>
+          <Button href={whitepaperURL} newTab text="View Whitepaper" />
+          <Button href="#subscribe" text="Register for ICO" />
+        </span>
       </section>
 
-      <section className={styles.smallSection}>
+      <section className={styles.wideSection}>
         <CountDownClock endDate={preSaleDate} />
       </section>
 
-      <div className={styles.row}>
-        <section
-          id="subscribe"
-          className={[styles.smallSection, styles.boxedSection, styles.subscribeSection].join(' ')}
-        >
+      <section>
+        <div className={styles.flexContainer}>
+          <section
+            id="subscribe"
+            className={[styles.boxedSection, styles.subscribeSection].join(' ')}
+          >
 
-          <h2 className={styles.heading}>Subscribe for Updates</h2>
+            <h2 className={styles.heading}>Subscribe for Updates</h2>
 
-          <div className={styles.subscribeForm}>
-            <SubscribeForm />
-            <small>We won&#39;t share your email address or send you any spam</small>
-          </div>
-        </section>
+            <div className={styles.subscribeForm}>
+              <SubscribeForm />
+              <small>We won&#39;t share your email address or send you any spam</small>
+            </div>
+          </section>
 
-        <section className={[styles.smallSection, styles.boxedSection, styles.linksSection].join(' ')}>
-          <h2 className={styles.heading}>Links</h2>
+          <section className={[styles.boxedSection, styles.linksSection].join(' ')}>
+            <h2 className={styles.heading}>Links</h2>
 
-          <ul className={styles.linksList}>
-            <li>
-              <a href="https://github.com/TethysFoundation">Github</a>
-            </li>
+            <ul className={styles.linksList}>
+              <li>
+                <a href="https://github.com/TethysFoundation">Github</a>
+              </li>
 
-            <li>
-              <a href="/">Telegram</a>
-            </li>
+              <li>
+                <a href="/">Telegram</a>
+              </li>
 
-            <li>
-              <a href="/">Medium</a>
-            </li>
-          </ul>
-        </section>
-      </div>
+              <li>
+                <a href="/">Medium</a>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </section>
     </div>
 
     <Footer />
@@ -148,14 +152,16 @@ export default Home;
 
 const TopNav = () => (
   <nav className={styles.topNav} style={{ backgroundImage: `url(${background})` }}>
-    <img className={[styles.redHalo, styles.navHalo].join(' ')} src={backgroundRedHaloImage} alt="" />
-    <img className={styles.navLogo} src={navLogo} alt="Tethys" />
+    <div className={styles.navInner}>
+      <img className={[styles.redHalo, styles.navHalo].join(' ')} src={backgroundRedHaloImage} alt="" />
+      <img className={styles.navLogo} src={navLogo} alt="Tethys" />
 
-    <div className={styles.navLinks}>
-      <a href="/">Why Tethys</a>
-      <a href={whitepaperURL} target="_blank">Whitepaper</a>
-      <a href="/">Overview</a>
-      <a href="/">Roadmap</a>
+      <div className={styles.navLinks}>
+        <a href="/">Why Tethys</a>
+        <a href={whitepaperURL} target="_blank">Whitepaper</a>
+        <a href="/">Overview</a>
+        <a href="/">Roadmap</a>
+      </div>
     </div>
   </nav>
 );

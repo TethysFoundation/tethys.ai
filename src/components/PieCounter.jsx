@@ -48,11 +48,11 @@ class PieCounter extends React.Component {
 
     ctx.clearRect(0, 0, 200, 200);
 
-    ctx.font = '80px "Helvetica Neue"';
+    ctx.font = '500 80px "Montserrat", sans-serif';
     ctx.textAlign = 'center';
     ctx.fillStyle = 'white';
     ctx.fillText(this.props.displayValue(), X_CENTRE, Y_CENTRE + 20);
-    ctx.font = '15px "Helvetica Neue"';
+    ctx.font = '16px "Montserrat", sans-serif';
     ctx.fillText(this.props.label, X_CENTRE, Y_CENTRE + 40);
 
     // start at the top of the circle
@@ -65,10 +65,10 @@ class PieCounter extends React.Component {
     const gradientSectionLength = (2 * Math.PI) - (2 * solidSectionLength);
 
     // draw the background circle
-    drawSection(ctx, start, start + (2 * Math.PI), '#242429', 20);
+    drawSection(ctx, start, start + (2 * Math.PI), '#24242999', 20);
 
     // draw the solid blue section
-    drawSection(ctx, start, start + solidSectionLength, '#36B3C1', 12, complete);
+    drawSection(ctx, start, start + solidSectionLength, '#1fb3c3', 12, complete);
 
     // end in the first section
     if (complete <= start + solidSectionLength) {
@@ -89,7 +89,7 @@ class PieCounter extends React.Component {
     }
 
     // draw the solid green section
-    drawSection(ctx, gradientEnd, gradientEnd + solidSectionLength, '#49E68D', 12, complete);
+    drawSection(ctx, gradientEnd, gradientEnd + solidSectionLength, '#31ed84', 12, complete);
 
     window.requestAnimationFrame(this.draw);
   };
