@@ -17,13 +17,14 @@ function getSizeClass(size) {
 
 const Button = React.forwardRef((props, ref) => {
   const {
-    href, onClick, size, text,
+    href, onClick, size, newTab, text,
   } = props;
 
   const sizeClass = getSizeClass(size);
 
   if (href) {
-    return <a ref={ref} className={[styles.btn, sizeClass].join(' ')} href={href}>{text}</a>;
+    const target = newTab ? '_blank' : null;
+    return <a ref={ref} className={[styles.btn, sizeClass].join(' ')} href={href} target={target}>{text}</a>;
   }
 
   return <button ref={ref} className={[styles.btn, sizeClass].join(' ')} onClick={onClick}>{text}</button>;
@@ -33,6 +34,7 @@ Button.propTypes = forbidExtraProps({
   href: PropTypes.string,
   onClick: PropTypes.func,
   size: PropTypes.oneOf(['small', 'large']),
+  newTab: PropTypes.bool,
   text: PropTypes.string.isRequired,
 });
 
@@ -40,6 +42,7 @@ Button.defaultProps = {
   href: null,
   onClick: () => {},
   size: 'large',
+  newTab: false,
 };
 
 export default Button;

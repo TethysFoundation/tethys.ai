@@ -1,5 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Button when given an href adds target _blank when newTab is set to true 1`] = `
+<div>
+  <a
+    class="btn btnSmall"
+    href="/example"
+    target="_blank"
+  >
+    Submit
+  </a>
+</div>
+`;
+
 exports[`Button when given an href can render with the small size class 1`] = `
 <div>
   <a

@@ -13,6 +13,11 @@ describe('Button', () => {
       const { container } = render(<Button href="/example" text="Submit" size="small" />);
       expect(container).toMatchSnapshot();
     });
+
+    it('adds target _blank when newTab is set to true', () => {
+      const { container } = render(<Button href="/example" text="Submit" size="small" newTab />);
+      expect(container).toMatchSnapshot();
+    });
   });
 
   describe('when not given an href', () => {

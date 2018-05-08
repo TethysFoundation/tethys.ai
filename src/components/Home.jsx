@@ -16,6 +16,8 @@ import memoryImage from '../assets/images/img_MemoryVisual.png';
 const polyfillURL = 'https://cdn.polyfill.io/v2/polyfill.min.js?features=default,Array.prototype.find,' +
   'Array.prototype.findIndex,Array.prototype.includes';
 
+const whitepaperURL = '/Whitepaper-v1_7.pdf';
+
 const preSaleDate = new Date(2018, 5, 1, 0, 0, 0);
 
 const Home = () => (
@@ -39,7 +41,7 @@ const Home = () => (
           A decentralized currency based on blockchain technology powering NextGen Semantic Web
         </h2>
 
-        <Button href="/" text="View Whitepaper" />
+        <Button href={whitepaperURL} newTab text="View Whitepaper" />
         <Button href="#subscribe" text="Register for ICO" />
       </section>
 
@@ -96,7 +98,7 @@ const Home = () => (
       <section className={[styles.smallSection, styles.boxedSection, styles.wideBoxedSection].join(' ')}>
         <h2 className={styles.heading}>Learn More About Tethys</h2>
 
-        <Button href="/" text="View Whitepaper" />
+        <Button href={whitepaperURL} newTab text="View Whitepaper" />
         <Button href="#subscribe" text="Register for ICO" />
       </section>
 
@@ -151,7 +153,7 @@ const TopNav = () => (
 
     <div className={styles.navLinks}>
       <a href="/">Why Tethys</a>
-      <a href="/">Whitepaper</a>
+      <a href={whitepaperURL} target="_blank">Whitepaper</a>
       <a href="/">Overview</a>
       <a href="/">Roadmap</a>
     </div>
