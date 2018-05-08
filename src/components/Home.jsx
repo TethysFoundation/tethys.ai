@@ -13,13 +13,15 @@ import networkImage from '../assets/images/img_NetworkVisual.png';
 import semanticImage from '../assets/images/img_SemanticVisual.png';
 import memoryImage from '../assets/images/img_MemoryVisual.png';
 
+const polyfillURL = 'https://cdn.polyfill.io/v2/polyfill.min.js?features=default,Array.prototype.find,' +
+  'Array.prototype.findIndex,Array.prototype.includes';
+
 const preSaleDate = new Date(2018, 5, 1, 0, 0, 0);
 
 const Home = () => (
   <React.Fragment>
     <Head>
-      { /* eslint-disable-next-line max-len */ }
-      <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=default,Array.prototype.find,Array.prototype.findIndex,Array.prototype.includes" />
+      <script src={polyfillURL} />
     </Head>
 
     <TopNav />
