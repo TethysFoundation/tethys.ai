@@ -22,6 +22,7 @@ const Home = () => (
   <React.Fragment>
     <Head>
       <script src={polyfillURL} />
+      <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:500|Montserrat" rel="stylesheet" />
     </Head>
 
     <TopNav />
