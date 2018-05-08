@@ -8,12 +8,14 @@ const Y_CENTRE = 100;
 const R = 90;
 
 function drawSection(ctx, start, end, strokeStyle, lineWidth, limit = end) {
+  ctx.save();
   ctx.beginPath();
   ctx.strokeStyle = strokeStyle;
   ctx.lineCap = 'round';
   ctx.lineWidth = lineWidth;
   ctx.arc(X_CENTRE, Y_CENTRE, R, start, Math.min(end, limit));
   ctx.stroke();
+  ctx.restore();
 }
 
 function gradientBetweenRads(ctx, start, end) {
@@ -48,12 +50,14 @@ class PieCounter extends React.Component {
 
     ctx.clearRect(0, 0, 200, 200);
 
+    ctx.save();
     ctx.font = '500 80px "Montserrat", sans-serif';
     ctx.textAlign = 'center';
     ctx.fillStyle = 'white';
     ctx.fillText(this.props.displayValue(), X_CENTRE, Y_CENTRE + 20);
     ctx.font = '16px "Montserrat", sans-serif';
     ctx.fillText(this.props.label, X_CENTRE, Y_CENTRE + 40);
+    ctx.restore();
 
     // start at the top of the circle
     const start = 1.5 * Math.PI;
@@ -65,7 +69,7 @@ class PieCounter extends React.Component {
     const gradientSectionLength = (2 * Math.PI) - (2 * solidSectionLength);
 
     // draw the background circle
-    drawSection(ctx, start, start + (2 * Math.PI), '#24242999', 20);
+    drawSection(ctx, start, start + (2 * Math.PI), 'rgba(0,0,0,0.16)', 20);
 
     // draw the solid blue section
     drawSection(ctx, start, start + solidSectionLength, '#1fb3c3', 12, complete);
