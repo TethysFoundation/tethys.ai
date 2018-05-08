@@ -157,10 +157,8 @@ const TopNav = () => (
       <img className={styles.navLogo} src={navLogo} alt="Tethys" />
 
       <div className={styles.navLinks}>
-        <a href="/">Why Tethys</a>
         <a href={whitepaperURL} target="_blank">Whitepaper</a>
         <a href="/">Overview</a>
-        <a href="/">Roadmap</a>
       </div>
     </div>
   </nav>
