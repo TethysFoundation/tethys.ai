@@ -4,6 +4,7 @@ import ExtractCssChunks from 'extract-css-chunks-webpack-plugin';
 import postcssFlexbugsFixes from 'postcss-flexbugs-fixes';
 import autoprefixer from 'autoprefixer';
 import postcssPresetEnv from 'postcss-preset-env';
+import postcssImport from 'postcss-import';
 
 // noinspection JSUnusedGlobalSymbols
 export default {
@@ -40,6 +41,7 @@ export default {
         loader: 'postcss-loader',
         options: {
           plugins: () => [
+            postcssImport(),
             postcssPresetEnv({
               stage: 1,
             }),
