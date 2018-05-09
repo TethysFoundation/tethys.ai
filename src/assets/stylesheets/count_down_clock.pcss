@@ -1,3 +1,5 @@
+@import 'shared/breakpoints.pcss';
+
 .container {
   text-align: center;
 }
@@ -16,5 +18,17 @@
 
   & canvas {
     margin: 0 10px;
+  }
+}
+
+@media (--phone-screen) {
+  .heading {
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0 0 21px;
+  }
+
+  .count-down canvas {
+    margin: 0 6px;
   }
 }

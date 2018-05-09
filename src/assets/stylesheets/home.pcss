@@ -1,10 +1,5 @@
 @import "shared/colors.pcss";
-
-@custom-media --large-desktop-screen (1024px <= width <= 1640px);
-
-@custom-media --small-desktop-screen (810px <= width < 1024px);
-
-@custom-media --tablet-screen (width < 810px);
+@import 'shared/breakpoints.pcss';
 
 .top-nav {
   height: 80px;
@@ -93,9 +88,15 @@
     margin-left: 100px;
     margin-right: 100px;
   } @media (--small-desktop-screen) {
-  margin-left: 50px;
-  margin-right: 50px;
-}
+    margin-left: 50px;
+    margin-right: 50px;
+  } @media (--tablet-screen) {
+    margin-left: 50px;
+    margin-right: 50px;
+  } @media (--phone-screen) {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
 }
 
 .logo {
@@ -260,6 +261,10 @@
   }
 }
 
+.reverse-wrap {
+  flex-wrap: wrap-reverse;
+}
+
 @media (--small-desktop-screen) {
   .value-prop-section {
     height: 430px;
@@ -272,5 +277,85 @@
 
   .flex-image-block {
     flex-basis: 270px;
+  }
+}
+
+@media (--phone-screen) {
+  .home-content {
+    margin-top: 100px;
+  }
+
+  .logo {
+    height: 98px;
+    margin: 0 auto 54px;
+  }
+
+  .hero-section {
+    height: 336px;
+
+    & .heading {
+      font-weight: normal;
+      line-height: 21px;
+      font-size: 19px;
+      max-width: 336px;
+      margin-bottom: 25px;
+    }
+    & a:first-of-type {
+      margin-right: 22px;
+    }
+  }
+
+  .heading {
+    font-weight: normal;
+    line-height: 21px;
+    margin-bottom: 14px;
+    font-size: 18px;
+  }
+
+  .boxed-section {
+    padding-top: 26px;
+    padding-bottom: 30px;
+  }
+
+  .flex-text-block {
+    padding: 0 20px 26px;
+    flex-basis: 330px;
+  }
+
+  .flex-image-block {
+    padding: 0 20px;
+
+    & img {
+      max-width: 100%;
+    }
+  }
+
+  .value-prop-section {
+    height: auto;
+    margin-bottom: 60px;
+
+    & p {
+      max-width: 96%;
+      font-size: 12px;
+      line-height: 15px;
+      margin-bottom: 0;
+    }
+  }
+
+  .wide-section {
+    margin-bottom: 56px;
+
+    & a:first-of-type {
+      margin-right: 22px;
+    }
+  }
+
+  .learn-more-section {
+    height: 134px;
+    padding: 0;
+
+    & .heading {
+      margin-bottom: 21px;
+    }
   }
 }

@@ -1,3 +1,5 @@
+@import 'shared/breakpoints.pcss';
+
 .btn {
   display: inline-block;
   text-align: center;
@@ -24,4 +26,16 @@
 
 .btn-small {
   width: 170px;
+}
+
+@media (--phone-screen) {
+  .btn {
+    height: 35px;
+    line-height: 35px;
+    font-size: 13px;
+  }
+
+  .btn-large {
+    width: 125px;
+  }
 }

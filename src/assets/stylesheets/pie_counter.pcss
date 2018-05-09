@@ -1,4 +1,13 @@
+@import 'shared/breakpoints.pcss';
+
 .canvas {
   width: 200px;
   height: 200px;
+}
+
+@media (--phone-screen) {
+  .canvas {
+    width: 74px;
+    height: 74px;
+  }
 }

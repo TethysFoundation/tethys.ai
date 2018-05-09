@@ -61,7 +61,7 @@ const Home = () => (
         </div>
       </section>
 
-      <section className={styles.valuePropSection}>
+      <section className={[styles.valuePropSection, styles.reverseWrap].join(' ')}>
         <div className={styles.flexImageBlock}>
           <img src={semanticImage} alt="Semantic information extracted from a web page" />
         </div>
