@@ -1,5 +1,6 @@
 import React from 'react';
 import { Head } from 'react-static';
+import { I18n } from 'react-i18next';
 import Button from './Button';
 import CountDownClock from './CountDownClock';
 import SubscribeForm from './SubscribeForm';
@@ -21,154 +22,174 @@ const whitepaperURL = '/Whitepaper-v1_7.pdf';
 const preSaleDate = new Date(2018, 5, 1, 0, 0, 0);
 
 const Home = () => (
-  <React.Fragment>
-    <Head>
-      <script src={polyfillURL} />
-      <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:500|Montserrat:400,500" rel="stylesheet" />
-    </Head>
+  <I18n>
+    {
+      t => (
+        <React.Fragment>
+          <Head>
+            <script src={polyfillURL} />
 
-    <TopNav />
+            <link
+              href="https://fonts.googleapis.com/css?family=Barlow+Condensed:500|Montserrat:400,500"
+              rel="stylesheet"
+            />
+          </Head>
 
-    <div className={styles.backgroundImage} style={{ backgroundImage: `url(${background})` }} />
-    <img className={styles.redHalo} src={backgroundRedHaloImage} alt="" />
-    <img className={styles.greenHalo} src={backgroundGreedHaloImage} alt="" />
+          <TopNav />
 
-    <div className={styles.homeContent}>
-      <section className={styles.heroSection}>
-        <img className={styles.logo} src={mainLogo} alt="Tethys" />
+          <div className={styles.backgroundImage} style={{ backgroundImage: `url(${background})` }} />
+          <img className={styles.redHalo} src={backgroundRedHaloImage} alt="" />
+          <img className={styles.greenHalo} src={backgroundGreedHaloImage} alt="" />
 
-        <h2 className={styles.heading}>
-          A decentralized currency based on blockchain technology powering NextGen Semantic Web
-        </h2>
+          <div className={styles.homeContent}>
+            <section className={styles.heroSection}>
+              <img className={styles.logo} src={mainLogo} alt="Tethys" />
 
-        <Button href={whitepaperURL} newTab text="View Whitepaper" />
-        <Button href="#subscribe" text="Register for ICO" />
-      </section>
+              <h2 className={styles.heading}>
+                {t('home.headline')}
+              </h2>
 
-      <section className={[styles.valuePropSection, styles.boxedSection].join(' ')}>
-        <div className={styles.flexTextBlock}>
-          <h2 className={styles.heading}>
-            A Share Economy for Untapped Computing Power and Human Intelligence
-          </h2>
+              <Button href={whitepaperURL} newTab text={t('home.viewWhitepaper')} />
+              <Button href="#subscribe" text={t('home.subscribeButton')} />
+            </section>
 
-          <p>
-            End users can earn Tethys tokens for sharing bandwidth and resources, enabling rapid growth at a low cost.
-          </p>
-        </div>
+            <section className={[styles.valuePropSection, styles.boxedSection].join(' ')}>
+              <div className={styles.flexTextBlock}>
+                <h2 className={styles.heading}>
+                  {t('home.valueProp.shareEconomy.title')}
+                </h2>
 
-        <div className={styles.flexImageBlock}>
-          <img src={networkImage} alt="Network" />
-        </div>
-      </section>
+                <p>
+                  {t('home.valueProp.shareEconomy.description')}
+                </p>
+              </div>
 
-      <section className={[styles.valuePropSection, styles.reverseWrap].join(' ')}>
-        <div className={styles.flexImageBlock}>
-          <img src={semanticImage} alt="Semantic information extracted from a web page" />
-        </div>
+              <div className={styles.flexImageBlock}>
+                <img src={networkImage} alt="Network" />
+              </div>
+            </section>
 
-        <div className={styles.flexTextBlock}>
-          <h2 className={styles.heading}>
-            An Artificial Intelligence to Navigate and Organize Semantic Information
-          </h2>
+            <section className={[styles.valuePropSection, styles.reverseWrap].join(' ')}>
+              <div className={styles.flexImageBlock}>
+                <img src={semanticImage} alt="Semantic information extracted from a web page" />
+              </div>
 
-          <p>
-            Robust extraction of complex semantic information powered by an unparalleled modular deep learning model
-            designed to simplify the implementation and execution of A.I.
-          </p>
-        </div>
-      </section>
+              <div className={styles.flexTextBlock}>
+                <h2 className={styles.heading}>
+                  {t('home.valueProp.semanticWeb.title')}
+                </h2>
 
-      <section className={[styles.valuePropSection, styles.boxedSection].join(' ')}>
-        <div className={styles.flexTextBlock}>
-          <h2 className={styles.heading}>
-            An Infinitely Scalable Blockchain to Bring Long-term Memory to the Web
-          </h2>
+                <p>
+                  {t('home.valueProp.semanticWeb.description')}
+                </p>
+              </div>
+            </section>
 
-          <p>
-            Serves as a memory base for the web in which users can monitor changes at any point in time. Supported by
-            unique blockchain technology to store vast amounts of information on the web
-          </p>
-        </div>
+            <section className={[styles.valuePropSection, styles.boxedSection].join(' ')}>
+              <div className={styles.flexTextBlock}>
+                <h2 className={styles.heading}>
+                  {t('home.valueProp.infinitelyScalable.title')}
+                </h2>
 
-        <div className={styles.flexImageBlock}>
-          <img src={memoryImage} alt="Human brain" />
-        </div>
-      </section>
+                <p>
+                  {t('home.valueProp.infinitelyScalable.description')}
+                </p>
+              </div>
 
-      <section className={[styles.boxedSection, styles.wideSection, styles.learnMoreSection].join(' ')}>
-        <h2 className={styles.heading}>Learn More About Tethys</h2>
+              <div className={styles.flexImageBlock}>
+                <img src={memoryImage} alt="Human brain" />
+              </div>
+            </section>
 
-        <span>
-          <Button href={whitepaperURL} newTab text="View Whitepaper" />
-          <Button href="#subscribe" text="Register for ICO" />
-        </span>
-      </section>
+            <section className={[styles.boxedSection, styles.wideSection, styles.learnMoreSection].join(' ')}>
+              <h2 className={styles.heading}>{t('home.learnMore')}</h2>
 
-      <section className={styles.wideSection}>
-        <CountDownClock endDate={preSaleDate} />
-      </section>
+              <span>
+                <Button href={whitepaperURL} newTab text={t('home.viewWhitepaper')} />
+                <Button href="#subscribe" text={t('home.subscribeButton')} />
+              </span>
+            </section>
 
-      <section>
-        <div className={styles.flexContainer}>
-          <section
-            id="subscribe"
-            className={[styles.boxedSection, styles.subscribeSection].join(' ')}
-          >
+            <section className={styles.wideSection}>
+              <CountDownClock endDate={preSaleDate} />
+            </section>
 
-            <h2 className={styles.heading}>Subscribe for Updates</h2>
+            <section>
+              <div className={styles.flexContainer}>
+                <section
+                  id="subscribe"
+                  className={[styles.boxedSection, styles.subscribeSection].join(' ')}
+                >
 
-            <div className={styles.subscribeForm}>
-              <SubscribeForm />
-              <small>We won&#39;t share your email address or send you any spam</small>
-            </div>
-          </section>
+                  <h2 className={styles.heading}>{t('home.subscribeForm.title')}</h2>
 
-          <section className={[styles.boxedSection, styles.linksSection].join(' ')}>
-            <h2 className={styles.heading}>Links</h2>
+                  <div className={styles.subscribeForm}>
+                    <SubscribeForm />
+                    <small>{t('home.subscribeForm.wontShareEmail')}</small>
+                  </div>
+                </section>
 
-            <ul className={styles.linksList}>
-              <li>
-                <a href="https://github.com/TethysFoundation">Github</a>
-              </li>
+                <section className={[styles.boxedSection, styles.linksSection].join(' ')}>
+                  <h2 className={styles.heading}>{t('home.links.title')}</h2>
 
-              <li>
-                <a href="/">Telegram</a>
-              </li>
+                  <ul className={styles.linksList}>
+                    <li>
+                      <a href="https://github.com/TethysFoundation">{t('home.links.github')}</a>
+                    </li>
 
-              <li>
-                <a href="/">Medium</a>
-              </li>
-            </ul>
-          </section>
-        </div>
-      </section>
-    </div>
+                    <li>
+                      <a href="/">{t('home.links.telegram')}</a>
+                    </li>
 
-    <Footer />
-  </React.Fragment>
+                    <li>
+                      <a href="/">{t('home.links.medium')}</a>
+                    </li>
+                  </ul>
+                </section>
+              </div>
+            </section>
+          </div>
+
+          <Footer />
+        </React.Fragment>
+      )
+    }
+  </I18n>
 );
 
 export default Home;
 
 const TopNav = () => (
-  <nav className={styles.topNav} style={{ backgroundImage: `url(${background})` }}>
-    <div className={styles.navInner}>
-      <img className={[styles.redHalo, styles.navHalo].join(' ')} src={backgroundRedHaloImage} alt="" />
-      <img className={styles.navLogo} src={navLogo} alt="Tethys" />
+  <I18n>
+    {
+      t => (
+        <nav className={styles.topNav} style={{ backgroundImage: `url(${background})` }}>
+          <div className={styles.navInner}>
+            <img className={[styles.redHalo, styles.navHalo].join(' ')} src={backgroundRedHaloImage} alt="" />
+            <img className={styles.navLogo} src={navLogo} alt="Tethys" />
 
-      <div className={styles.navLinks}>
-        <a href={whitepaperURL} target="_blank">Whitepaper</a>
-        <a href="/">Overview</a>
-      </div>
-    </div>
-  </nav>
+            <div className={styles.navLinks}>
+              <a href={whitepaperURL} target="_blank">{t('nav.links.whitepaper')}</a>
+              <a href="/">{t('nav.links.overview')}</a>
+            </div>
+          </div>
+        </nav>
+      )
+    }
+  </I18n>
 );
 
 const Footer = () => (
-  <footer className={styles.footer}>
-    <div>
-      <a href="/">Privacy Policy</a> | <a href="/">Terms</a>
-    </div>
-    <div className={styles.copyright}>© 2018 Tethys</div>
-  </footer>
+  <I18n>
+    {
+      t => (
+        <footer className={styles.footer}>
+          <div>
+            <a href="/">{t('footer.privacyPolicy')}</a> | <a href="/">{t('footer.terms')}</a>
+          </div>
+          <div className={styles.copyright}>{t('footer.copyright')}</div>
+        </footer>
+      )
+    }
+  </I18n>
 );

@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { forbidExtraProps } from 'airbnb-prop-types';
+import { I18n } from 'react-i18next';
 import PieCounter from './PieCounter';
 import styles from '../assets/stylesheets/count_down_clock.pcss';
 
@@ -59,36 +60,44 @@ export default class CountDownClock extends React.Component {
 
   render() {
     return (
-      <div className={styles.container}>
-        <h2 data-testid="heading" className={styles.heading}>Pre-sale starts {formatDate(this.props.endDate)}</h2>
+      <I18n>
+        {
+          t => (
+            <div className={styles.container}>
+              <h2 data-testid="heading" className={styles.heading}>
+                {t('countDown.heading', {endDate: formatDate(this.props.endDate)})}
+              </h2>
 
-        <div data-testid="counter-container" className={styles.countDown}>
-          <PieCounter
-            getValue={this.getDaysRemaining}
-            displayValue={this.displayDaysRemaining}
-            max={30}
-            label="Days"
-          />
-          <PieCounter
-            getValue={this.getHoursRemaining}
-            displayValue={this.displayHoursRemaining}
-            max={24}
-            label="Hours"
-          />
-          <PieCounter
-            getValue={this.getMinutesRemaining}
-            displayValue={this.displayMinutesRemaining}
-            max={60}
-            label="Minutes"
-          />
-          <PieCounter
-            getValue={this.getMillisRemaining}
-            displayValue={this.displaySecondsRemaining}
-            max={60000}
-            label="Seconds"
-          />
-        </div>
-      </div>
+              <div data-testid="counter-container" className={styles.countDown}>
+                <PieCounter
+                  getValue={this.getDaysRemaining}
+                  displayValue={this.displayDaysRemaining}
+                  max={30}
+                  label={t('countDown.days')}
+                />
+                <PieCounter
+                  getValue={this.getHoursRemaining}
+                  displayValue={this.displayHoursRemaining}
+                  max={24}
+                  label={t('countDown.hours')}
+                />
+                <PieCounter
+                  getValue={this.getMinutesRemaining}
+                  displayValue={this.displayMinutesRemaining}
+                  max={60}
+                  label={t('countDown.minutes')}
+                />
+                <PieCounter
+                  getValue={this.getMillisRemaining}
+                  displayValue={this.displaySecondsRemaining}
+                  max={60000}
+                  label={t('countDown.seconds')}
+                />
+              </div>
+            </div>
+          )
+        }
+      </I18n>
     );
   }
 }

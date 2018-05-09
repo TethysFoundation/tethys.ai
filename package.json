@@ -48,9 +48,11 @@
   "dependencies": {
     "airbnb-prop-types": "^2.9.0",
     "axios": "^0.18.0",
+    "i18next": "^11.3.1",
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
+    "react-i18next": "^7.6.1",
     "react-static": "^5.7.5",
     "react-static-routes": "^1.0.0"
   },

@@ -2,6 +2,7 @@ import React from 'react';
 import { render } from 'react-testing-library';
 import 'dom-testing-library/extend-expect';
 import tk from 'timekeeper';
+import '../../src/i18n';
 import CountDownClock from '../../src/components/CountDownClock';
 
 jest.mock('../../src/components/PieCounter', () =>

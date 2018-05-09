@@ -1,4 +1,5 @@
 import React from 'react';
+import { I18n } from 'react-i18next';
 import api from '../api';
 import CountryOptions from './CountryOptions';
 import styles from '../assets/stylesheets/subscribe_form.pcss';
@@ -43,30 +44,36 @@ class SubscribeForm extends React.Component {
 
   render() {
     return (
-      <div className={styles.container}>
-        <span className={styles.row}>
-          <input
-            data-testid="email"
-            ref={this.emailRef}
-            className={this.state.errors.includes('email') ? styles.error : null}
-            type="text"
-            name="email"
-            placeholder="Enter your email"
-          />
+      <I18n>
+        {
+          t => (
+            <div className={styles.container}>
+              <span className={styles.row}>
+                <input
+                  data-testid="email"
+                  ref={this.emailRef}
+                  className={this.state.errors.includes('email') ? styles.error : null}
+                  type="text"
+                  name="email"
+                  placeholder={t('home.subscribeForm.email.placeholder')}
+                />
 
-          <Button ref={this.buttonRef} size="small" onClick={this.submit} text="Submit" />
-        </span>
+                <Button ref={this.buttonRef} size="small" onClick={this.submit} text={t('submit')} />
+              </span>
 
-        <select
-          data-testid="country"
-          ref={this.countryRef}
-          className={this.state.errors.includes('country') ? styles.error : null}
-          name="country"
-          defaultValue=""
-        >
-          <CountryOptions />
-        </select>
-      </div>
+              <select
+                data-testid="country"
+                ref={this.countryRef}
+                className={this.state.errors.includes('country') ? styles.error : null}
+                name="country"
+                defaultValue=""
+              >
+                <CountryOptions />
+              </select>
+            </div>
+          )
+        }
+      </I18n>
     );
   }
 }

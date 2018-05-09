@@ -1,6 +1,7 @@
 import React from 'react';
 import { render } from 'react-testing-library';
 import 'dom-testing-library/extend-expect';
+import '../../src/i18n';
 import Home from '../../src/components/Home';
 
 describe('Home', () => {

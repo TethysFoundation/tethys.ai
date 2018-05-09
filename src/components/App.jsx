@@ -2,6 +2,7 @@ import React from 'react';
 import { Router } from 'react-static';
 // eslint-disable-next-line import/no-unresolved, import/extensions
 import Routes from 'react-static-routes';
+import '../i18n'; // need to import this to initialize i18next
 import '../assets/stylesheets/app.pcss';
 
 const App = () => (
