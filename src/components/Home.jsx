@@ -170,7 +170,6 @@ const TopNav = () => (
 
             <div className={styles.navLinks}>
               <a href={whitepaperURL} target="_blank">{t('nav.links.whitepaper')}</a>
-              <a href="/">{t('nav.links.overview')}</a>
             </div>
           </div>
         </nav>
