@@ -65,7 +65,7 @@ export default class CountDownClock extends React.Component {
           t => (
             <div className={styles.container}>
               <h2 data-testid="heading" className={styles.heading}>
-                {t('countDown.heading', {endDate: formatDate(this.props.endDate)})}
+                {t('countDown.heading', { endDate: formatDate(this.props.endDate) })}
               </h2>
 
               <div data-testid="counter-container" className={styles.countDown}>
