@@ -1,3 +1,5 @@
+@import 'shared/breakpoints.pcss';
+
 .container {
   margin-top: 40px;
 
@@ -37,5 +39,13 @@
 
   & input {
     margin: 0 20px 0 0;
+  }
+}
+
+@media (--phone-screen) {
+  .container {
+    & input, & select {
+      font-size: 12px;
+    }
   }
 }
