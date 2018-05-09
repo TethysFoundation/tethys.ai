@@ -17,7 +17,7 @@ describe('SubscribeForm', () => {
       const { getByTestId, getByText } = render(<SubscribeForm />);
 
       getByTestId('email').value = 'test@example.com';
-      getByTestId('country').value = 'SG';
+      getByTestId('country-select').value = 'SGP';
 
       const subscribeButton = getByText('Submit');
       Simulate.click(subscribeButton);
@@ -28,7 +28,18 @@ describe('SubscribeForm', () => {
       await wait(() => expect(subscribeButton).toHaveTextContent('Thanks!'));
 
       expect(api.createSubscriber).toHaveBeenCalledTimes(1);
-      expect(api.createSubscriber).toHaveBeenCalledWith({ country: 'SG', email: 'test@example.com' });
+      expect(api.createSubscriber).toHaveBeenCalledWith({ country: 'SGP', email: 'test@example.com' });
+    });
+
+    it('displays the selected country value', () => {
+      const { getByTestId } = render(<SubscribeForm />);
+
+      expect(getByTestId('selected-country')).toHaveTextContent('');
+
+      getByTestId('country-select').value = 'CAN';
+      Simulate.change(getByTestId('country-select'));
+
+      expect(getByTestId('selected-country')).toHaveTextContent('CAN');
     });
   });
 
@@ -36,7 +47,7 @@ describe('SubscribeForm', () => {
     it('does not make the API call and displays an error state', async () => {
       const { container, getByTestId, getByText } = render(<SubscribeForm />);
 
-      getByTestId('country').value = 'SG';
+      getByTestId('country-select').value = 'SGP';
 
       const subscribeButton = getByText('Submit');
       Simulate.click(subscribeButton);
@@ -53,7 +64,7 @@ describe('SubscribeForm', () => {
       const { container, getByTestId, getByText } = render(<SubscribeForm />);
 
       getByTestId('email').value = 'test@example';
-      getByTestId('country').value = 'SG';
+      getByTestId('country-select').value = 'SGP';
 
       const subscribeButton = getByText('Submit');
       Simulate.click(subscribeButton);
@@ -67,7 +78,7 @@ describe('SubscribeForm', () => {
 
   describe('when the country is blank', () => {
     it('does not make the API call and displays an error state', async () => {
-      const { container, getByTestId, getByText } = render(<SubscribeForm />);
+      const { getByTestId, getByText } = render(<SubscribeForm />);
 
       getByTestId('email').value = 'test@example.com';
 
@@ -77,13 +88,13 @@ describe('SubscribeForm', () => {
       expect(subscribeButton.disabled).toBeFalsy();
       expect(api.createSubscriber).not.toHaveBeenCalled();
 
-      expect(container.querySelector('select[name="country"].error')).toBeInTheDOM();
+      expect(getByTestId('country-wrapper').className).toContain('error');
     });
   });
 
   describe('when both are blank', () => {
     it('does not make the API call and displays an error state', async () => {
-      const { container, getByText } = render(<SubscribeForm />);
+      const { container, getByText, getByTestId } = render(<SubscribeForm />);
 
       const subscribeButton = getByText('Submit');
       Simulate.click(subscribeButton);
@@ -92,7 +103,7 @@ describe('SubscribeForm', () => {
       expect(api.createSubscriber).not.toHaveBeenCalled();
 
       expect(container.querySelector('input[name="email"].error')).toBeInTheDOM();
-      expect(container.querySelector('select[name="country"].error')).toBeInTheDOM();
+      expect(getByTestId('country-wrapper').className).toContain('error');
     });
   });
 });

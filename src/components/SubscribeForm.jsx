@@ -6,10 +6,11 @@ import styles from '../assets/stylesheets/subscribe_form.pcss';
 import Button from './Button';
 
 class SubscribeForm extends React.Component {
-  state = { errors: [] };
-  emailRef = React.createRef();
-  countryRef = React.createRef();
-  buttonRef = React.createRef();
+  state = { errors: [], selectedCountry: '' };
+
+  onCountrySelected = (e) => {
+    this.setState({ selectedCountry: e.target.value });
+  };
 
   submit = () => {
     if (!this.validateForm()) return;
@@ -27,6 +28,10 @@ class SubscribeForm extends React.Component {
       });
   };
 
+  emailRef = React.createRef();
+  countryRef = React.createRef();
+  buttonRef = React.createRef();
+
   validateForm() {
     const errors = [];
 
@@ -43,6 +48,11 @@ class SubscribeForm extends React.Component {
   }
 
   render() {
+    const countryStyles = [styles.countrySelector];
+    if (this.state.errors.includes('country')) {
+      countryStyles.push(styles.error);
+    }
+
     return (
       <I18n>
         {
@@ -61,15 +71,24 @@ class SubscribeForm extends React.Component {
                 <Button ref={this.buttonRef} size="small" onClick={this.submit} text={t('submit')} />
               </span>
 
-              <select
-                data-testid="country"
-                ref={this.countryRef}
-                className={this.state.errors.includes('country') ? styles.error : null}
-                name="country"
-                defaultValue=""
+              <div
+                data-testid="country-wrapper"
+                className={countryStyles.join(' ')}
               >
-                <CountryOptions />
-              </select>
+                <div data-testid="selected-country" className={styles.selectedCountry}>
+                  {this.state.selectedCountry}
+                </div>
+
+                <select
+                  data-testid="country-select"
+                  ref={this.countryRef}
+                  name="country"
+                  defaultValue=""
+                  onChange={this.onCountrySelected}
+                >
+                  <CountryOptions />
+                </select>
+              </div>
             </div>
           )
         }
