@@ -183,9 +183,6 @@ const Footer = () => (
     {
       t => (
         <footer className={styles.footer}>
-          <div>
-            <a href="/">{t('footer.privacyPolicy')}</a> | <a href="/">{t('footer.terms')}</a>
-          </div>
           <div className={styles.copyright}>{t('footer.copyright')}</div>
         </footer>
       )
