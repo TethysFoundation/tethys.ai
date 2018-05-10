@@ -27,6 +27,8 @@ const Home = () => (
       t => (
         <React.Fragment>
           <Head>
+            <title>Tethys</title>
+
             <script src={polyfillURL} />
 
             <link
