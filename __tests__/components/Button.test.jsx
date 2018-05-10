@@ -26,6 +26,11 @@ describe('Button', () => {
       expect(container).toMatchSnapshot();
     });
 
+    it('accepts a type prop', () => {
+      const { container } = render(<Button text="Submit" type="submit" size="small" />);
+      expect(container).toMatchSnapshot();
+    });
+
     it('can render with the small size class', () => {
       const { container } = render(<Button text="Submit" size="small" />);
       expect(container).toMatchSnapshot();

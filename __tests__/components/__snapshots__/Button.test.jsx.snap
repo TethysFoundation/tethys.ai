@@ -34,6 +34,17 @@ exports[`Button when given an href renders an "a" tag 1`] = `
 </div>
 `;
 
+exports[`Button when not given an href accepts a type prop 1`] = `
+<div>
+  <button
+    class="btn btnSmall"
+    type="submit"
+  >
+    Submit
+  </button>
+</div>
+`;
+
 exports[`Button when not given an href can render with the small size class 1`] = `
 <div>
   <button
