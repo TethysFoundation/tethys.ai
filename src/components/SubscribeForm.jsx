@@ -1,11 +1,16 @@
 import React from 'react';
-import { I18n } from 'react-i18next';
+import PropTypes from 'prop-types';
+import { translate } from 'react-i18next';
 import api from '../api';
 import CountryOptions from './CountryOptions';
 import styles from '../assets/stylesheets/subscribe_form.pcss';
 import Button from './Button';
 
 class SubscribeForm extends React.Component {
+  static propTypes = {
+    t: PropTypes.func.isRequired,
+  };
+
   state = { errors: [], selectedCountry: '' };
 
   onCountrySelected = (e) => {
@@ -16,16 +21,12 @@ class SubscribeForm extends React.Component {
     if (!this.validateForm()) return;
 
     this.buttonRef.current.disabled = true;
-    this.buttonRef.current.innerHTML = 'Sending…';
+    this.buttonRef.current.innerHTML = this.props.t('thanks');
 
-    api
-      .createSubscriber({
-        email: this.emailRef.current.value,
-        country: this.countryRef.current.value,
-      })
-      .then(() => {
-        this.buttonRef.current.innerHTML = 'Thanks!';
-      });
+    api.createSubscriber({
+      email: this.emailRef.current.value,
+      country: this.countryRef.current.value,
+    });
   };
 
   emailRef = React.createRef();
@@ -48,53 +49,46 @@ class SubscribeForm extends React.Component {
   }
 
   render() {
+    const { t } = this.props;
+
     const countryStyles = [styles.countrySelector];
     if (this.state.errors.includes('country')) {
       countryStyles.push(styles.error);
     }
 
     return (
-      <I18n>
-        {
-          t => (
-            <div className={styles.container}>
-              <span className={styles.row}>
-                <input
-                  data-testid="email"
-                  ref={this.emailRef}
-                  className={this.state.errors.includes('email') ? styles.error : null}
-                  type="text"
-                  name="email"
-                  placeholder={t('home.subscribeForm.email.placeholder')}
-                />
+      <div className={styles.container}>
+        <span className={styles.row}>
+          <input
+            data-testid="email"
+            ref={this.emailRef}
+            className={this.state.errors.includes('email') ? styles.error : null}
+            type="email"
+            name="email"
+            placeholder={t('home.subscribeForm.email.placeholder')}
+          />
 
-                <Button ref={this.buttonRef} size="small" onClick={this.submit} text={t('submit')} />
-              </span>
+          <Button ref={this.buttonRef} size="small" onClick={this.submit} text={t('submit')} />
+        </span>
 
-              <div
-                data-testid="country-wrapper"
-                className={countryStyles.join(' ')}
-              >
-                <div data-testid="selected-country" className={styles.selectedCountry}>
-                  {this.state.selectedCountry}
-                </div>
+        <div data-testid="country-wrapper" className={countryStyles.join(' ')}>
+          <div data-testid="selected-country" className={styles.selectedCountry}>
+            {this.state.selectedCountry}
+          </div>
 
-                <select
-                  data-testid="country-select"
-                  ref={this.countryRef}
-                  name="country"
-                  defaultValue=""
-                  onChange={this.onCountrySelected}
-                >
-                  <CountryOptions />
-                </select>
-              </div>
-            </div>
-          )
-        }
-      </I18n>
+          <select
+            data-testid="country-select"
+            ref={this.countryRef}
+            name="country"
+            defaultValue=""
+            onChange={this.onCountrySelected}
+          >
+            <CountryOptions />
+          </select>
+        </div>
+      </div>
     );
   }
 }
 
-export default SubscribeForm;
+export default translate()(SubscribeForm);

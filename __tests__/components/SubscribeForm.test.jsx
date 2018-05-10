@@ -23,12 +23,12 @@ describe('SubscribeForm', () => {
       Simulate.click(subscribeButton);
 
       expect(subscribeButton.disabled).toBeTruthy();
-      expect(subscribeButton).toHaveTextContent('Sending…');
+      expect(subscribeButton).toHaveTextContent('Thanks');
 
-      await wait(() => expect(subscribeButton).toHaveTextContent('Thanks!'));
-
-      expect(api.createSubscriber).toHaveBeenCalledTimes(1);
-      expect(api.createSubscriber).toHaveBeenCalledWith({ country: 'SGP', email: 'test@example.com' });
+      await wait(() => {
+        expect(api.createSubscriber).toHaveBeenCalledTimes(1);
+        expect(api.createSubscriber).toHaveBeenCalledWith({ country: 'SGP', email: 'test@example.com' });
+      });
     });
 
     it('displays the selected country value', () => {
