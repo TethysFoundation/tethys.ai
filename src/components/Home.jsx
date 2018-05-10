@@ -136,14 +136,6 @@ const Home = () => (
                     <li>
                       <a href="https://github.com/TethysFoundation">{t('home.links.github')}</a>
                     </li>
-
-                    <li>
-                      <a href="/">{t('home.links.telegram')}</a>
-                    </li>
-
-                    <li>
-                      <a href="/">{t('home.links.medium')}</a>
-                    </li>
                   </ul>
                 </section>
               </div>
