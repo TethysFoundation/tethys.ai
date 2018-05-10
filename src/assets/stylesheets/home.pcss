@@ -73,7 +73,7 @@
 
 .home-content {
   width: 100%;
-  margin: 190px 0 55px;
+  margin: 190px 0 110px;
   overflow-x: hidden;
   z-index: 1;
 }
@@ -89,9 +89,6 @@
   } @media (--small-desktop-screen) {
     margin-left: 50px;
     margin-right: 50px;
-  } @media (--tablet-screen) {
-    margin-left: 50px;
-    margin-right: 50px;
   } @media (--phone-screen) {
     margin-left: 20px;
     margin-right: 20px;
@@ -104,8 +101,9 @@
 }
 
 .hero-section {
-  height: 650px;
+  height: auto;
   text-align: center;
+  margin-bottom: 120px;
 
   & a:first-of-type {
     margin-right: 40px;
@@ -130,7 +128,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  margin-bottom: 125px;
+  margin-bottom: 120px;
 
   & .heading {
     max-width: 490px;
@@ -168,7 +166,7 @@
 
 .wide-section {
   text-align: center;
-  margin-bottom: 150px;
+  margin-bottom: 120px;
   width: 100%;
 
   & .heading {
@@ -269,6 +267,10 @@
     height: 430px;
   }
 
+  .value-prop-section:not(.boxed-section) {
+    height: auto;
+  }
+
   .flex-text-block {
     flex-basis: 395px;
     padding: 0 30px;
@@ -323,7 +325,7 @@
   }
 
   .hero-section {
-    height: 336px;
+    margin-bottom: 60px;
 
     & .heading {
       line-height: 21px;
