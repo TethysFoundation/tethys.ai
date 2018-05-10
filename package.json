@@ -59,6 +59,7 @@
   "devDependencies": {
     "autoprefixer": "^8.4.1",
     "babel-eslint": "^8.2.3",
+    "babel-plugin-react-remove-properties": "^0.2.5",
     "babel-plugin-universal-import": "^1.4.0",
     "css-loader": "^0.28.11",
     "cypress": "^2.1.0",
