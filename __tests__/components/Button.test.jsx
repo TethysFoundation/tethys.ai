@@ -35,5 +35,10 @@ describe('Button', () => {
       const { container } = render(<Button text="Submit" size="small" />);
       expect(container).toMatchSnapshot();
     });
+
+    it('can render a disabled button', () => {
+      const { container } = render(<Button disabled text="Submit" size="small" />);
+      expect(container).toMatchSnapshot();
+    });
   });
 });

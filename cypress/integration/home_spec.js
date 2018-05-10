@@ -19,6 +19,8 @@ describe('Tethys home page', () => {
       cy.contains('Submit').click();
 
       cy.wait('@createSubscriber');
+
+      cy.contains('Thanks for subscribing').should('be.visible');
     });
   });
 });

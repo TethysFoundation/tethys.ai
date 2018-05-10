@@ -17,7 +17,7 @@ function getSizeClass(size) {
 
 const Button = React.forwardRef((props, ref) => {
   const {
-    href, onClick, type, size, newTab, text,
+    href, onClick, type, size, newTab, disabled, text,
   } = props;
 
   const sizeClass = getSizeClass(size);
@@ -27,7 +27,17 @@ const Button = React.forwardRef((props, ref) => {
     return <a ref={ref} className={[styles.btn, sizeClass].join(' ')} href={href} target={target}>{text}</a>;
   }
 
-  return <button type={type} ref={ref} className={[styles.btn, sizeClass].join(' ')} onClick={onClick}>{text}</button>;
+  return (
+    <button
+      ref={ref}
+      disabled={disabled}
+      type={type}
+      className={[styles.btn, sizeClass].join(' ')}
+      onClick={onClick}
+    >
+      {text}
+    </button>
+  );
 });
 
 Button.propTypes = forbidExtraProps({
@@ -35,6 +45,7 @@ Button.propTypes = forbidExtraProps({
   onClick: PropTypes.func,
   type: PropTypes.oneOf(['submit']),
   size: PropTypes.oneOf(['small', 'large']),
+  disabled: PropTypes.bool,
   newTab: PropTypes.bool,
   text: PropTypes.string.isRequired,
 });
@@ -44,6 +55,7 @@ Button.defaultProps = {
   onClick: () => {},
   type: null,
   size: 'large',
+  disabled: false,
   newTab: false,
 };
 

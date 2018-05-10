@@ -1,3 +1,4 @@
+@import 'shared/colors.pcss';
 @import 'shared/breakpoints.pcss';
 
 .btn {
@@ -13,11 +14,16 @@
   font-size: 24px;
   font-weight: 500;
 
-  color: #4AE7F0;
-  border: 1px solid #326970;
+  color: var(--tethysBlue);
+  border: 2px solid var(--tethysBlueBorder);
   background: none;
   text-decoration: none;
   text-transform: uppercase;
+}
+
+.btn:disabled {
+  color: #3F3F44;
+  border: 2px solid #3F3F44;
 }
 
 .btn-large {

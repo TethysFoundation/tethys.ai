@@ -35,6 +35,7 @@ export default {
         email: { placeholder: 'Enter your email' },
         selectCountry: '– Country of residence –',
         wontShareEmail: 'We won\'t share your email address or send you any spam',
+        submitFeedback: 'Thanks for subscribing, we will let know of all exciting updates.',
       },
 
       links: {
@@ -60,6 +61,6 @@ export default {
     },
 
     submit: 'Submit',
-    thanks: 'Thanks',
+    success: 'Success',
   },
 };

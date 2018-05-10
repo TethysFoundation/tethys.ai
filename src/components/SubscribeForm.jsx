@@ -11,7 +11,7 @@ class SubscribeForm extends React.Component {
     t: PropTypes.func.isRequired,
   };
 
-  state = { selectedCountry: '' };
+  state = { submitted: false, selectedCountry: '' };
 
   onCountrySelected = (e) => {
     this.setState({ selectedCountry: e.target.value });
@@ -21,55 +21,76 @@ class SubscribeForm extends React.Component {
     e.preventDefault();
 
     this.buttonRef.current.disabled = true;
-    this.buttonRef.current.innerHTML = this.props.t('thanks');
+    this.buttonRef.current.innerHTML = this.props.t('success');
 
     api.createSubscriber({
       email: this.emailRef.current.value,
       country: this.countryRef.current.value,
     });
+
+    this.setState({ submitted: true });
   };
 
   emailRef = React.createRef();
   countryRef = React.createRef();
   buttonRef = React.createRef();
 
-  render() {
-    const { t } = this.props;
+  renderContent() {
+    return this.state.submitted ? this.renderFeedback() : this.renderForm();
+  }
 
+  renderFeedback() {
+    const { t } = this.props;
+    return (
+      <div className={styles.feedbackContainer}>
+        <p>{t('home.subscribeForm.submitFeedback')}</p>
+        <Button disabled size="small" text={t('success')} />
+      </div>
+    );
+  }
+
+  renderForm() {
+    const { t } = this.props;
+    return (
+      <form action="" onSubmit={this.submit}>
+        <div className={styles.formInner}>
+          <input
+            data-testid="email"
+            ref={this.emailRef}
+            type="email"
+            name="email"
+            required
+            placeholder={t('home.subscribeForm.email.placeholder')}
+          />
+
+          <div data-testid="country-wrapper" className={styles.countrySelector}>
+            <div data-testid="selected-country" className={styles.selectedCountry}>
+              {this.state.selectedCountry}
+            </div>
+
+            <select
+              data-testid="country-select"
+              ref={this.countryRef}
+              name="country"
+              required
+              onChange={this.onCountrySelected}
+            >
+              <CountryOptions />
+            </select>
+          </div>
+        </div>
+
+        <p className={styles.disclaimer}>{t('home.subscribeForm.wontShareEmail')}</p>
+
+        <Button ref={this.buttonRef} type="submit" size="small" text={t('submit')} />
+      </form>
+    );
+  }
+
+  render() {
     return (
       <div className={styles.container}>
-        <form action="" onSubmit={this.submit}>
-          <div className={styles.formInner}>
-            <input
-              data-testid="email"
-              ref={this.emailRef}
-              type="email"
-              name="email"
-              required
-              placeholder={t('home.subscribeForm.email.placeholder')}
-            />
-
-            <div data-testid="country-wrapper" className={styles.countrySelector}>
-              <div data-testid="selected-country" className={styles.selectedCountry}>
-                {this.state.selectedCountry}
-              </div>
-
-              <select
-                data-testid="country-select"
-                ref={this.countryRef}
-                name="country"
-                required
-                onChange={this.onCountrySelected}
-              >
-                <CountryOptions />
-              </select>
-            </div>
-          </div>
-
-          <p className={styles.disclaimer}>{t('home.subscribeForm.wontShareEmail')}</p>
-
-          <Button ref={this.buttonRef} type="submit" size="small" text={t('submit')} />
-        </form>
+        {this.renderContent()}
       </div>
     );
   }

@@ -12,7 +12,7 @@ describe('SubscribeForm', () => {
     api.clearMocks();
   });
 
-  describe('when the form is filled out correctly', () => {
+  describe('when the form is submitted', () => {
     it('calls the create subscriber API when the Subscribe button is clicked', async () => {
       const { getByTestId, getByText } = render(<SubscribeForm />);
 
@@ -22,13 +22,31 @@ describe('SubscribeForm', () => {
       const subscribeButton = getByText('Submit');
       Simulate.submit(subscribeButton);
 
-      expect(subscribeButton.disabled).toBeTruthy();
-      expect(subscribeButton).toHaveTextContent('Thanks');
-
       await wait(() => {
         expect(api.createSubscriber).toHaveBeenCalledTimes(1);
         expect(api.createSubscriber).toHaveBeenCalledWith({ country: 'SGP', email: 'test@example.com' });
       });
+    });
+
+    it('displays feedback to the user', () => {
+      const {
+        container, getByTestId, queryByTestId, getByText, queryByText,
+      } = render(<SubscribeForm />);
+
+      getByTestId('email').value = 'test@example.com';
+      getByTestId('country-select').value = 'SGP';
+
+      const subscribeButton = getByText('Submit');
+      Simulate.submit(subscribeButton);
+
+      // removes the form
+      expect(queryByText('Submit')).not.toBeInTheDOM();
+      expect(queryByTestId('email')).not.toBeInTheDOM();
+      expect(queryByTestId('country-select')).not.toBeInTheDOM();
+
+      // displays feedback
+      expect(container).toHaveTextContent('Thanks for subscribing');
+      expect(getByText('Success').disabled).toBeTruthy();
     });
   });
 
