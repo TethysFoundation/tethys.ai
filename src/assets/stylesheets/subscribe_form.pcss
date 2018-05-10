@@ -51,17 +51,18 @@
     opacity: 0;
     height: 60px;
     width: 120px;
+    -webkit-appearance: menulist-button; /* otherwise height cannot be changed in safari */
   }
 }
 
 .country-selector:after {
   position: absolute;
   content: "";
-  top: 24px;
-  right: 10px;
+  top: 26px;
+  right: 20px;
   width: 0;
   height: 0;
-  border: 10px solid transparent;
+  border: 8px solid transparent;
   border-top-color: var(--mainTextColor);
   pointer-events: none;
 }
