@@ -116,18 +116,16 @@ const Home = () => (
               <CountDownClock endDate={preSaleDate} />
             </section>
 
-            <section>
+            <section className={styles.moreInfoSection}>
               <div className={styles.flexContainer}>
                 <section
                   id="subscribe"
                   className={[styles.boxedSection, styles.subscribeSection].join(' ')}
                 >
-
                   <h2 className={styles.heading}>{t('home.subscribeForm.title')}</h2>
 
                   <div className={styles.subscribeForm}>
                     <SubscribeForm />
-                    <small>{t('home.subscribeForm.wontShareEmail')}</small>
                   </div>
                 </section>
 

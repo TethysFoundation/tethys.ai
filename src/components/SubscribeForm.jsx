@@ -39,7 +39,7 @@ class SubscribeForm extends React.Component {
     return (
       <div className={styles.container}>
         <form action="" onSubmit={this.submit}>
-          <span className={styles.row}>
+          <div className={styles.formInner}>
             <input
               data-testid="email"
               ref={this.emailRef}
@@ -49,24 +49,26 @@ class SubscribeForm extends React.Component {
               placeholder={t('home.subscribeForm.email.placeholder')}
             />
 
-            <Button ref={this.buttonRef} type="submit" size="small" text={t('submit')} />
-          </span>
+            <div data-testid="country-wrapper" className={styles.countrySelector}>
+              <div data-testid="selected-country" className={styles.selectedCountry}>
+                {this.state.selectedCountry}
+              </div>
 
-          <div data-testid="country-wrapper" className={styles.countrySelector}>
-            <div data-testid="selected-country" className={styles.selectedCountry}>
-              {this.state.selectedCountry}
+              <select
+                data-testid="country-select"
+                ref={this.countryRef}
+                name="country"
+                required
+                onChange={this.onCountrySelected}
+              >
+                <CountryOptions />
+              </select>
             </div>
-
-            <select
-              data-testid="country-select"
-              ref={this.countryRef}
-              name="country"
-              required
-              onChange={this.onCountrySelected}
-            >
-              <CountryOptions />
-            </select>
           </div>
+
+          <p className={styles.disclaimer}>{t('home.subscribeForm.wontShareEmail')}</p>
+
+          <Button ref={this.buttonRef} type="submit" size="small" text={t('submit')} />
         </form>
       </div>
     );

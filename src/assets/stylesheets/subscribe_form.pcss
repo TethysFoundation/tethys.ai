@@ -8,10 +8,11 @@
 
   & input {
     display: block;
+    flex: 1 1;
+
     font-size: 20px;
     line-height: 20px;
     padding: 18px;
-    width: 100%;
     height: 60px;
     background: var(--inputBackgroundColor);
     border: none;
@@ -23,22 +24,17 @@
   }
 }
 
-.row {
+.form-inner {
   display: flex;
-  flex-direction: row;
-
-  & input {
-    margin: 0 20px 0 0;
-  }
 }
 
 .country-selector {
+  flex: 0 0 120px;
   position: relative;
   font-size: 20px;
   line-height: 20px;
-  width: 120px;
   height: 60px;
-  margin: 20px 0 10px;
+  margin: 0 0 0 20px;
   padding: 0 0 0 20px;
   background: var(--inputBackgroundColor);
   border: none;
@@ -73,6 +69,12 @@
   line-height: 60px;
 }
 
+.disclaimer {
+  color: var(--mainTextColor);
+  font-size: 16px;
+  margin: 8px 0 16px;
+}
+
 @media (--phone-screen) {
   .container {
     & input, & .selected-country {
@@ -82,14 +84,28 @@
     & input, & .country-selector, & .country-selector select {
       height: 35px;
     }
+
+    & input {
+      padding: 12px;
+    }
+  }
+
+  .country-selector {
+    flex-basis: 80px;
+    padding-left: 14px;
   }
 
   .country-selector:after {
     top: 14px;
     border-width: 7px;
+    right: 14px;
   }
 
   .selected-country {
     line-height: 35px;
+  }
+
+  .disclaimer {
+    font-size: 8px;
   }
 }
