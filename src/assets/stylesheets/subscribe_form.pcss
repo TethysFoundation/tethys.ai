@@ -2,8 +2,6 @@
 @import 'shared/breakpoints.pcss';
 
 .container {
-  margin-top: 40px;
-
   & .error {
     border: 1px solid red;
   }
@@ -71,7 +69,7 @@
 .selected-country {
   color: var(--inputTextColor);
   font-size: 20px;
-  padding-top: 22px;
+  line-height: 60px;
 }
 
 @media (--phone-screen) {
@@ -79,5 +77,18 @@
     & input, & .selected-country {
       font-size: 12px;
     }
+
+    & input, & .country-selector, & .country-selector select {
+      height: 35px;
+    }
+  }
+
+  .country-selector:after {
+    top: 14px;
+    border-width: 7px;
+  }
+
+  .selected-country {
+    line-height: 35px;
   }
 }
