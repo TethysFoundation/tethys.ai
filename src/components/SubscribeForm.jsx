@@ -62,7 +62,6 @@ class SubscribeForm extends React.Component {
               ref={this.countryRef}
               name="country"
               required
-              defaultValue=""
               onChange={this.onCountrySelected}
             >
               <CountryOptions />
