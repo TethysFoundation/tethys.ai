@@ -11,14 +11,14 @@ class SubscribeForm extends React.Component {
     t: PropTypes.func.isRequired,
   };
 
-  state = { errors: [], selectedCountry: '' };
+  state = { selectedCountry: '' };
 
   onCountrySelected = (e) => {
     this.setState({ selectedCountry: e.target.value });
   };
 
-  submit = () => {
-    if (!this.validateForm()) return;
+  submit = (e) => {
+    e.preventDefault();
 
     this.buttonRef.current.disabled = true;
     this.buttonRef.current.innerHTML = this.props.t('thanks');
@@ -33,59 +33,42 @@ class SubscribeForm extends React.Component {
   countryRef = React.createRef();
   buttonRef = React.createRef();
 
-  validateForm() {
-    const errors = [];
-
-    if (!this.emailRef.current.value || !this.emailRef.current.value.match(/\w+@\w+\.\w+/)) {
-      errors.push('email');
-    }
-
-    if (!this.countryRef.current.value) {
-      errors.push('country');
-    }
-
-    this.setState({ errors });
-    return errors.length === 0;
-  }
-
   render() {
     const { t } = this.props;
 
-    const countryStyles = [styles.countrySelector];
-    if (this.state.errors.includes('country')) {
-      countryStyles.push(styles.error);
-    }
-
     return (
       <div className={styles.container}>
-        <span className={styles.row}>
-          <input
-            data-testid="email"
-            ref={this.emailRef}
-            className={this.state.errors.includes('email') ? styles.error : null}
-            type="email"
-            name="email"
-            placeholder={t('home.subscribeForm.email.placeholder')}
-          />
+        <form action="" onSubmit={this.submit}>
+          <span className={styles.row}>
+            <input
+              data-testid="email"
+              ref={this.emailRef}
+              type="email"
+              name="email"
+              required
+              placeholder={t('home.subscribeForm.email.placeholder')}
+            />
 
-          <Button ref={this.buttonRef} size="small" onClick={this.submit} text={t('submit')} />
-        </span>
+            <Button ref={this.buttonRef} type="submit" size="small" text={t('submit')} />
+          </span>
 
-        <div data-testid="country-wrapper" className={countryStyles.join(' ')}>
-          <div data-testid="selected-country" className={styles.selectedCountry}>
-            {this.state.selectedCountry}
+          <div data-testid="country-wrapper" className={styles.countrySelector}>
+            <div data-testid="selected-country" className={styles.selectedCountry}>
+              {this.state.selectedCountry}
+            </div>
+
+            <select
+              data-testid="country-select"
+              ref={this.countryRef}
+              name="country"
+              required
+              defaultValue=""
+              onChange={this.onCountrySelected}
+            >
+              <CountryOptions />
+            </select>
           </div>
-
-          <select
-            data-testid="country-select"
-            ref={this.countryRef}
-            name="country"
-            defaultValue=""
-            onChange={this.onCountrySelected}
-          >
-            <CountryOptions />
-          </select>
-        </div>
+        </form>
       </div>
     );
   }

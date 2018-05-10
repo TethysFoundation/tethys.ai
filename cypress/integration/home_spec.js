@@ -15,7 +15,7 @@ describe('Tethys home page', () => {
       cy.route('POST', `${API_BASE_URL}/subscribers`, {}).as('createSubscriber');
 
       cy.get('input[name="email"]').type('test@example.com');
-      cy.get('select[name="country"]').select('CA');
+      cy.get('select[name="country"]').select('CAN');
       cy.contains('Submit').click();
 
       cy.wait('@createSubscriber');
