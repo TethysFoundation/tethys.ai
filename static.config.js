@@ -8,7 +8,7 @@ import postcssImport from 'postcss-import';
 
 // noinspection JSUnusedGlobalSymbols
 export default {
-  siteRoot: 'https://tethys-86b61.firebaseapp.com/',
+  siteRoot: 'https://tethys.ai/',
   extractCssChunks: true,
   inlineCss: true,
   // bundleAnalyzer: true,
