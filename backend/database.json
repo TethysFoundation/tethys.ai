@@ -9,10 +9,12 @@
     "multipleStatements": true
   },
   "prod": {
-    "host": "mysqlforlambdatest.c8ca87fel8vs.us-east-1.rds.amazonaws.com",
     "database": "tethys_prod",
     "driver": "mysql",
     "multipleStatements": true,
+    "host": {
+      "ENV": "DB_HOST"
+    },
     "user": {
       "ENV": "DB_USERNAME"
     },

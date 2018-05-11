@@ -5,7 +5,7 @@ function getConfig() {
 
   if (process.env.NODE_ENV === 'production') {
     return {
-      host: databaseConfig.prod.host,
+      host: process.env[databaseConfig.prod.host.ENV],
       database: databaseConfig.prod.database,
       user: process.env[databaseConfig.prod.user.ENV],
       password: process.env[databaseConfig.prod.password.ENV],
