@@ -1,5 +1,4 @@
 import React from 'react';
-import { Head } from 'react-static';
 import { I18n } from 'react-i18next';
 import Button from './Button';
 import CountDownClock from './CountDownClock';
@@ -14,11 +13,7 @@ import networkImage from '../assets/images/img_NetworkVisual.png';
 import semanticImage from '../assets/images/img_SemanticVisual.png';
 import memoryImage from '../assets/images/img_MemoryVisual.png';
 
-const polyfillURL = 'https://cdn.polyfill.io/v2/polyfill.min.js?features=default,Array.prototype.find,' +
-  'Array.prototype.findIndex,Array.prototype.includes';
-
 const whitepaperURL = '/Whitepaper-v1_7.pdf';
-
 const preSaleDate = new Date(2018, 5, 1, 0, 0, 0);
 
 const Home = () => (
@@ -26,17 +21,6 @@ const Home = () => (
     {
       t => (
         <React.Fragment>
-          <Head>
-            <title>Tethys</title>
-
-            <script src={polyfillURL} />
-
-            <link
-              href="https://fonts.googleapis.com/css?family=Barlow+Condensed:500|Montserrat:400,500"
-              rel="stylesheet"
-            />
-          </Head>
-
           <TopNav />
 
           <div className={styles.backgroundImage} style={{ backgroundImage: `url(${background})` }} />
