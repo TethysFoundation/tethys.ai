@@ -8,10 +8,29 @@ import '../assets/stylesheets/app.pcss';
 const polyfillURL = 'https://cdn.polyfill.io/v2/polyfill.min.js?features=default,Array.prototype.find,' +
   'Array.prototype.findIndex,Array.prototype.includes';
 
+const GA_ID = 'UA-50367475-9';
+
 const App = () => (
   <React.Fragment>
     <Head>
       <title>Tethys</title>
+
+      {
+        process.env.NODE_ENV === 'production' &&
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} />
+      }
+
+      {
+        process.env.NODE_ENV === 'production' &&
+        <script>
+          {
+            `window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments)}
+            gtag('js', new Date());
+            gtag('config', '${GA_ID}');`.replace(/\s{2,}/g, '')
+          }
+        </script>
+      }
 
       <script src={polyfillURL} />
 
