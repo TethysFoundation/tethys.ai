@@ -38,6 +38,9 @@ const App = () => (
         href="https://fonts.googleapis.com/css?family=Barlow+Condensed:500|Montserrat:400,500"
         rel="stylesheet"
       />
+
+      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     </Head>
 
     <Router>
