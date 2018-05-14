@@ -25,7 +25,7 @@ export default {
   ],
 
   webpack: (config, { defaultLoaders, stage }) => {
-    const cssLoaders = [
+    let cssLoaders = [
       {
         loader: 'css-loader',
         options: {
@@ -53,41 +53,30 @@ export default {
     ];
 
     if (stage === 'dev') {
-      config.module.rules = [
-        {
-          oneOf: [
-            {
-              test: /\.pcss$/,
-              use: ['style-loader'].concat(cssLoaders),
-            },
-            defaultLoaders.jsLoader,
-            defaultLoaders.fileLoader,
-          ],
-        },
-      ];
+      cssLoaders = ['style-loader'].concat(cssLoaders);
     } else {
-      config.module.rules = [
-        {
-          oneOf: [
-            {
-              test: /\.pcss$/,
-              use: ExtractCssChunks.extract({
-                fallback: {
-                  loader: 'style-loader',
-                  options: {
-                    sourceMap: false,
-                    hmr: false,
-                  },
-                },
-                use: cssLoaders,
-              }),
-            },
-            defaultLoaders.jsLoader,
-            defaultLoaders.fileLoader,
-          ],
+      cssLoaders = ExtractCssChunks.extract({
+        fallback: {
+          loader: 'style-loader',
+          options: {
+            sourceMap: false,
+            hmr: false,
+          },
         },
-      ];
+        use: cssLoaders,
+      });
     }
+
+    const pcssLoader = {
+      test: /\.pcss$/,
+      use: cssLoaders,
+    };
+
+    config.module.rules = [
+      {
+        oneOf: [pcssLoader, defaultLoaders.jsLoader, defaultLoaders.fileLoader],
+      },
+    ];
 
     return config;
   },

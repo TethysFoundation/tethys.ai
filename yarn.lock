@@ -7553,9 +7553,9 @@ react-static-routes@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/react-static-routes/-/react-static-routes-1.0.0.tgz#73882f1569498d7ce5b4b1d4057ff642b1eea40c"
 
-react-static@^5.7.5:
-  version "5.7.5"
-  resolved "https://registry.yarnpkg.com/react-static/-/react-static-5.7.5.tgz#81d86c034a9f1dee719580fe5845b9f3216e8a0a"
+react-static@5.8.1:
+  version "5.8.1"
+  resolved "https://registry.yarnpkg.com/react-static/-/react-static-5.8.1.tgz#6f665029980d385263a067b2d17008178356e7f5"
   dependencies:
     "@types/react" "^16.0.18"
     "@types/react-helmet" "^5.0.3"
