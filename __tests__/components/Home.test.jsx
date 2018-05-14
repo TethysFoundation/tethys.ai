@@ -8,6 +8,7 @@ describe('Home', () => {
   test('renders something', () => {
     const { queryByText } = render(<Home />);
 
-    expect(queryByText(/A decentralized currency based on blockchain technology/)).toBeInTheDOM();
+    expect(queryByText('A decentralized network based on blockchain technology powering NextGen Semantic Web'))
+      .toBeInTheDOM();
   });
 });

@@ -9,7 +9,7 @@ export default {
     },
 
     home: {
-      headline: 'A decentralized currency based on blockchain technology powering NextGen Semantic Web',
+      headline: 'A decentralized network based on blockchain technology powering NextGen Semantic Web',
       viewWhitepaper: 'View Whitepaper',
       subscribeButton: 'Register for ICO',
 
@@ -20,11 +20,11 @@ export default {
         },
         semanticWeb: {
           title: 'An Artificial Intelligence to Navigate and Organize Semantic Information',
-          description: 'Robust extraction of complex semantic information powered by an unparalleled modular deep learning model designed to simplify the implementation and execution of A.I.',
+          description: 'Robust extraction of complex semantic information powered by an unparalleled modular deep learning model.',
         },
         infinitelyScalable: {
           title: 'An Infinitely Scalable Blockchain to Bring Long-term Memory to the Web',
-          description: 'Serves as a memory base for the web in which users can monitor changes at any point in time. Supported by unique blockchain technology to store vast amounts of information on the web',
+          description: 'Serves as a transparent and tamper proof memory base to store vast amounts of temporal information on the web.',
         },
       },
 
@@ -35,7 +35,7 @@ export default {
         email: { placeholder: 'Enter your email' },
         selectCountry: '– Country of residence –',
         wontShareEmail: 'We won\'t share your email address or send you any spam',
-        submitFeedback: 'Thanks for subscribing, we will let know of all exciting updates.',
+        submitFeedback: 'Thanks for subscribing. Stay tuned for exciting updates and Tethys news.',
       },
 
       links: {

@@ -6,7 +6,8 @@ describe('Tethys home page', () => {
   });
 
   it('displays the main site content', () => {
-    cy.contains('A decentralized currency based on blockchain technology').should('be.visible');
+    cy.contains('A decentralized network based on blockchain technology powering NextGen Semantic Web')
+      .should('be.visible');
   });
 
   context('when user completes the subscribe form', () => {
