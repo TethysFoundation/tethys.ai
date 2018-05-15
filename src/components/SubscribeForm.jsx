@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 import { translate } from 'react-i18next';
 import api from '../api';
 import CountryOptions from './CountryOptions';
-import styles from '../assets/stylesheets/subscribe_form.pcss';
 import Button from './Button';
+import { sendEvent } from '../util/analytics';
+import styles from '../assets/stylesheets/subscribe_form.pcss';
 
 class SubscribeForm extends React.Component {
   static propTypes = {
@@ -29,6 +30,8 @@ class SubscribeForm extends React.Component {
     });
 
     this.setState({ submitted: true });
+
+    sendEvent('conversion', 'subscribe', this.countryRef.current.value);
   };
 
   emailRef = React.createRef();

@@ -3,9 +3,11 @@ import { render, Simulate, wait } from 'react-testing-library';
 import 'dom-testing-library/extend-expect';
 import '../../src/i18n';
 import api from '../../src/api';
+import { sendEvent } from '../../src/util/analytics';
 import SubscribeForm from '../../src/components/SubscribeForm';
 
 jest.mock('../../src/api');
+jest.mock('../../src/util/analytics', () => ({ sendEvent: jest.fn() }));
 
 describe('SubscribeForm', () => {
   afterEach(() => {
@@ -26,6 +28,18 @@ describe('SubscribeForm', () => {
         expect(api.createSubscriber).toHaveBeenCalledTimes(1);
         expect(api.createSubscriber).toHaveBeenCalledWith({ country: 'SGP', email: 'test@example.com' });
       });
+    });
+
+    it('sends an analytical event', async () => {
+      const { getByTestId, getByText } = render(<SubscribeForm />);
+
+      getByTestId('email').value = 'test@example.com';
+      getByTestId('country-select').value = 'SGP';
+
+      const subscribeButton = getByText('Submit');
+      Simulate.submit(subscribeButton);
+
+      await wait(() => expect(sendEvent).toHaveBeenCalledWith('conversion', 'subscribe', 'SGP'));
     });
 
     it('displays feedback to the user', () => {
