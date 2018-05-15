@@ -4,7 +4,7 @@ import { translate } from 'react-i18next';
 import api from '../api';
 import CountryOptions from './CountryOptions';
 import Button from './Button';
-import { sendEvent } from '../util/analytics';
+import sendEvent from '../util/sendEvent';
 import styles from '../assets/stylesheets/subscribe_form.pcss';
 
 class SubscribeForm extends React.Component {

@@ -1,6 +1,6 @@
 import mysqlMock from 'promise-mysql';
 import config from '../../src/dbconfig';
-import { createSubscriber } from '../../src/apis/subscribers';
+import createSubscriber from '../../src/apis/createSubscriber';
 
 jest.mock('../../src/dbconfig');
 

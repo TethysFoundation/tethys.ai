@@ -3,11 +3,11 @@ import { render, Simulate, wait } from 'react-testing-library';
 import 'dom-testing-library/extend-expect';
 import '../../src/i18n';
 import api from '../../src/api';
-import { sendEvent } from '../../src/util/analytics';
+import sendEvent from '../../src/util/sendEvent';
 import SubscribeForm from '../../src/components/SubscribeForm';
 
 jest.mock('../../src/api');
-jest.mock('../../src/util/analytics', () => ({ sendEvent: jest.fn() }));
+jest.mock('../../src/util/sendEvent', () => jest.fn());
 
 describe('SubscribeForm', () => {
   afterEach(() => {

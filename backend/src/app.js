@@ -1,6 +1,6 @@
 import 'regenerator-runtime/runtime';
 import ApiBuilder from 'claudia-api-builder';
-import { createSubscriber } from './apis/subscribers';
+import createSubscriber from './apis/createSubscriber';
 
 const api = new ApiBuilder();
 

@@ -14,5 +14,4 @@ const createSubscriber = async (request) => {
   return {};
 };
 
-// eslint-disable-next-line import/prefer-default-export
-export { createSubscriber };
+export default createSubscriber;
