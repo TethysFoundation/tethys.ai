@@ -15,6 +15,11 @@ const App = () => (
     <Head>
       <title>Tethys</title>
 
+      <meta
+        name="description"
+        content="A decentralized network based on blockchain technology powering NextGen Semantic Web"
+      />
+
       {
         process.env.NODE_ENV === 'production' &&
         <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} />
