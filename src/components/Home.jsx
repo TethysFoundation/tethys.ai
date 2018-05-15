@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { I18n } from 'react-i18next';
 import Button from './Button';
 import CountDownClock from './CountDownClock';
@@ -13,155 +14,185 @@ import networkImage from '../assets/images/img_NetworkVisual.png';
 import semanticImage from '../assets/images/img_SemanticVisual.png';
 import memoryImage from '../assets/images/img_MemoryVisual.png';
 
-const whitepaperURL = '/Whitepaper-v1_7.pdf';
-const preSaleDate = new Date(2018, 5, 1, 0, 0, 0);
+const WHITEPAPER_URL = '/Whitepaper-v1_7.pdf';
+const PRE_SALE_DATE = new Date(2018, 5, 1, 0, 0, 0);
 
 const Home = () => (
   <I18n>
-    {
-      t => (
-        <React.Fragment>
-          <TopNav />
+    {t => (
+      <React.Fragment>
+        <TopNav t={t} />
 
-          <div className={styles.backgroundImage} style={{ backgroundImage: `url(${background})` }} />
-          <img className={styles.redHalo} src={backgroundRedHaloImage} alt="" />
-          <img className={styles.greenHalo} src={backgroundGreedHaloImage} alt="" />
+        <div className={styles.backgroundImage} style={{ backgroundImage: `url(${background})` }} />
+        <img className={styles.redHalo} src={backgroundRedHaloImage} alt="" />
+        <img className={styles.greenHalo} src={backgroundGreedHaloImage} alt="" />
 
-          <div className={styles.homeContent}>
-            <section className={styles.heroSection}>
-              <img className={styles.logo} src={mainLogo} alt="Tethys" />
+        <div className={styles.homeContent}>
+          <HeroSection t={t} />
 
-              <h2 className={styles.heading}>
-                {t('home.headline')}
-              </h2>
+          <ShareEconomySection t={t} />
 
-              <Button href={whitepaperURL} newTab text={t('home.viewWhitepaper')} />
-              <Button href="#subscribe" text={t('home.subscribeButton')} />
-            </section>
+          <SemanticWebSection t={t} />
 
-            <section className={[styles.valuePropSection, styles.boxedSection].join(' ')}>
-              <div className={styles.flexTextBlock}>
-                <h2 className={styles.heading}>
-                  {t('home.valueProp.shareEconomy.title')}
-                </h2>
+          <InfinitelyScalableSection t={t} />
 
-                <p>
-                  {t('home.valueProp.shareEconomy.description')}
-                </p>
-              </div>
+          <LearnMoreSection t={t} />
 
-              <div className={styles.flexImageBlock}>
-                <img src={networkImage} alt="Network" />
-              </div>
-            </section>
+          <CountDownSection />
 
-            <section className={[styles.valuePropSection, styles.reverseWrap].join(' ')}>
-              <div className={styles.flexImageBlock}>
-                <img src={semanticImage} alt="Semantic information extracted from a web page" />
-              </div>
+          <MoreInfoSection t={t} />
+        </div>
 
-              <div className={styles.flexTextBlock}>
-                <h2 className={styles.heading}>
-                  {t('home.valueProp.semanticWeb.title')}
-                </h2>
-
-                <p>
-                  {t('home.valueProp.semanticWeb.description')}
-                </p>
-              </div>
-            </section>
-
-            <section className={[styles.valuePropSection, styles.boxedSection].join(' ')}>
-              <div className={styles.flexTextBlock}>
-                <h2 className={styles.heading}>
-                  {t('home.valueProp.infinitelyScalable.title')}
-                </h2>
-
-                <p>
-                  {t('home.valueProp.infinitelyScalable.description')}
-                </p>
-              </div>
-
-              <div className={styles.flexImageBlock}>
-                <img src={memoryImage} alt="Human brain" />
-              </div>
-            </section>
-
-            <section className={[styles.boxedSection, styles.wideSection, styles.learnMoreSection].join(' ')}>
-              <h2 className={styles.heading}>{t('home.learnMore')}</h2>
-
-              <span>
-                <Button href={whitepaperURL} newTab text={t('home.viewWhitepaper')} />
-                <Button href="#subscribe" text={t('home.subscribeButton')} />
-              </span>
-            </section>
-
-            <section className={styles.wideSection}>
-              <CountDownClock endDate={preSaleDate} />
-            </section>
-
-            <section className={styles.moreInfoSection}>
-              <div className={styles.flexContainer}>
-                <section
-                  id="subscribe"
-                  className={[styles.boxedSection, styles.subscribeSection].join(' ')}
-                >
-                  <h2 className={styles.heading}>{t('home.subscribeForm.title')}</h2>
-
-                  <div className={styles.subscribeForm}>
-                    <SubscribeForm />
-                  </div>
-                </section>
-
-                <section className={[styles.boxedSection, styles.linksSection].join(' ')}>
-                  <h2 className={styles.heading}>{t('home.links.title')}</h2>
-
-                  <ul className={styles.linksList}>
-                    <li>
-                      <a href="https://github.com/TethysFoundation">{t('home.links.github')}</a>
-                    </li>
-                  </ul>
-                </section>
-              </div>
-            </section>
-          </div>
-
-          <Footer />
-        </React.Fragment>
-      )
-    }
+        <Footer t={t} />
+      </React.Fragment>
+    )}
   </I18n>
 );
 
 export default Home;
 
-const TopNav = () => (
-  <I18n>
-    {
-      t => (
-        <nav className={styles.topNav} style={{ backgroundImage: `url(${background})` }}>
-          <div className={styles.navInner}>
-            <img className={[styles.redHalo, styles.navHalo].join(' ')} src={backgroundRedHaloImage} alt="" />
-            <img className={styles.navLogo} src={navLogo} alt="Tethys" />
+const TopNav = ({ t }) => (
+  <nav className={styles.topNav} style={{ backgroundImage: `url(${background})` }}>
+    <div className={styles.navInner}>
+      <img className={[styles.redHalo, styles.navHalo].join(' ')} src={backgroundRedHaloImage} alt="" />
+      <img className={styles.navLogo} src={navLogo} alt="Tethys" />
 
-            <div className={styles.navLinks}>
-              <a href={whitepaperURL} target="_blank">{t('nav.links.whitepaper')}</a>
-            </div>
-          </div>
-        </nav>
-      )
-    }
-  </I18n>
+      <div className={styles.navLinks}>
+        <a href={WHITEPAPER_URL} target="_blank">{t('nav.links.whitepaper')}</a>
+      </div>
+    </div>
+  </nav>
 );
 
-const Footer = () => (
-  <I18n>
-    {
-      t => (
-        <footer className={styles.footer}>
-          <div className={styles.copyright}>{t('footer.copyright')}</div>
-        </footer>
-      )
-    }
-  </I18n>
+TopNav.propTypes = { t: PropTypes.func.isRequired };
+
+const HeroSection = ({ t }) => (
+  <section className={styles.heroSection}>
+    <img className={styles.logo} src={mainLogo} alt="Tethys" />
+
+    <h2 className={styles.heading}>
+      {t('home.headline')}
+    </h2>
+
+    <Button href={WHITEPAPER_URL} newTab text={t('home.viewWhitepaper')} />
+    <Button href="#subscribe" text={t('home.subscribeButton')} />
+  </section>
 );
+
+HeroSection.propTypes = { t: PropTypes.func.isRequired };
+
+const ShareEconomySection = ({ t }) => (
+  <section className={[styles.valuePropSection, styles.boxedSection].join(' ')}>
+    <div className={styles.flexTextBlock}>
+      <h2 className={styles.heading}>
+        {t('home.valueProp.shareEconomy.title')}
+      </h2>
+
+      <p>
+        {t('home.valueProp.shareEconomy.description')}
+      </p>
+    </div>
+
+    <div className={styles.flexImageBlock}>
+      <img src={networkImage} alt="Network" />
+    </div>
+  </section>
+);
+
+ShareEconomySection.propTypes = { t: PropTypes.func.isRequired };
+
+const SemanticWebSection = ({ t }) => (
+  <section className={[styles.valuePropSection, styles.reverseWrap].join(' ')}>
+    <div className={styles.flexImageBlock}>
+      <img src={semanticImage} alt="Semantic information extracted from a web page" />
+    </div>
+
+    <div className={styles.flexTextBlock}>
+      <h2 className={styles.heading}>
+        {t('home.valueProp.semanticWeb.title')}
+      </h2>
+
+      <p>
+        {t('home.valueProp.semanticWeb.description')}
+      </p>
+    </div>
+  </section>
+);
+
+SemanticWebSection.propTypes = { t: PropTypes.func.isRequired };
+
+const InfinitelyScalableSection = ({ t }) => (
+  <section className={[styles.valuePropSection, styles.boxedSection].join(' ')}>
+    <div className={styles.flexTextBlock}>
+      <h2 className={styles.heading}>
+        {t('home.valueProp.infinitelyScalable.title')}
+      </h2>
+
+      <p>
+        {t('home.valueProp.infinitelyScalable.description')}
+      </p>
+    </div>
+
+    <div className={styles.flexImageBlock}>
+      <img src={memoryImage} alt="Human brain" />
+    </div>
+  </section>
+);
+
+InfinitelyScalableSection.propTypes = { t: PropTypes.func.isRequired };
+
+const LearnMoreSection = ({ t }) => (
+  <section className={[styles.boxedSection, styles.wideSection, styles.learnMoreSection].join(' ')}>
+    <h2 className={styles.heading}>{t('home.learnMore')}</h2>
+
+    <span>
+      <Button href={WHITEPAPER_URL} newTab text={t('home.viewWhitepaper')} />
+      <Button href="#subscribe" text={t('home.subscribeButton')} />
+    </span>
+  </section>
+);
+
+LearnMoreSection.propTypes = { t: PropTypes.func.isRequired };
+
+const CountDownSection = () => (
+  <section className={styles.wideSection}>
+    <CountDownClock endDate={PRE_SALE_DATE} />
+  </section>
+);
+
+const MoreInfoSection = ({ t }) => (
+  <section className={styles.moreInfoSection}>
+    <div className={styles.flexContainer}>
+      <section
+        id="subscribe"
+        className={[styles.boxedSection, styles.subscribeSection].join(' ')}
+      >
+        <h2 className={styles.heading}>{t('home.subscribeForm.title')}</h2>
+
+        <div className={styles.subscribeForm}>
+          <SubscribeForm />
+        </div>
+      </section>
+
+      <section className={[styles.boxedSection, styles.linksSection].join(' ')}>
+        <h2 className={styles.heading}>{t('home.links.title')}</h2>
+
+        <ul className={styles.linksList}>
+          <li>
+            <a href="https://github.com/TethysFoundation">{t('home.links.github')}</a>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </section>
+);
+
+MoreInfoSection.propTypes = { t: PropTypes.func.isRequired };
+
+const Footer = ({ t }) => (
+  <footer className={styles.footer}>
+    <div className={styles.copyright}>{t('footer.copyright')}</div>
+  </footer>
+);
+
+Footer.propTypes = { t: PropTypes.func.isRequired };
