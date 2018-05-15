@@ -34,6 +34,8 @@ const App = () => (
 
       <script src={polyfillURL} />
 
+      <link rel="preconnect" href="https://fonts.gstatic.com/" crossOrigin />
+
       <link
         href="https://fonts.googleapis.com/css?family=Barlow+Condensed:500|Montserrat:400,500"
         rel="stylesheet"
