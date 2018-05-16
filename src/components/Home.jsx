@@ -26,6 +26,8 @@ const Home = () => (
     <div className={styles.homeContent}>
       <HeroSection />
 
+      <CountDownSection />
+
       <ShareEconomySection />
 
       <SemanticWebSection />
@@ -33,8 +35,6 @@ const Home = () => (
       <InfinitelyScalableSection />
 
       <LearnMoreSection />
-
-      <CountDownSection />
 
       <MoreInfoSection />
     </div>

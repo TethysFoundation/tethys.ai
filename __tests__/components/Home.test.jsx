@@ -19,7 +19,7 @@ describe('Home', () => {
 
     expect(queryByText('Learn More About Tethys')).toBeInTheDOM();
 
-    expect(queryByText('Pre-sale starts 06/01/2018')).toBeInTheDOM();
+    expect(queryByText('Pre-sale starts 07/01/2018')).toBeInTheDOM();
 
     expect(queryByText('Subscribe for Updates')).toBeInTheDOM();
 
