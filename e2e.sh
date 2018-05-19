@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
-set -v
+set -ev
 
 yarn build
 yarn export
+
+set +e
+
 yarn serve &
 
 # wait for serve to start
