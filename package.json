@@ -4,11 +4,12 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "setup": "yarn && cd backend && yarn",
     "dev": "next",
     "build": "next build",
     "start": "next start",
     "export": "next export",
-    "setup": "yarn && cd backend && yarn",
+    "serve": "serve out -p 8080",
     "test": "jest",
     "test:watch": "jest --watch --notify",
     "lint": "eslint src __tests__ __mocks__ **/src **/__tests__ **/__mocks__ cypress --ext .jsx --ext .js"
@@ -58,7 +59,7 @@
     "postcss-loader": "^2.1.5",
     "postcss-preset-env": "^4.1.0",
     "react-testing-library": "^3.0.2",
-    "serve": "^6.5.6",
+    "serve": "^6.5.7",
     "timekeeper": "^2.1.1"
   }
 }

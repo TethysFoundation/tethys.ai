@@ -2,7 +2,7 @@ describe('Tethys home page', () => {
   const API_BASE_URL = 'https://7jwcjesxi6.execute-api.us-east-1.amazonaws.com/latest';
 
   beforeEach(() => {
-    cy.visit('http://localhost:3000/');
+    cy.visit('http://localhost:8080/');
   });
 
   it('displays the main site content', () => {

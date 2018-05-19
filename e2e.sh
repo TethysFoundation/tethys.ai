@@ -1,15 +1,19 @@
 #!/usr/bin/env bash
-set -ev
+set -v
 
-yarn build --staging
+yarn build
+yarn export
 yarn serve &
 
 # wait for serve to start
-while ! curl -s localhost:3000 >/dev/null; do
+while ! curl -s localhost:8080 >/dev/null; do
   sleep 1
 done
 
 yarn run cypress run
+RESULT=$?
 
 # kill serve process
 kill %1
+
+exit ${RESULT}
