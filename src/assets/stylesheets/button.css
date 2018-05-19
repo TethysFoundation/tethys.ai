@@ -1,5 +1,4 @@
-@import 'shared/colors.pcss';
-@import 'shared/breakpoints.pcss';
+@import 'shared/breakpoints.css';
 
 .btn {
   display: inline-block;

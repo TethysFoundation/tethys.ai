@@ -2,7 +2,7 @@ import React from 'react';
 import { I18n } from 'react-i18next';
 import { WHITEPAPER_URL } from '../Home';
 import Button from '../Button';
-import styles from '../../assets/stylesheets/home.pcss';
+import styles from '../../assets/stylesheets/home.css';
 
 const LearnMoreSection = () => (
   <I18n>

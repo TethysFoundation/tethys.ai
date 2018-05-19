@@ -2,15 +2,15 @@
   "name": "tethys.ai",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "export": "next export",
     "setup": "yarn && cd backend && yarn",
-    "start": "react-static start",
-    "stage": "react-static build --staging",
-    "build": "react-static build",
-    "serve": "serve dist -p 3000",
     "test": "jest",
-    "watch": "jest --watch --notify",
+    "test:watch": "jest --watch --notify",
     "lint": "eslint src __tests__ __mocks__ **/src **/__tests__ **/__mocks__ cypress --ext .jsx --ext .js"
   },
   "browserslist": [
@@ -28,7 +28,7 @@
         "displayName": "test",
         "moduleNameMapper": {
           "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)$": "<rootDir>/__mocks__/fileMock.js",
-          "\\.pcss$": "identity-obj-proxy"
+          "\\.css$": "identity-obj-proxy"
         }
       },
       {
@@ -47,22 +47,25 @@
     ]
   },
   "dependencies": {
+    "@zeit/next-css": "^0.2.0",
     "airbnb-prop-types": "^2.9.0",
     "axios": "^0.18.0",
     "i18next": "^11.3.1",
+    "next": "^6.0.3",
+    "next-compose-plugins": "^2.1.1",
+    "next-optimized-images": "^1.4.0",
     "prop-types": "^15.6.1",
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2",
-    "react-i18next": "^7.6.1",
-    "react-static": "5.8.1",
-    "react-static-routes": "^1.0.0"
+    "react": "^16.3.1",
+    "react-dom": "^16.3.1",
+    "react-i18next": "^7.6.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.0.0-beta.47",
     "autoprefixer": "^8.4.1",
+    "babel-core": "^7.0.0-0",
     "babel-eslint": "^8.2.3",
+    "babel-jest": "^22.4.4",
     "babel-plugin-react-remove-properties": "^0.2.5",
-    "babel-plugin-universal-import": "^1.4.0",
-    "css-loader": "^0.28.11",
     "cypress": "^2.1.0",
     "dom-testing-library": "^2.2.0",
     "eslint": "^4.19.1",
@@ -72,7 +75,6 @@
     "eslint-plugin-import": "^2.11.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
-    "extract-css-chunks-webpack-plugin": "^2.0.18",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^22.4.3",
     "jest-canvas-mock": "^1.0.2",
@@ -82,10 +84,8 @@
     "postcss-import": "^11.1.0",
     "postcss-loader": "^2.1.5",
     "postcss-preset-env": "^4.1.0",
-    "react-hot-loader": "^4.1.2",
     "react-testing-library": "^3.0.2",
     "serve": "^6.5.6",
-    "style-loader": "^0.21.0",
     "timekeeper": "^2.1.1"
   }
 }

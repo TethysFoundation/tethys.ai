@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { forbidExtraProps } from 'airbnb-prop-types';
-import styles from '../assets/stylesheets/pie_counter.pcss';
+import styles from '../assets/stylesheets/pie_counter.css';
 
 const X_CENTRE = 100;
 const Y_CENTRE = 100;

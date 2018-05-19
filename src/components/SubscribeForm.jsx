@@ -5,7 +5,7 @@ import api from '../api';
 import CountryOptions from './CountryOptions';
 import Button from './Button';
 import sendEvent from '../util/sendEvent';
-import styles from '../assets/stylesheets/subscribe_form.pcss';
+import styles from '../assets/stylesheets/subscribe_form.css';
 
 class SubscribeForm extends React.Component {
   static propTypes = {

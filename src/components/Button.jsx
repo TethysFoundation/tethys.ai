@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { forbidExtraProps } from 'airbnb-prop-types';
-import styles from '../assets/stylesheets/button.pcss';
+import styles from '../assets/stylesheets/button.css';
 
 function getSizeClass(size) {
   let sizeClass = '';

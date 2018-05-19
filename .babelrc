@@ -1,7 +1,14 @@
 {
-  "extends": "react-static/.babelrc",
   "env": {
+    "development": {
+      "presets": [
+        "next/babel"
+      ]
+    },
     "production": {
+      "presets": [
+        "next/babel"
+      ],
       "plugins": [
         [
           "react-remove-properties",
@@ -9,6 +16,18 @@
             "properties": [
               "data-testid"
             ]
+          }
+        ]
+      ]
+    },
+    "test": {
+      "presets": [
+        [
+          "next/babel",
+          {
+            "preset-env": {
+              "modules": "commonjs"
+            }
           }
         ]
       ]

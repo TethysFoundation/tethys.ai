@@ -8,12 +8,12 @@ import LearnMoreSection from './home/LearnMoreSection';
 import CountDownSection from './home/CountDownSection';
 import MoreInfoSection from './home/MoreInfoSection';
 import Footer from './Footer';
-import styles from '../assets/stylesheets/home.pcss';
+import styles from '../assets/stylesheets/home.css';
 import background from '../assets/images/img_webBackground_textureCenterTop.jpg';
 import backgroundRedHaloImage from '../assets/images/img_webBackground_redHalo.png';
 import backgroundGreedHaloImage from '../assets/images/img_webBackground_greenHalo.png';
 
-export const WHITEPAPER_URL = '/Whitepaper-v1_7.pdf';
+export const WHITEPAPER_URL = '/static/Whitepaper-v1_7.pdf';
 
 const Home = () => (
   <React.Fragment>

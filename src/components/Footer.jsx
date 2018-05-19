@@ -1,6 +1,6 @@
 import React from 'react';
 import { I18n } from 'react-i18next';
-import styles from '../assets/stylesheets/home.pcss';
+import styles from '../assets/stylesheets/home.css';
 
 const Footer = () => (
   <I18n>

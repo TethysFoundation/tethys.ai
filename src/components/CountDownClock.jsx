@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { forbidExtraProps } from 'airbnb-prop-types';
 import { I18n } from 'react-i18next';
 import PieCounter from './PieCounter';
-import styles from '../assets/stylesheets/count_down_clock.pcss';
+import styles from '../assets/stylesheets/count_down_clock.css';
 
 function formatDate(date) {
   const month = padDatePart(date.getMonth() + 1);

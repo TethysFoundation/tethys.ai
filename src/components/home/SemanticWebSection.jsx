@@ -1,7 +1,7 @@
 import React from 'react';
 import { I18n } from 'react-i18next';
 import semanticImage from '../../assets/images/img_SemanticVisual.png';
-import styles from '../../assets/stylesheets/home.pcss';
+import styles from '../../assets/stylesheets/home.css';
 
 const SemanticWebSection = () => (
   <I18n>
