@@ -19,6 +19,8 @@ export default class MyDocument extends Document {
             content="A decentralized network based on blockchain technology powering NextGen Semantic Web"
           />
 
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+
           {
             process.env.NODE_ENV === 'production' &&
             <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} />
