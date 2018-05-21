@@ -11,7 +11,7 @@ describe('sendEvent', () => {
     });
 
     it('calls gtag function', () => {
-      sendEvent('category', 'action', 'label', 1);
+      sendEvent('action', 'category', 'label', 1);
 
       expect(window.gtag).toHaveBeenCalledWith('event', 'action', {
         event_category: 'category',
@@ -23,7 +23,7 @@ describe('sendEvent', () => {
 
   describe('when gtag is not defined', () => {
     it('does not attempt to call gtag', () => {
-      expect(() => sendEvent('category', 'action', 'label', 1)).not.toThrow();
+      expect(() => sendEvent('action', 'category', 'label', 1)).not.toThrow();
     });
   });
 });

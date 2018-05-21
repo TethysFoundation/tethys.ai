@@ -31,7 +31,7 @@ class SubscribeForm extends React.Component {
 
     this.setState({ submitted: true });
 
-    sendEvent('conversion', 'subscribe', this.countryRef.current.value);
+    sendEvent('generate_lead');
   };
 
   emailRef = React.createRef();

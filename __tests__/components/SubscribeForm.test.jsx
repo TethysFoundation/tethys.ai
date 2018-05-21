@@ -39,7 +39,7 @@ describe('SubscribeForm', () => {
       const subscribeButton = getByText('Submit');
       Simulate.submit(subscribeButton);
 
-      await wait(() => expect(sendEvent).toHaveBeenCalledWith('conversion', 'subscribe', 'SGP'));
+      await wait(() => expect(sendEvent).toHaveBeenCalledWith('generate_lead'));
     });
 
     it('displays feedback to the user', () => {
