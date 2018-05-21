@@ -1,25 +1,29 @@
 import sendEvent from '../../src/util/sendEvent';
 
 describe('sendEvent', () => {
-  describe('when ga is defined', () => {
+  describe('when gtag is defined', () => {
     beforeEach(() => {
-      window.ga = jest.fn();
+      window.gtag = jest.fn();
     });
 
     afterEach(() => {
-      delete window.ga;
+      delete window.gtag;
     });
 
-    it('calls ga function', () => {
-      sendEvent('category', 'action', 'label', 'value');
+    it('calls gtag function', () => {
+      sendEvent('category', 'action', 'label', 1);
 
-      expect(window.ga).toHaveBeenCalledWith('send', 'event', 'category', 'action', 'label', 'value');
+      expect(window.gtag).toHaveBeenCalledWith('event', 'action', {
+        event_category: 'category',
+        event_label: 'label',
+        value: 1,
+      });
     });
   });
 
-  describe('when ga is not defined', () => {
-    it('does not attempt to call ga', () => {
-      expect(() => sendEvent('category', 'action', 'label', 'value')).not.toThrow();
+  describe('when gtag is not defined', () => {
+    it('does not attempt to call gtag', () => {
+      expect(() => sendEvent('category', 'action', 'label', 1)).not.toThrow();
     });
   });
 });
