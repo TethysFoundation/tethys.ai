@@ -1,6 +1,8 @@
 language: node_js
 node_js:
   - "8.10"
+# temporarily use osx due to: https://github.com/tcoopman/image-webpack-loader/issues/142
+os: osx
 script:
   - yarn setup
   - yarn test
