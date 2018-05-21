@@ -2,11 +2,11 @@ import React from 'react';
 import { render } from 'react-testing-library';
 import 'dom-testing-library/extend-expect';
 import '../../src/i18n';
-import Home from '../../src/components/Home';
+import Index from '../../pages/index';
 
-describe('Home', () => {
+describe('Index', () => {
   test('renders the home page content', () => {
-    const { queryByText } = render(<Home />);
+    const { queryByText } = render(<Index />);
 
     expect(queryByText('A decentralized network based on blockchain technology powering NextGen Semantic Web'))
       .toBeInTheDOM();
