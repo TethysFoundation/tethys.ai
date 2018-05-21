@@ -1,5 +1,7 @@
 import React from 'react';
 import { I18n } from 'react-i18next';
+// eslint-disable-next-line import/no-unresolved
+import memoryImageWebP from '../../assets/images/img_MemoryVisual.png?webp';
 import memoryImage from '../../assets/images/img_MemoryVisual.png';
 import styles from '../../assets/stylesheets/home.css';
 
@@ -18,7 +20,11 @@ const InfinitelyScalableSection = () => (
         </div>
 
         <div className={styles.flexImageBlock}>
-          <img src={memoryImage} alt="Human brain" />
+          <picture>
+            <source srcSet={memoryImageWebP} type="image/webp" />
+            <source srcSet={memoryImage} type="image/png" />
+            <img src={memoryImage} alt="Human brain" />
+          </picture>
         </div>
       </section>
     )}

@@ -4,7 +4,7 @@ module.exports = {
       setupFiles: ['jest-canvas-mock'],
       displayName: 'frontend',
       moduleNameMapper: {
-        '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)$': '<rootDir>/__mocks__/fileMock.js',
+        '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\\?.+)?$': '<rootDir>/__mocks__/fileMock.js',
         '\\.css$': 'identity-obj-proxy',
       },
       testPathIgnorePatterns: ['./backend']

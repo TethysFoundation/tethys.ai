@@ -1,5 +1,7 @@
 import React from 'react';
 import { I18n } from 'react-i18next';
+// eslint-disable-next-line import/no-unresolved
+import networkImageWebP from '../../assets/images/img_NetworkVisual.png?webp';
 import networkImage from '../../assets/images/img_NetworkVisual.png';
 import styles from '../../assets/stylesheets/home.css';
 
@@ -18,7 +20,11 @@ const ShareEconomySection = () => (
         </div>
 
         <div className={styles.flexImageBlock}>
-          <img src={networkImage} alt="Network" />
+          <picture>
+            <source srcSet={networkImageWebP} type="image/webp" />
+            <source srcSet={networkImage} type="image/png" />
+            <img src={networkImage} alt="Network" />
+          </picture>
         </div>
       </section>
     )}
