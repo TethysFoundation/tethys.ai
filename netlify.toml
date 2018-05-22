@@ -1,3 +1,8 @@
+# Common settings
 [build]
   command = "yarn export"
   publish = "out"
+
+# Production branch settings
+[context.production]
+  environment = { ENABLE_ANALYTICS = "true" }

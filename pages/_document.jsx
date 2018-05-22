@@ -22,12 +22,12 @@ export default class MyDocument extends Document {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
 
           {
-            process.env.NODE_ENV === 'production' &&
+            process.env.ENABLE_ANALYTICS === 'true' &&
             <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} />
           }
 
           {
-            process.env.NODE_ENV === 'production' &&
+            process.env.ENABLE_ANALYTICS === 'true' &&
             <script dangerouslySetInnerHTML={{
               __html: `window.dataLayer = window.dataLayer || [];
                       function gtag(){dataLayer.push(arguments)}
