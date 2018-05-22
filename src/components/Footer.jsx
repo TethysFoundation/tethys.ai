@@ -6,7 +6,12 @@ const Footer = () => (
   <I18n>
     {t => (
       <footer className={styles.footer}>
-        <div className={styles.copyright}>{t('footer.copyright')}</div>
+        <p className={styles.footerContent}>
+          <a href="/static/2018.05.16-privacy-policy.pdf">{t('footer.privacyPolicy')}</a>&nbsp;|&nbsp;
+          <a href="/static/2018.05.16-terms.pdf">{t('footer.terms')}</a>
+          <br />
+          <span className={styles.copyright}>{t('footer.copyright')}</span>
+        </p>
       </footer>
     )}
   </I18n>
