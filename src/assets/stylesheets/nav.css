@@ -1,0 +1,108 @@
+@import 'shared/breakpoints.css';
+
+.top-nav {
+  height: 72px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: no-repeat fixed center top var(--backgroundColor);
+  overflow: hidden;
+  z-index: 2;
+
+  & .nav-inner {
+    padding: 0 30px;
+    height: 100%;
+  }
+
+  & .nav-halo {
+    position: absolute;
+  }
+
+  & .nav-logo {
+    margin-top: 20px;
+  }
+
+  & .nav-links {
+    float: right;
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+    & a {
+      font-family: 'Barlow Condensed', sans-serif;
+      color: white;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+      margin-right: 50px;
+      letter-spacing: 0.4px;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.red-halo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.green-halo {
+  position: fixed;
+  top: 300px;
+  right: 0;
+  z-index: -1;
+}
+
+.nav-inner {
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (--large-desktop-screen) {
+    margin-left: 100px;
+    margin-right: 100px;
+  } @media (--small-desktop-screen) {
+    margin-left: 50px;
+    margin-right: 50px;
+  } @media (--phone-screen) {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
+@media (--phone-screen) {
+  .top-nav {
+    height: 50px;
+    background-size: 232%;
+
+    & .nav-inner {
+      padding: 0;
+    }
+
+    & .nav-logo {
+      height: 20px;
+      margin-top: 15px;
+    }
+
+    & .nav-links {
+      & a {
+        font-size: 13px;
+      }
+    }
+  }
+
+  .red-halo {
+    width: 260px;
+  }
+
+  .green-halo {
+    width: 243px;
+  }
+}

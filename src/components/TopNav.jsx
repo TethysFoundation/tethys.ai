@@ -4,7 +4,7 @@ import { WHITEPAPER_URL } from './Home';
 import navLogo from '../assets/images/img_TethysLogo_Horizontal.png';
 import background from '../assets/images/img_webBackground_textureCenterTop.jpg';
 import backgroundRedHaloImage from '../assets/images/img_webBackground_redHalo.png';
-import styles from '../assets/stylesheets/home.css';
+import styles from '../assets/stylesheets/nav.css';
 
 const TopNav = () => (
   <I18n>
