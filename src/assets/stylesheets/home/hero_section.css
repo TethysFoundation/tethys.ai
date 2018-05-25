@@ -1,0 +1,46 @@
+@import '../shared/breakpoints.css';
+
+.hero-section {
+  height: auto;
+  text-align: center;
+  margin-bottom: 120px;
+
+  & a:first-of-type {
+    margin-right: 40px;
+  }
+}
+
+.heading {
+  max-width: 675px;
+  margin: 0 auto 50px;
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--headingTextColor);
+}
+
+.logo {
+  height: 220px;
+  margin: 0 auto 75px;
+}
+
+@media (--phone-screen) {
+  .hero-section {
+    margin-bottom: 60px;
+
+    & a:first-of-type {
+      margin-right: 22px;
+    }
+  }
+
+  .heading {
+    line-height: 26px;
+    font-size: 20px;
+    max-width: 336px;
+    margin-bottom: 25px;
+  }
+
+  .logo {
+    height: 98px;
+    margin: 0 auto 54px;
+  }
+}

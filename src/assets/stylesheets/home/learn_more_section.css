@@ -1,0 +1,25 @@
+@import '../shared/breakpoints.css';
+
+.learn-more-section {
+  height: 260px;
+  padding: 0 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  & .heading {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+}
+
+@media (--phone-screen) {
+  .learn-more-section {
+    height: 134px;
+    padding: 0;
+
+    & .heading {
+      margin-bottom: 21px;
+    }
+  }
+}

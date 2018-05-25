@@ -2,13 +2,14 @@ import React from 'react';
 import { I18n } from 'react-i18next';
 import { WHITEPAPER_URL } from '../Home';
 import Button from '../Button';
-import styles from '../../assets/stylesheets/home.css';
+import homeStyles from '../../assets/stylesheets/home.css';
+import styles from '../../assets/stylesheets/home/learn_more_section.css';
 
 const LearnMoreSection = () => (
   <I18n>
     {t => (
-      <section className={[styles.boxedSection, styles.wideSection, styles.learnMoreSection].join(' ')}>
-        <h2 className={styles.heading}>{t('home.learnMore')}</h2>
+      <section className={[homeStyles.boxedSection, homeStyles.wideSection, styles.learnMoreSection].join(' ')}>
+        <h2 className={[homeStyles.heading, styles.heading].join(' ')}>{t('home.learnMore')}</h2>
 
         <span>
           <Button href={WHITEPAPER_URL} newTab text={t('home.viewWhitepaper')} />

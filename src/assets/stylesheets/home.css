@@ -49,29 +49,9 @@
 }
 
 @media (--small-phone-screen) {
-  .home-content > section.value-prop-section, .home-content > section.more-info-section {
+  .home-content > section.value-prop-section {
     margin-left: 0;
     margin-right: 0;
-  }
-}
-
-.logo {
-  height: 220px;
-  margin: 0 auto 75px;
-}
-
-.hero-section {
-  height: auto;
-  text-align: center;
-  margin-bottom: 120px;
-
-  & a:first-of-type {
-    margin-right: 40px;
-  }
-
-  & .heading {
-    font-size: 28px;
-    margin: 0 auto 50px;
   }
 }
 
@@ -139,19 +119,6 @@
   }
 }
 
-.learn-more-section {
-  height: 260px;
-  padding: 0 60px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  & .heading {
-    width: 100%;
-    margin-bottom: 50px;
-  }
-}
-
 .flex-container {
   display: flex;
   flex-direction: row;
@@ -160,49 +127,6 @@
 
   & > * {
     margin: 10px;
-  }
-}
-
-.subscribe-section {
-  flex: 1 0 750px;
-  text-align: left;
-  padding: 60px;
-
-  @media (width < 900px) {
-    flex-basis: 60%;
-  }
-
-  & .heading {
-    margin-bottom: 40px;
-  }
-}
-
-.links-section {
-  flex: 1 0 300px;
-  text-align: left;
-  padding: 60px;
-
-  @media (width < 900px) {
-    flex-basis: 60%;
-  }
-
-  & .links-list {
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    padding: 15px 0 0 0;
-    margin: 0;
-
-    & li {
-      flex: 1 0 40%;
-      margin-bottom: 20px;
-      min-width: 185px;
-    }
-
-    & li > a {
-      color: var(--mainTextColor);
-      font-size: 20px;
-    }
   }
 }
 
@@ -247,25 +171,6 @@
     margin-bottom: 50px;
   }
 
-  .logo {
-    height: 98px;
-    margin: 0 auto 54px;
-  }
-
-  .hero-section {
-    margin-bottom: 60px;
-
-    & .heading {
-      line-height: 26px;
-      font-size: 20px;
-      max-width: 336px;
-      margin-bottom: 25px;
-    }
-    & a:first-of-type {
-      margin-right: 22px;
-    }
-  }
-
   .heading {
     line-height: 26px;
     margin-bottom: 14px;
@@ -307,49 +212,6 @@
 
     & a:first-of-type {
       margin-right: 22px;
-    }
-  }
-
-  .learn-more-section {
-    height: 134px;
-    padding: 0;
-
-    & .heading {
-      margin-bottom: 21px;
-    }
-  }
-
-  .subscribe-section {
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 27px;
-
-    & .heading {
-      margin-bottom: 15px;
-    }
-  }
-
-  .links-section {
-    padding-right: 20px;
-    padding-left: 20px;
-    padding-bottom: 22px;
-
-    & .heading {
-      margin-bottom: 8px;
-    }
-
-    & .links-list {
-      padding-top: 2px;
-
-      & li {
-        min-width: 0;
-        margin-bottom: 0;
-      }
-
-      & li > a {
-        font-size: 14px;
-        line-height: 26px;
-      }
     }
   }
 }

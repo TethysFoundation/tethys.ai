@@ -3,7 +3,7 @@ import { I18n } from 'react-i18next';
 import { WHITEPAPER_URL } from '../Home';
 import Button from '../Button';
 import mainLogo from '../../assets/images/img_TethysLogo_Vertical.png';
-import styles from '../../assets/stylesheets/home.css';
+import styles from '../../assets/stylesheets/home/hero_section.css';
 
 const HeroSection = () => (
   <I18n>
