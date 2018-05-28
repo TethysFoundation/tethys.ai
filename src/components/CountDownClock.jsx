@@ -72,7 +72,7 @@ export default class CountDownClock extends React.Component {
                 <PieCounter
                   getValue={this.getDaysRemaining}
                   displayValue={this.displayDaysRemaining}
-                  max={30}
+                  max={45}
                   label={t('countDown.days')}
                 />
                 <PieCounter
