@@ -1,11 +1,12 @@
 import React from 'react';
 import TopNav from './TopNav';
 import HeroSection from './home/HeroSection';
+import CountDownSection from './home/CountDownSection';
+import ProblemSection from './home/ProblemSection';
 import ShareEconomySection from './home/ShareEconomySection';
 import SemanticWebSection from './home/SemanticWebSection';
 import InfinitelyScalableSection from './home/InfinitelyScalableSection';
 import LearnMoreSection from './home/LearnMoreSection';
-import CountDownSection from './home/CountDownSection';
 import MoreInfoSection from './home/MoreInfoSection';
 import Footer from './Footer';
 import styles from '../assets/stylesheets/home.css';
@@ -41,6 +42,8 @@ const Home = () => (
       <HeroSection />
 
       <CountDownSection />
+
+      <ProblemSection />
 
       <ShareEconomySection />
 

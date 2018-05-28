@@ -11,6 +11,8 @@ describe('Index', () => {
     expect(queryByText('A decentralized network based on blockchain technology powering NextGen Semantic Web'))
       .toBeInTheDOM();
 
+    expect(queryByText('Problem')).toBeInTheDOM();
+
     expect(queryByText('A Share Economy for Untapped Computing Power and Human Intelligence')).toBeInTheDOM();
 
     expect(queryByText('An Artificial Intelligence to Navigate and Organize Semantic Information')).toBeInTheDOM();

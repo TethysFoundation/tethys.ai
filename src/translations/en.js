@@ -13,6 +13,18 @@ export default {
       viewWhitepaper: 'View Whitepaper',
       subscribeButton: 'Register for ICO',
 
+      problem: {
+        title: 'Problem',
+        description: 'Centralized Web Crawling',
+        list: {
+          limitedThroughput: 'Limited throughput',
+          zeroParticipation: 'Zero consumer participation and incentivisation',
+          shallowExtraction: 'Shallow textual extraction',
+          noTemporalDatabase: 'No temporal database and without memory',
+          noVerification: 'No information verification',
+        },
+      },
+
       valueProp: {
         shareEconomy: {
           title: 'A Share Economy for Untapped Computing Power and Human Intelligence',
