@@ -39,10 +39,14 @@
   @media (--large-desktop-screen) {
     margin-left: 100px;
     margin-right: 100px;
-  } @media (--small-desktop-screen) {
+  }
+
+  @media (--small-desktop-screen) {
     margin-left: 50px;
     margin-right: 50px;
-  } @media (--phone-screen) {
+  }
+
+  @media (--phone-screen) {
     margin-left: 20px;
     margin-right: 20px;
   }

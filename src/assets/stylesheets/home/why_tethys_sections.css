@@ -17,6 +17,27 @@
   }
 }
 
+.why-inner {
+  margin: 0 auto;
+  text-align: left;
+  max-width: 1440px;
+
+  @media (--large-desktop-screen) {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+
+  @media (--small-desktop-screen) {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  @media (--phone-screen) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
 .heading {
   display: inline-block;
   font-size: 46px;
@@ -68,7 +89,7 @@
 
   & li {
     max-width: 300px;
-    font-size: 16px;
+    font-size: 20px;
     margin-bottom: 15px;
     line-height: 1.5;
 

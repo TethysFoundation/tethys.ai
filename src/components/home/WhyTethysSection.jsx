@@ -11,40 +11,40 @@ const WhyTethysSection = () => (
     {t => (
       <section
         className={[
-          homeStyles.valuePropSection, homeStyles.boxedSection, styles.listSection, styles.whySection,
+          homeStyles.valuePropSection,
+          homeStyles.boxedSection,
+          homeStyles.wideSection,
+          styles.listSection,
+          styles.whySection,
         ].join(' ')}
       >
-        <h2 className={styles.heading}>
-          {t('home.whyTethys.title')}
-        </h2>
+        <div className={styles.whyInner}>
+          <h2 className={styles.heading}>{t('home.whyTethys.title')}</h2>
 
-        <div className={styles.listSectionInner}>
-          <div className={[homeStyles.flexTextBlock, styles.flexTextBlock].join(' ')}>
-            <h3 className={styles.listHeading}>
-              {t('home.problem.description')}
-            </h3>
+          <div className={styles.listSectionInner}>
+            <div className={[homeStyles.flexTextBlock, styles.flexTextBlock].join(' ')}>
+              <h3 className={styles.listHeading}>{t('home.problem.description')}</h3>
 
-            <ul className={styles.list}>
-              <ListItem iconImage={xImg} text={t('home.problem.list.limitedThroughput')} />
-              <ListItem iconImage={xImg} text={t('home.problem.list.zeroParticipation')} />
-              <ListItem iconImage={xImg} text={t('home.problem.list.shallowExtraction')} />
-              <ListItem iconImage={xImg} text={t('home.problem.list.noTemporalDatabase')} />
-              <ListItem iconImage={xImg} text={t('home.problem.list.noVerification')} />
-            </ul>
-          </div>
+              <ul className={styles.list}>
+                <ListItem iconImage={xImg} text={t('home.problem.list.limitedThroughput')} />
+                <ListItem iconImage={xImg} text={t('home.problem.list.zeroParticipation')} />
+                <ListItem iconImage={xImg} text={t('home.problem.list.shallowExtraction')} />
+                <ListItem iconImage={xImg} text={t('home.problem.list.noTemporalDatabase')} />
+                <ListItem iconImage={xImg} text={t('home.problem.list.noVerification')} />
+              </ul>
+            </div>
 
-          <div className={[homeStyles.flexTextBlock, styles.flexTextBlock].join(' ')}>
-            <h3 className={styles.listHeading}>
-              {t('home.solution.description')}
-            </h3>
+            <div className={[homeStyles.flexTextBlock, styles.flexTextBlock].join(' ')}>
+              <h3 className={styles.listHeading}>{t('home.solution.description')}</h3>
 
-            <ul className={styles.list}>
-              <ListItem iconImage={checkImg} text={t('home.solution.list.unlimitedThroughput')} />
-              <ListItem iconImage={checkImg} text={t('home.solution.list.consumerIncentivisation')} />
-              <ListItem iconImage={checkImg} text={t('home.solution.list.semanticExtraction')} />
-              <ListItem iconImage={checkImg} text={t('home.solution.list.temporalDatabase')} />
-              <ListItem iconImage={checkImg} text={t('home.solution.list.statisticalVerification')} />
-            </ul>
+              <ul className={styles.list}>
+                <ListItem iconImage={checkImg} text={t('home.solution.list.unlimitedThroughput')} />
+                <ListItem iconImage={checkImg} text={t('home.solution.list.consumerIncentivisation')} />
+                <ListItem iconImage={checkImg} text={t('home.solution.list.semanticExtraction')} />
+                <ListItem iconImage={checkImg} text={t('home.solution.list.temporalDatabase')} />
+                <ListItem iconImage={checkImg} text={t('home.solution.list.statisticalVerification')} />
+              </ul>
+            </div>
           </div>
         </div>
       </section>
