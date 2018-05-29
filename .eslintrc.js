@@ -11,10 +11,10 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:import/errors',
     'plugin:import/warnings',
+    'prettier',
+    'prettier/react',
   ],
-  plugins: [
-    'compat',
-  ],
+  plugins: ['compat'],
   rules: {
     'max-len': ['error', { code: 120, comments: 120 }],
     'jsx-a11y/anchor-is-valid': [
@@ -25,7 +25,7 @@ module.exports = {
       },
     ],
     'compat/compat': 'error',
-    'import/no-extraneous-dependencies': ['error', { 'devDependencies': ['**/__mocks__/*', '**/*.test.js*'] }],
+    'import/no-extraneous-dependencies': ['error', { devDependencies: ['**/__mocks__/*', '**/*.test.js*'] }],
     'no-use-before-define': ['error', { functions: false }],
   },
 };

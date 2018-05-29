@@ -30,9 +30,14 @@
   },
   "lint-staged": {
     "*.{js,jsx}": [
+      "prettier --write",
       "eslint --fix",
       "git add",
       "jest --findRelatedTests"
+    ],
+    "*.{json,md,css}": [
+      "prettier --write",
+      "git add"
     ]
   },
   "dependencies": {
@@ -59,6 +64,7 @@
     "dom-testing-library": "^2.2.0",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-compat": "^2.2.0",
     "eslint-plugin-cypress": "^2.0.1",
     "eslint-plugin-import": "^2.11.0",
@@ -75,6 +81,7 @@
     "postcss-import": "^11.1.0",
     "postcss-loader": "^2.1.5",
     "postcss-preset-env": "^4.1.0",
+    "prettier": "^1.13.2",
     "react-testing-library": "^3.0.2",
     "serve": "^6.5.7",
     "timekeeper": "^2.1.1"
