@@ -25,6 +25,18 @@ export default {
         },
       },
 
+      solution: {
+        title: 'Solution',
+        description: 'Tethys Network',
+        list: {
+          unlimitedThroughput: 'Unlimited throughput',
+          consumerIncentivisation: 'Consumer incentivisation',
+          semanticExtraction: 'Semantic navigation and extraction',
+          temporalDatabase: 'Temporal database built on blockchain technology',
+          statisticalVerification: 'Decentralized statistical verification',
+        }
+      },
+
       valueProp: {
         shareEconomy: {
           title: 'A Share Economy for Untapped Computing Power and Human Intelligence',

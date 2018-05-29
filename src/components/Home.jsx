@@ -3,6 +3,7 @@ import TopNav from './TopNav';
 import HeroSection from './home/HeroSection';
 import CountDownSection from './home/CountDownSection';
 import ProblemSection from './home/ProblemSection';
+import SolutionSection from './home/SolutionSection';
 import ShareEconomySection from './home/ShareEconomySection';
 import SemanticWebSection from './home/SemanticWebSection';
 import InfinitelyScalableSection from './home/InfinitelyScalableSection';
@@ -44,6 +45,8 @@ const Home = () => (
       <CountDownSection />
 
       <ProblemSection />
+
+      <SolutionSection />
 
       <ShareEconomySection />
 

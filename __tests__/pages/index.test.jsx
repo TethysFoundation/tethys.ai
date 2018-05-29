@@ -13,6 +13,8 @@ describe('Index', () => {
 
     expect(queryByText('Problem')).toBeInTheDOM();
 
+    expect(queryByText('Solution')).toBeInTheDOM();
+
     expect(queryByText('A Share Economy for Untapped Computing Power and Human Intelligence')).toBeInTheDOM();
 
     expect(queryByText('An Artificial Intelligence to Navigate and Organize Semantic Information')).toBeInTheDOM();
