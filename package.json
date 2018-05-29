@@ -26,6 +26,7 @@
     "hooks": {
       "pre-commit": "yarn run lint-staged",
       "pre-push": "yarn test && ./e2e.sh",
+      "post-commit": "git update-index --again",
       "post-merge": "yarnhook",
       "post-checkout": "yarnhook",
       "post-rewrite": "yarnhook"
