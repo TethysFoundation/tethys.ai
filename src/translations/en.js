@@ -34,7 +34,11 @@ export default {
           semanticExtraction: 'Semantic navigation and extraction',
           temporalDatabase: 'Temporal database built on blockchain technology',
           statisticalVerification: 'Decentralized statistical verification',
-        }
+        },
+      },
+
+      whyTethys: {
+        title: 'Why Tethys?',
       },
 
       valueProp: {

@@ -15,6 +15,8 @@ describe('Index', () => {
 
     expect(queryByText('Solution')).toBeInTheDOM();
 
+    expect(queryByText('Why Tethys?')).toBeInTheDOM();
+
     expect(queryByText('A Share Economy for Untapped Computing Power and Human Intelligence')).toBeInTheDOM();
 
     expect(queryByText('An Artificial Intelligence to Navigate and Organize Semantic Information')).toBeInTheDOM();

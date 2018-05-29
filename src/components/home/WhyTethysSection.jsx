@@ -1,19 +1,21 @@
 import React from 'react';
 import { I18n } from 'react-i18next';
 import ListItem from '../ListItem';
-// eslint-disable-next-line import/no-unresolved
-import centralizedImageWebP from '../../assets/images/img_centralized_web_crawling.png?webp';
-import centralizedImage from '../../assets/images/img_centralized_web_crawling.png';
 import xImg from '../../assets/images/img_x.svg';
+import checkImg from '../../assets/images/img_checkbox.svg';
 import homeStyles from '../../assets/stylesheets/home.css';
 import styles from '../../assets/stylesheets/home/why_tethys_sections.css';
 
-const ProblemSection = () => (
+const WhyTethysSection = () => (
   <I18n>
     {t => (
-      <section className={[homeStyles.valuePropSection, homeStyles.boxedSection, styles.listSection].join(' ')}>
+      <section
+        className={[
+          homeStyles.valuePropSection, homeStyles.boxedSection, styles.listSection, styles.whySection,
+        ].join(' ')}
+      >
         <h2 className={styles.heading}>
-          {t('home.problem.title')}
+          {t('home.whyTethys.title')}
         </h2>
 
         <div className={styles.listSectionInner}>
@@ -31,12 +33,18 @@ const ProblemSection = () => (
             </ul>
           </div>
 
-          <div className={[homeStyles.flexImageBlock, styles.mainImage].join(' ')}>
-            <picture>
-              <source srcSet={centralizedImageWebP} type="image/webp" />
-              <source srcSet={centralizedImage} type="image/png" />
-              <img src={centralizedImage} alt="Servers in a centralized network crawl the web" />
-            </picture>
+          <div className={[homeStyles.flexTextBlock, styles.flexTextBlock].join(' ')}>
+            <h3 className={styles.listHeading}>
+              {t('home.solution.description')}
+            </h3>
+
+            <ul className={styles.list}>
+              <ListItem iconImage={checkImg} text={t('home.solution.list.unlimitedThroughput')} />
+              <ListItem iconImage={checkImg} text={t('home.solution.list.consumerIncentivisation')} />
+              <ListItem iconImage={checkImg} text={t('home.solution.list.semanticExtraction')} />
+              <ListItem iconImage={checkImg} text={t('home.solution.list.temporalDatabase')} />
+              <ListItem iconImage={checkImg} text={t('home.solution.list.statisticalVerification')} />
+            </ul>
           </div>
         </div>
       </section>
@@ -44,4 +52,4 @@ const ProblemSection = () => (
   </I18n>
 );
 
-export default ProblemSection;
+export default WhyTethysSection;

@@ -4,6 +4,7 @@ import HeroSection from './home/HeroSection';
 import CountDownSection from './home/CountDownSection';
 import ProblemSection from './home/ProblemSection';
 import SolutionSection from './home/SolutionSection';
+import WhyTethysSection from './home/WhyTethysSection';
 import ShareEconomySection from './home/ShareEconomySection';
 import SemanticWebSection from './home/SemanticWebSection';
 import InfinitelyScalableSection from './home/InfinitelyScalableSection';
@@ -47,6 +48,8 @@ const Home = () => (
       <ProblemSection />
 
       <SolutionSection />
+
+      <WhyTethysSection />
 
       <ShareEconomySection />
 
