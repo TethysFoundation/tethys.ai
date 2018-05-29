@@ -18,7 +18,7 @@ const Check = () => <img className={styles.checkIcon} src={checkImg} alt="" />;
 const InfinitelyScalableSection = () => (
   <I18n>
     {t => (
-      <section className={[homeStyles.valuePropSection, homeStyles.boxedSection, styles.solutionSection].join(' ')}>
+      <section className={[homeStyles.valuePropSection, styles.solutionSection].join(' ')}>
         <h2 className={styles.heading}>
           {t('home.solution.title')}
         </h2>

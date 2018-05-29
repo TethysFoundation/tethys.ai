@@ -29,6 +29,7 @@
 
 .flex-text-block {
   align-self: flex-start;
+  flex-basis: 310px;
 }
 
 .list-heading {
@@ -45,7 +46,7 @@
   color: var(--mainTextColor);
 
   & li {
-    max-width: 260px;
+    max-width: 300px;
     font-size: 16px;
     line-height: 1.5;
     margin-bottom: 15px;
