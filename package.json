@@ -22,6 +22,19 @@
     "Firefox ESR",
     "not ie < 9"
   ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn run lint-staged",
+      "pre-push": "yarn test && ./e2e.sh"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint --fix",
+      "git add",
+      "jest --findRelatedTests"
+    ]
+  },
   "dependencies": {
     "@zeit/next-css": "^0.2.0",
     "airbnb-prop-types": "^2.9.0",
@@ -51,11 +64,13 @@
     "eslint-plugin-import": "^2.11.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
+    "husky": "^1.0.0-rc.8",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^22.4.3",
     "jest-canvas-mock": "^1.0.2",
     "jest-mock-axios": "^2.1.11",
     "jest-runner-eslint": "^0.5.0",
+    "lint-staged": "^7.1.2",
     "postcss-flexbugs-fixes": "^3.3.1",
     "postcss-import": "^11.1.0",
     "postcss-loader": "^2.1.5",
