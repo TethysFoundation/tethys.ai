@@ -11,12 +11,10 @@ const HeroSection = () => (
       <section className={styles.heroSection}>
         <img className={styles.logo} src={mainLogo} alt="Tethys" />
 
-        <h2 className={styles.heading}>
-          {t('home.headline')}
-        </h2>
+        <h2 className={styles.heading}>{t('home.headline')}</h2>
 
-        <Button href={WHITEPAPER_URL} newTab text={t('home.viewWhitepaper')} />
-        <Button href="#subscribe" text={t('home.subscribeButton')} />
+        <Button href={WHITEPAPER_URL} newTab text={t('home.viewWhitepaper')} theme="green" />
+        <Button href="#subscribe" text={t('home.subscribeButton')} theme="green" />
       </section>
     )}
   </I18n>

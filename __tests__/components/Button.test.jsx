@@ -14,6 +14,11 @@ describe('Button', () => {
       expect(container).toMatchSnapshot();
     });
 
+    it('can render with a non-default theme', () => {
+      const { container } = render(<Button href="/example" text="Submit" theme="green" />);
+      expect(container).toMatchSnapshot();
+    });
+
     it('adds target _blank when newTab is set to true', () => {
       const { container } = render(<Button href="/example" text="Submit" size="small" newTab />);
       expect(container).toMatchSnapshot();
@@ -33,6 +38,11 @@ describe('Button', () => {
 
     it('can render with the small size class', () => {
       const { container } = render(<Button text="Submit" size="small" />);
+      expect(container).toMatchSnapshot();
+    });
+
+    it('can render with a non-default theme', () => {
+      const { container } = render(<Button text="Submit" theme="green" />);
       expect(container).toMatchSnapshot();
     });
 
