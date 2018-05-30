@@ -89,14 +89,12 @@
 
   & li {
     max-width: 300px;
-    font-size: 20px;
+    font-size: 16px;
     margin-bottom: 15px;
-    line-height: 1.5;
 
     @media (--phone-screen) {
       font-size: 12px;
       margin-bottom: 10px;
-      line-height: 1;
     }
   }
 
