@@ -13,8 +13,8 @@ const HeroSection = () => (
 
         <h2 className={styles.heading}>{t('home.headline')}</h2>
 
-        <Button href={WHITEPAPER_URL} newTab text={t('home.viewWhitepaper')} theme="green" />
-        <Button href="#subscribe" text={t('home.subscribeButton')} theme="green" />
+        <Button href={WHITEPAPER_URL} newTab text={t('home.viewWhitepaper')} />
+        <Button href="#subscribe" text={t('home.subscribeButton')} />
       </section>
     )}
   </I18n>

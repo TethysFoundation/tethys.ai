@@ -16,10 +16,10 @@ function getSizeClass(size) {
 }
 
 const Button = React.forwardRef((props, ref) => {
-  const { href, onClick, type, size, theme, newTab, disabled, text } = props;
+  const { href, onClick, type, size, newTab, disabled, text } = props;
 
   const sizeClass = getSizeClass(size);
-  const classes = [styles.btn, sizeClass, styles[`${theme}Theme`]];
+  const classes = [styles.btn, sizeClass];
 
   if (href) {
     const target = newTab ? '_blank' : null;
@@ -42,7 +42,6 @@ Button.propTypes = forbidExtraProps({
   onClick: PropTypes.func,
   type: PropTypes.oneOf(['submit']),
   size: PropTypes.oneOf(['small', 'large']),
-  theme: PropTypes.oneOf(['blue', 'green']),
   disabled: PropTypes.bool,
   newTab: PropTypes.bool,
   text: PropTypes.string.isRequired,
@@ -53,7 +52,6 @@ Button.defaultProps = {
   onClick: () => {},
   type: null,
   size: 'large',
-  theme: 'blue',
   disabled: false,
   newTab: false,
 };

@@ -13,6 +13,9 @@
   font-size: 24px;
   font-weight: 500;
 
+  color: var(--tethysGreen);
+  border: 2px solid var(--tethysGreenBorder);
+
   background: none;
   text-decoration: none;
   text-transform: uppercase;
@@ -29,16 +32,6 @@
 
 .btn-small {
   width: 170px;
-}
-
-.blue-theme {
-  color: var(--tethysBlue);
-  border: 2px solid var(--tethysBlueBorder);
-}
-
-.green-theme {
-  color: var(--tethysGreen);
-  border: 2px solid var(--tethysGreenBorder);
 }
 
 @media (--phone-screen) {
