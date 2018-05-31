@@ -60,6 +60,10 @@
 .flex-text-block {
   align-self: flex-start;
   flex-basis: 300px;
+
+  &:first-of-type {
+    flex-basis: 260px;
+  }
 }
 
 .list-heading {
