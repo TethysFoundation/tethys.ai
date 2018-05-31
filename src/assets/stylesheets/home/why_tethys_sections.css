@@ -91,11 +91,6 @@
     max-width: 300px;
     font-size: 16px;
     margin-bottom: 15px;
-
-    @media (--phone-screen) {
-      font-size: 12px;
-      margin-bottom: 10px;
-    }
   }
 
   & li:last-of-type {
