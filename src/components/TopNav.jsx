@@ -6,6 +6,8 @@ import background from '../assets/images/img_webBackground_textureCenterTop.jpg'
 import backgroundRedHaloImage from '../assets/images/img_webBackground_redHalo.png';
 import styles from '../assets/stylesheets/nav.css';
 
+const OVERVIEW_URL = '/static/Tethys-overview-v1.pdf';
+
 const TopNav = () => (
   <I18n>
     {t => (
@@ -15,7 +17,12 @@ const TopNav = () => (
           <img className={styles.navLogo} src={navLogo} alt="Tethys" />
 
           <div className={styles.navLinks}>
-            <a href={WHITEPAPER_URL} target="_blank">{t('nav.links.whitepaper')}</a>
+            <a href={WHITEPAPER_URL} target="_blank">
+              {t('nav.links.whitepaper')}
+            </a>
+            <a href={OVERVIEW_URL} target="_blank">
+              {t('nav.links.overview')}
+            </a>
           </div>
         </div>
       </nav>
