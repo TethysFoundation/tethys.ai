@@ -1,0 +1,44 @@
+@import '../shared/breakpoints.css';
+
+.roadmap-section {
+  margin-bottom: 120px;
+  padding-left: 60px;
+  padding-right: 60px;
+
+  @media (--small-desktop-screen) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  @media (--phone-screen) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  @media (--small-phone-screen) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.heading {
+  max-width: 675px;
+  font-weight: 400;
+  color: var(--headingTextColor);
+
+  font-size: 46px;
+  line-height: 46px;
+  margin: 0 0 50px;
+
+  @media (--phone-screen) {
+    font-size: 25px;
+    line-height: 25px;
+    margin: 0 0 25px;
+  }
+}
+
+.roadmap {
+  width: 100%;
+  max-width: 800px;
+  min-width: 260px;
+}

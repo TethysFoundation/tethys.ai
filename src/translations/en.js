@@ -44,25 +44,30 @@ export default {
       valueProp: {
         shareEconomy: {
           title: 'A Share Economy for Untapped Computing Power and Human Intelligence',
-          description: 'End users can earn Tethys tokens for sharing bandwidth and resources, enabling rapid growth at a low cost.',
+          description:
+            'End users can earn Tethys tokens for sharing bandwidth and resources, enabling rapid growth at a low cost.',
         },
         semanticWeb: {
           title: 'An Artificial Intelligence to Navigate and Organize Semantic Information',
-          description: 'Robust extraction of complex semantic information powered by an unparalleled modular deep learning model.',
+          description:
+            'Robust extraction of complex semantic information powered by an unparalleled modular deep learning model.',
         },
         infinitelyScalable: {
           title: 'An Infinitely Scalable Blockchain to Bring Long-term Memory to the Web',
-          description: 'Serves as a transparent and tamper proof memory base to store vast amounts of temporal information on the web.',
+          description:
+            'Serves as a transparent and tamper proof memory base to store vast amounts of temporal information on the web.',
         },
       },
 
       learnMore: 'Learn More About Tethys',
 
+      roadmap: { title: 'Roadmap' },
+
       subscribeForm: {
         title: 'Subscribe for Updates',
         email: { placeholder: 'Enter your email' },
         selectCountry: '– Country of residence –',
-        wontShareEmail: 'We won\'t share your email address or send you any spam',
+        wontShareEmail: "We won't share your email address or send you any spam",
         submitFeedback: 'Thanks for subscribing. Stay tuned for exciting updates and Tethys news.',
       },
 

@@ -9,6 +9,7 @@ import ShareEconomySection from './home/ShareEconomySection';
 import SemanticWebSection from './home/SemanticWebSection';
 import InfinitelyScalableSection from './home/InfinitelyScalableSection';
 import LearnMoreSection from './home/LearnMoreSection';
+import Roadmap from './home/Roadmap';
 import MoreInfoSection from './home/MoreInfoSection';
 import Footer from './Footer';
 import styles from '../assets/stylesheets/home.css';
@@ -58,6 +59,8 @@ const Home = () => (
       <InfinitelyScalableSection />
 
       <LearnMoreSection />
+
+      <Roadmap />
 
       <MoreInfoSection />
     </div>

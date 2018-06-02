@@ -8,8 +8,11 @@ describe('Index', () => {
   test('renders the home page content', () => {
     const { queryByText } = render(<Index />);
 
-    expect(queryByText('A decentralized network based on blockchain technology powering NextGen Semantic Web'))
-      .toBeInTheDOM();
+    expect(
+      queryByText('A decentralized network based on blockchain technology powering NextGen Semantic Web')
+    ).toBeInTheDOM();
+
+    expect(queryByText('Pre-sale starts 07/01/2018')).toBeInTheDOM();
 
     expect(queryByText('Problem')).toBeInTheDOM();
 
@@ -25,7 +28,7 @@ describe('Index', () => {
 
     expect(queryByText('Learn More About Tethys')).toBeInTheDOM();
 
-    expect(queryByText('Pre-sale starts 07/01/2018')).toBeInTheDOM();
+    expect(queryByText('Roadmap')).toBeInTheDOM();
 
     expect(queryByText('Subscribe for Updates')).toBeInTheDOM();
 
