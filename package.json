@@ -11,7 +11,7 @@
     "preexport": "yarn build",
     "export": "next export",
     "postexport": "cp static/robots.txt out && cp static/sitemap.xml out && cp static/favicon.ico out",
-    "serve": "serve out -p 8080",
+    "serve": "serve out --listen 8080",
     "test": "jest",
     "test:watch": "jest --watch --notify",
     "lint": "eslint src __tests__ __mocks__ **/src **/__tests__ **/__mocks__ cypress --ext .jsx --ext .js"
