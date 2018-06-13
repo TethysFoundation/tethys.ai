@@ -3,6 +3,9 @@ node_js:
   - "8.10"
 # temporarily use osx due to: https://github.com/tcoopman/image-webpack-loader/issues/142
 os: osx
+before_install: yarn global add greenkeeper-lockfile@1
+before_script: greenkeeper-lockfile-update
+after_script: greenkeeper-lockfile-upload
 script:
   - yarn setup
   - yarn test
