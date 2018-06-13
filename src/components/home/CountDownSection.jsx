@@ -2,7 +2,7 @@ import React from 'react';
 import CountDownClock from '../CountDownClock';
 import styles from '../../assets/stylesheets/home.css';
 
-const PRE_SALE_DATE = new Date(2018, 6, 1, 0, 0, 0);
+const PRE_SALE_DATE = new Date(2018, 7, 1, 0, 0, 0);
 
 const CountDownSection = () => (
   <section className={styles.wideSection}>

@@ -46,17 +46,17 @@ const Home = () => (
 
       <CountDownSection />
 
-      <ProblemSection />
-
-      <SolutionSection />
-
-      <WhyTethysSection />
-
       <ShareEconomySection />
 
       <SemanticWebSection />
 
       <InfinitelyScalableSection />
+
+      <ProblemSection />
+
+      <SolutionSection />
+
+      <WhyTethysSection />
 
       <LearnMoreSection />
 
