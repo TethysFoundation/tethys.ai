@@ -21,7 +21,7 @@ import backgroundRedHaloImage from '../assets/images/img_webBackground_redHalo.p
 import backgroundGreedHaloImageWebP from '../assets/images/img_webBackground_greenHalo.png?webp';
 import backgroundGreedHaloImage from '../assets/images/img_webBackground_greenHalo.png';
 
-export const WHITEPAPER_URL = '/static/Whitepaper-v1_7.pdf';
+export const WHITEPAPER_URL = '/static/Tethys-White-Paper-v2.1.pdf';
 
 const Home = () => (
   <React.Fragment>
