@@ -17,10 +17,10 @@ const TopNav = () => (
           <img className={styles.navLogo} src={navLogo} alt="Tethys" />
 
           <div className={styles.navLinks}>
-            <a href={WHITEPAPER_URL} target="_blank">
+            <a href={WHITEPAPER_URL} rel="noopener noreferrer" target="_blank">
               {t('nav.links.whitepaper')}
             </a>
-            <a href={OVERVIEW_URL} target="_blank">
+            <a href={OVERVIEW_URL} rel="noopener noreferrer" target="_blank">
               {t('nav.links.overview')}
             </a>
           </div>
