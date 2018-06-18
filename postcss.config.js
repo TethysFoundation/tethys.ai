@@ -1,9 +1,13 @@
 module.exports = {
   plugins: {
     'postcss-import': {},
+    'postcss-flexbugs-fixes': {},
     'postcss-preset-env': {
-      stage: 1,
+      autoprefixer: { flexbox: 'no-2009' },
+      stage: 2,
       features: {
+        'nesting-rules': true,
+        'custom-media-queries': true,
         'custom-properties': {
           preserve: false,
           variables: {
@@ -22,7 +26,5 @@ module.exports = {
         },
       },
     },
-    autoprefixer: { flexbox: 'no-2009' },
-    'postcss-flexbugs-fixes': {},
   },
 };
