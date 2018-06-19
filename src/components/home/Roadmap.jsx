@@ -1,5 +1,6 @@
 import React from 'react';
 import { I18n } from 'react-i18next';
+import LazyLoad from 'react-lazyload';
 // eslint-disable-next-line import/no-unresolved
 import roadmapImgWebP from '../../assets/images/img_roadmap.png?webp';
 import roadmapImg from '../../assets/images/img_roadmap.png';
@@ -12,11 +13,13 @@ const Roadmap = () => (
       <section className={styles.roadmapSection}>
         <h2 className={[homeStyles.heading, styles.heading].join(' ')}>{t('home.roadmap.title')}</h2>
 
-        <picture>
-          <source srcSet={roadmapImgWebP} type="image/webp" />
-          <source srcSet={roadmapImg} type="image/png" />
-          <img className={styles.roadmap} src={roadmapImg} alt="Tethys Roadmap" />
-        </picture>
+        <LazyLoad offset={200}>
+          <picture>
+            <source srcSet={roadmapImgWebP} type="image/webp" />
+            <source srcSet={roadmapImg} type="image/png" />
+            <img className={styles.roadmap} src={roadmapImg} alt="Tethys Roadmap" />
+          </picture>
+        </LazyLoad>
       </section>
     )}
   </I18n>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { I18n } from 'react-i18next';
+import LazyLoad from 'react-lazyload';
 import ListItem from '../ListItem';
 // eslint-disable-next-line import/no-unresolved
 import networkImageWebP from '../../assets/images/img_tethys_network_vertical.png?webp';
@@ -12,15 +13,11 @@ const SolutionSection = () => (
   <I18n>
     {t => (
       <section className={[homeStyles.valuePropSection, styles.listSection].join(' ')}>
-        <h2 className={styles.heading}>
-          {t('home.solution.title')}
-        </h2>
+        <h2 className={styles.heading}>{t('home.solution.title')}</h2>
 
         <div className={styles.listSectionInner}>
           <div className={[homeStyles.flexTextBlock, styles.flexTextBlock].join(' ')}>
-            <h3 className={styles.listHeading}>
-              {t('home.solution.description')}
-            </h3>
+            <h3 className={styles.listHeading}>{t('home.solution.description')}</h3>
 
             <ul className={styles.list}>
               <ListItem iconImage={checkImg} text={t('home.solution.list.unlimitedThroughput')} />
@@ -32,11 +29,13 @@ const SolutionSection = () => (
           </div>
 
           <div className={[homeStyles.flexImageBlock, styles.mainImage].join(' ')}>
-            <picture>
-              <source srcSet={networkImageWebP} type="image/webp" />
-              <source srcSet={networkImage} type="image/png" />
-              <img src={networkImage} alt="The decentralized Tethys network" />
-            </picture>
+            <LazyLoad offset={200}>
+              <picture>
+                <source srcSet={networkImageWebP} type="image/webp" />
+                <source srcSet={networkImage} type="image/png" />
+                <img src={networkImage} alt="The decentralized Tethys network" />
+              </picture>
+            </LazyLoad>
           </div>
         </div>
       </section>

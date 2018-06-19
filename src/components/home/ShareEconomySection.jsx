@@ -1,5 +1,6 @@
 import React from 'react';
 import { I18n } from 'react-i18next';
+import LazyLoad from 'react-lazyload';
 // eslint-disable-next-line import/no-unresolved
 import networkImageWebP from '../../assets/images/img_NetworkVisual.png?webp';
 import networkImage from '../../assets/images/img_NetworkVisual.png';
@@ -10,21 +11,19 @@ const ShareEconomySection = () => (
     {t => (
       <section className={[styles.valuePropSection, styles.boxedSection].join(' ')}>
         <div className={styles.flexTextBlock}>
-          <h2 className={styles.heading}>
-            {t('home.valueProp.shareEconomy.title')}
-          </h2>
+          <h2 className={styles.heading}>{t('home.valueProp.shareEconomy.title')}</h2>
 
-          <p>
-            {t('home.valueProp.shareEconomy.description')}
-          </p>
+          <p>{t('home.valueProp.shareEconomy.description')}</p>
         </div>
 
         <div className={styles.flexImageBlock}>
-          <picture>
-            <source srcSet={networkImageWebP} type="image/webp" />
-            <source srcSet={networkImage} type="image/png" />
-            <img src={networkImage} alt="Network" />
-          </picture>
+          <LazyLoad offset={200}>
+            <picture>
+              <source srcSet={networkImageWebP} type="image/webp" />
+              <source srcSet={networkImage} type="image/png" />
+              <img src={networkImage} alt="Network" />
+            </picture>
+          </LazyLoad>
         </div>
       </section>
     )}
