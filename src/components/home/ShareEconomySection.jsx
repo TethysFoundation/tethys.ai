@@ -17,7 +17,7 @@ const ShareEconomySection = () => (
         </div>
 
         <div className={styles.flexImageBlock}>
-          <LazyLoad offset={200}>
+          <LazyLoad offset={300} once>
             <picture>
               <source srcSet={networkImageWebP} type="image/webp" />
               <source srcSet={networkImage} type="image/png" />

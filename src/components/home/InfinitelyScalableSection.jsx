@@ -17,7 +17,7 @@ const InfinitelyScalableSection = () => (
         </div>
 
         <div className={styles.flexImageBlock}>
-          <LazyLoad offset={200}>
+          <LazyLoad offset={300} once>
             <picture>
               <source srcSet={memoryImageWebP} type="image/webp" />
               <source srcSet={memoryImage} type="image/png" />

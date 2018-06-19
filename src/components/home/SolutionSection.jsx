@@ -29,7 +29,7 @@ const SolutionSection = () => (
           </div>
 
           <div className={[homeStyles.flexImageBlock, styles.mainImage].join(' ')}>
-            <LazyLoad offset={200}>
+            <LazyLoad offset={300} once>
               <picture>
                 <source srcSet={networkImageWebP} type="image/webp" />
                 <source srcSet={networkImage} type="image/png" />

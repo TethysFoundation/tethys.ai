@@ -13,7 +13,7 @@ const Roadmap = () => (
       <section className={styles.roadmapSection}>
         <h2 className={[homeStyles.heading, styles.heading].join(' ')}>{t('home.roadmap.title')}</h2>
 
-        <LazyLoad offset={200}>
+        <LazyLoad offset={300} once>
           <picture>
             <source srcSet={roadmapImgWebP} type="image/webp" />
             <source srcSet={roadmapImg} type="image/png" />
