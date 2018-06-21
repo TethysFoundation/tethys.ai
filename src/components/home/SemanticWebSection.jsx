@@ -11,7 +11,7 @@ const SemanticWebSection = () => (
     {t => (
       <section className={[styles.valuePropSection, styles.reverseWrap].join(' ')}>
         <div className={styles.flexImageBlock}>
-          <LazyLoad offset={300} once>
+          <LazyLoad offset={300} once height={300}>
             <picture>
               <source srcSet={semanticImageWebP} type="image/webp" />
               <source srcSet={semanticImage} type="image/png" />

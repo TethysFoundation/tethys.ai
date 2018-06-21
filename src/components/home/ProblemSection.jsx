@@ -29,7 +29,7 @@ const ProblemSection = () => (
           </div>
 
           <div className={[homeStyles.flexImageBlock, styles.mainImage].join(' ')}>
-            <LazyLoad offset={300} once>
+            <LazyLoad offset={300} once height={300}>
               <picture>
                 <source srcSet={centralizedImageWebP} type="image/webp" />
                 <source srcSet={centralizedImage} type="image/png" />
