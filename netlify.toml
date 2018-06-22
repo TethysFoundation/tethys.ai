@@ -5,4 +5,4 @@
 
 # Production branch settings
 [context.production]
-  environment = { ENABLE_ANALYTICS = "true" }
+  environment = { ENABLE_ANALYTICS = "true", ENABLE_SENTRY = "true" }
