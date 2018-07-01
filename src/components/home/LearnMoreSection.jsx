@@ -1,6 +1,6 @@
 import React from 'react';
 import { I18n } from 'react-i18next';
-import { WHITEPAPER_URL } from '../Home';
+import { WHITEPAPER_URL } from '../../util/constants';
 import Button from '../Button';
 import homeStyles from '../../assets/stylesheets/home.css';
 import styles from '../../assets/stylesheets/home/learn_more_section.css';

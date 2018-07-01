@@ -1,10 +1,12 @@
 import React from 'react';
-import { render } from 'react-testing-library';
+import { render, cleanup } from 'react-testing-library';
 import 'dom-testing-library/extend-expect';
 import '../../src/i18n';
 import Index from '../../pages/index';
 
 describe('Index', () => {
+  afterEach(cleanup);
+
   test('renders the home page content', () => {
     const { queryByText } = render(<Index />);
 

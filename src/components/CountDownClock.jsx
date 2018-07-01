@@ -22,8 +22,10 @@ export default class CountDownClock extends React.Component {
     endDate: PropTypes.instanceOf(Date).isRequired,
   });
 
-  // eslint-disable-next-line react/sort-comp
-  endTime = this.props.endDate.getTime();
+  constructor(props) {
+    super(props);
+    this.endTime = props.endDate.getTime();
+  }
 
   getDaysRemaining = () => {
     const currentTime = new Date().getTime();
@@ -31,15 +33,11 @@ export default class CountDownClock extends React.Component {
     return msRemaining / (1000 * 60 * 60 * 24);
   };
 
-  displayDaysRemaining = () => Math.floor(this.getDaysRemaining());
-
   getHoursRemaining = () => {
     const currentTime = new Date().getTime();
     const msRemaining = Math.max(0, this.endTime - currentTime);
     return (msRemaining / (1000 * 60 * 60)) % 24;
   };
-
-  displayHoursRemaining = () => Math.floor(this.getHoursRemaining());
 
   getMinutesRemaining = () => {
     const currentTime = new Date().getTime();
@@ -47,24 +45,29 @@ export default class CountDownClock extends React.Component {
     return (msRemaining / 1000 / 60) % 60;
   };
 
-  displayMinutesRemaining = () => Math.floor(this.getMinutesRemaining());
-
   getMillisRemaining = () => {
-    const endTime = this.props.endDate.getTime();
     const currentTime = new Date().getTime();
-    const msRemaining = (endTime - currentTime) % 60000;
+    const msRemaining = (this.endTime - currentTime) % 60000;
     return Math.max(0, msRemaining);
   };
 
+  displayDaysRemaining = () => Math.floor(this.getDaysRemaining());
+
+  displayMinutesRemaining = () => Math.floor(this.getMinutesRemaining());
+
   displaySecondsRemaining = () => Math.floor(this.getMillisRemaining() / 1000);
 
+  displayHoursRemaining = () => Math.floor(this.getHoursRemaining());
+
   render() {
+    const { endDate } = this.props;
+
     return (
       <I18n>
         {t => (
           <div className={styles.container}>
             <h2 data-testid="heading" className={styles.heading}>
-              {t('countDown.heading', { endDate: formatDate(this.props.endDate) })}
+              {t('countDown.heading', { endDate: formatDate(endDate) })}
             </h2>
 
             <div data-testid="counter-container" className={styles.countDown}>

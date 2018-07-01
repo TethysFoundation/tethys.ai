@@ -1,23 +1,26 @@
 import React from 'react';
-import { render } from 'react-testing-library';
+import { render, cleanup } from 'react-testing-library';
 import 'dom-testing-library/extend-expect';
 import tk from 'timekeeper';
 import '../../src/i18n';
 import CountDownClock from '../../src/components/CountDownClock';
 
 jest.mock('../../src/components/PieCounter', () =>
-  jest.fn(props => (
+  jest.fn(({ getValue, displayValue, max, label }) => (
     <div>
-      <span>{props.getValue()}</span>
-      <span>{props.displayValue()}</span>
-      <span>{props.max}</span>
-      <span>{props.label}</span>
+      <span>{getValue()}</span>
+      <span>{displayValue()}</span>
+      <span>{max}</span>
+      <span>{label}</span>
     </div>
-  )));
+  ))
+);
 
 describe('CountDownClock', () => {
   const endDate = new Date(2018, 4, 18, 0, 0, 0, 0);
   tk.freeze(new Date(2018, 4, 3, 0, 0, 1, 500));
+
+  afterEach(cleanup);
 
   it('renders correctly with a future endDate', () => {
     const { getByTestId } = render(<CountDownClock endDate={endDate} />);

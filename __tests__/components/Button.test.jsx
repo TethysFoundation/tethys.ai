@@ -1,8 +1,10 @@
 import React from 'react';
-import { render } from 'react-testing-library';
+import { render, cleanup } from 'react-testing-library';
 import Button from '../../src/components/Button';
 
 describe('Button', () => {
+  afterEach(cleanup);
+
   describe('when given an href', () => {
     it('renders an "a" tag', () => {
       const { container } = render(<Button href="/example" text="Submit" />);
