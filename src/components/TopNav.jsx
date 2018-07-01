@@ -1,6 +1,6 @@
 import React from 'react';
 import { I18n } from 'react-i18next';
-import { WHITEPAPER_URL } from './Home';
+import { WHITEPAPER_URL } from '../util/constants';
 import navLogo from '../assets/images/img_TethysLogo_Horizontal.png';
 import background from '../assets/images/img_webBackground_textureCenterTop.jpg';
 import backgroundRedHaloImage from '../assets/images/img_webBackground_redHalo.png';
