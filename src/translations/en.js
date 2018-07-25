@@ -11,7 +11,7 @@ export default {
     home: {
       headline: 'A decentralized network based on blockchain technology powering NextGen Semantic Web',
       viewWhitepaper: 'View Whitepaper',
-      subscribeButton: 'Register for ICO',
+      subscribeButton: 'Register for Updates',
 
       problem: {
         title: 'Problem',
