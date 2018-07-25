@@ -1,7 +1,6 @@
 import React from 'react';
 import TopNav from './TopNav';
 import HeroSection from './home/HeroSection';
-import CountDownSection from './home/CountDownSection';
 import ProblemSection from './home/ProblemSection';
 import SolutionSection from './home/SolutionSection';
 import WhyTethysSection from './home/WhyTethysSection';
@@ -41,8 +40,6 @@ const Home = () => (
 
     <div className={styles.homeContent}>
       <HeroSection />
-
-      <CountDownSection />
 
       <ShareEconomySection />
 
