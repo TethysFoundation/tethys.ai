@@ -1,18 +1,18 @@
 import React from 'react';
-import { render } from 'react-testing-library';
+import { render, cleanup } from 'react-testing-library';
 import 'dom-testing-library/extend-expect';
 import '../../src/i18n';
 import Index from '../../pages/index';
 
 describe('Index', () => {
+  afterEach(cleanup);
+
   test('renders the home page content', () => {
     const { queryByText } = render(<Index />);
 
     expect(
       queryByText('A decentralized network based on blockchain technology powering NextGen Semantic Web')
     ).toBeInTheDOM();
-
-    expect(queryByText('Pre-sale starts 08/01/2018')).toBeInTheDOM();
 
     expect(queryByText('A Share Economy for Untapped Computing Power and Human Intelligence')).toBeInTheDOM();
 

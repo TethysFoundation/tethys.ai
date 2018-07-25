@@ -1,7 +1,6 @@
 import React from 'react';
 import TopNav from './TopNav';
 import HeroSection from './home/HeroSection';
-import CountDownSection from './home/CountDownSection';
 import ProblemSection from './home/ProblemSection';
 import SolutionSection from './home/SolutionSection';
 import WhyTethysSection from './home/WhyTethysSection';
@@ -20,8 +19,6 @@ import backgroundRedHaloImage from '../assets/images/img_webBackground_redHalo.p
 // eslint-disable-next-line import/no-unresolved
 import backgroundGreedHaloImageWebP from '../assets/images/img_webBackground_greenHalo.png?webp';
 import backgroundGreedHaloImage from '../assets/images/img_webBackground_greenHalo.png';
-
-export const WHITEPAPER_URL = '/static/Tethys-White-Paper-v2.1.pdf';
 
 const Home = () => (
   <React.Fragment>
@@ -43,8 +40,6 @@ const Home = () => (
 
     <div className={styles.homeContent}>
       <HeroSection />
-
-      <CountDownSection />
 
       <ShareEconomySection />
 

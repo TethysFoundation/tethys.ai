@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, Simulate, wait } from 'react-testing-library';
+import { render, cleanup, fireEvent, wait } from 'react-testing-library';
 import 'dom-testing-library/extend-expect';
 import '../../src/i18n';
 import api from '../../src/api';
@@ -12,6 +12,7 @@ jest.mock('../../src/util/sendEvent', () => jest.fn());
 describe('SubscribeForm', () => {
   afterEach(() => {
     api.clearMocks();
+    cleanup();
   });
 
   describe('when the form is submitted', () => {
@@ -22,7 +23,7 @@ describe('SubscribeForm', () => {
       getByTestId('country-select').value = 'SGP';
 
       const subscribeButton = getByText('Submit');
-      Simulate.submit(subscribeButton);
+      fireEvent.submit(subscribeButton);
 
       await wait(() => {
         expect(api.createSubscriber).toHaveBeenCalledTimes(1);
@@ -37,21 +38,19 @@ describe('SubscribeForm', () => {
       getByTestId('country-select').value = 'SGP';
 
       const subscribeButton = getByText('Submit');
-      Simulate.submit(subscribeButton);
+      fireEvent.submit(subscribeButton);
 
       await wait(() => expect(sendEvent).toHaveBeenCalledWith('generate_lead', { label: 'SGP' }));
     });
 
     it('displays feedback to the user', () => {
-      const {
-        container, getByTestId, queryByTestId, getByText, queryByText,
-      } = render(<SubscribeForm />);
+      const { container, getByTestId, queryByTestId, getByText, queryByText } = render(<SubscribeForm />);
 
       getByTestId('email').value = 'test@example.com';
       getByTestId('country-select').value = 'SGP';
 
       const subscribeButton = getByText('Submit');
-      Simulate.submit(subscribeButton);
+      fireEvent.submit(subscribeButton);
 
       // removes the form
       expect(queryByText('Submit')).not.toBeInTheDOM();
@@ -77,7 +76,7 @@ describe('SubscribeForm', () => {
     expect(getByTestId('selected-country')).toHaveTextContent('');
 
     getByTestId('country-select').value = 'CAN';
-    Simulate.change(getByTestId('country-select'));
+    fireEvent.change(getByTestId('country-select'));
 
     expect(getByTestId('selected-country')).toHaveTextContent('CAN');
   });

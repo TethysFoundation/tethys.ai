@@ -1,6 +1,6 @@
 import React from 'react';
 import { I18n } from 'react-i18next';
-import { WHITEPAPER_URL } from '../Home';
+import { WHITEPAPER_URL } from '../../util/constants';
 import Button from '../Button';
 import mainLogo from '../../assets/images/img_TethysLogo_Vertical.png';
 import styles from '../../assets/stylesheets/home/hero_section.css';

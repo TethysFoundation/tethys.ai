@@ -31,6 +31,7 @@ const Button = React.forwardRef((props, ref) => {
   }
 
   return (
+    // eslint-disable-next-line react/button-has-type
     <button ref={ref} disabled={disabled} type={type} className={classes.join(' ')} onClick={onClick}>
       {text}
     </button>
@@ -40,7 +41,7 @@ const Button = React.forwardRef((props, ref) => {
 Button.propTypes = forbidExtraProps({
   href: PropTypes.string,
   onClick: PropTypes.func,
-  type: PropTypes.oneOf(['submit']),
+  type: PropTypes.oneOf(['submit', 'button']),
   size: PropTypes.oneOf(['small', 'large']),
   disabled: PropTypes.bool,
   newTab: PropTypes.bool,
@@ -50,7 +51,7 @@ Button.propTypes = forbidExtraProps({
 Button.defaultProps = {
   href: null,
   onClick: () => {},
-  type: null,
+  type: 'button',
   size: 'large',
   disabled: false,
   newTab: false,

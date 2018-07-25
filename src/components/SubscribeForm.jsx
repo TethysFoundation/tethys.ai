@@ -12,17 +12,28 @@ class SubscribeForm extends React.Component {
     t: PropTypes.func.isRequired,
   };
 
-  state = { submitted: false, selectedCountry: '' };
+  constructor(props) {
+    super(props);
 
-  onCountrySelected = (e) => {
+    this.emailRef = React.createRef();
+    this.countryRef = React.createRef();
+    this.buttonRef = React.createRef();
+
+    const { t } = props;
+    this.t = t;
+
+    this.state = { submitted: false, selectedCountry: '' };
+  }
+
+  onCountrySelected = e => {
     this.setState({ selectedCountry: e.target.value });
   };
 
-  submit = (e) => {
+  submit = e => {
     e.preventDefault();
 
     this.buttonRef.current.disabled = true;
-    this.buttonRef.current.innerHTML = this.props.t('success');
+    this.buttonRef.current.innerHTML = this.t('success');
 
     api.createSubscriber({
       email: this.emailRef.current.value,
@@ -34,26 +45,22 @@ class SubscribeForm extends React.Component {
     sendEvent('generate_lead', { label: this.countryRef.current.value });
   };
 
-  emailRef = React.createRef();
-  countryRef = React.createRef();
-  buttonRef = React.createRef();
-
   renderContent() {
-    return this.state.submitted ? this.renderFeedback() : this.renderForm();
+    const { submitted } = this.state;
+    return submitted ? this.renderFeedback() : this.renderForm();
   }
 
   renderFeedback() {
-    const { t } = this.props;
     return (
       <div className={styles.feedbackContainer}>
-        <p>{t('home.subscribeForm.submitFeedback')}</p>
-        <Button disabled size="small" text={t('success')} />
+        <p>{this.t('home.subscribeForm.submitFeedback')}</p>
+        <Button disabled size="small" text={this.t('success')} />
       </div>
     );
   }
 
   renderForm() {
-    const { t } = this.props;
+    const { selectedCountry } = this.state;
     return (
       <form action="" onSubmit={this.submit}>
         <div className={styles.formInner}>
@@ -63,12 +70,12 @@ class SubscribeForm extends React.Component {
             type="email"
             name="email"
             required
-            placeholder={t('home.subscribeForm.email.placeholder')}
+            placeholder={this.t('home.subscribeForm.email.placeholder')}
           />
 
           <div data-testid="country-wrapper" className={styles.countrySelector}>
             <div data-testid="selected-country" className={styles.selectedCountry}>
-              {this.state.selectedCountry}
+              {selectedCountry}
             </div>
 
             <select
@@ -83,19 +90,15 @@ class SubscribeForm extends React.Component {
           </div>
         </div>
 
-        <p className={styles.disclaimer}>{t('home.subscribeForm.wontShareEmail')}</p>
+        <p className={styles.disclaimer}>{this.t('home.subscribeForm.wontShareEmail')}</p>
 
-        <Button ref={this.buttonRef} type="submit" size="small" text={t('submit')} />
+        <Button ref={this.buttonRef} type="submit" size="small" text={this.t('submit')} />
       </form>
     );
   }
 
   render() {
-    return (
-      <div className={styles.container}>
-        {this.renderContent()}
-      </div>
-    );
+    return <div className={styles.container}>{this.renderContent()}</div>;
   }
 }
 
