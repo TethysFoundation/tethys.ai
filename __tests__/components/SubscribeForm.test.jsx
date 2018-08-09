@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, cleanup, fireEvent, wait } from 'react-testing-library';
-import 'dom-testing-library/extend-expect';
+import 'jest-dom/extend-expect';
 import '../../src/i18n';
 import api from '../../src/api';
 import sendEvent from '../../src/util/sendEvent';
@@ -53,9 +53,9 @@ describe('SubscribeForm', () => {
       fireEvent.submit(subscribeButton);
 
       // removes the form
-      expect(queryByText('Submit')).not.toBeInTheDOM();
-      expect(queryByTestId('email')).not.toBeInTheDOM();
-      expect(queryByTestId('country-select')).not.toBeInTheDOM();
+      expect(queryByText('Submit')).not.toBeInTheDocument();
+      expect(queryByTestId('email')).not.toBeInTheDocument();
+      expect(queryByTestId('country-select')).not.toBeInTheDocument();
 
       // displays feedback
       expect(container).toHaveTextContent('Thanks for subscribing');
