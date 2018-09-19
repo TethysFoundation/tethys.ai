@@ -988,15 +988,15 @@
   dependencies:
     webpack-bundle-analyzer "2.11.1"
 
-"@zeit/next-css@^0.2.0":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@zeit/next-css/-/next-css-0.2.0.tgz#35da071256397b509b86ac7726ce0f7d3593e62b"
+"@zeit/next-css@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@zeit/next-css/-/next-css-1.0.0.tgz#7b3e1645cb21ef076006a87eea531b2a71d602e5"
   dependencies:
     css-loader "0.28.9"
-    extract-text-webpack-plugin "3.0.2"
     extracted-loader "1.0.4"
     find-up "2.1.0"
     ignore-loader "0.1.2"
+    mini-css-extract-plugin "^0.4.1"
     postcss-loader "2.0.10"
 
 "@zeit/schemas@1.2.0":
@@ -1392,7 +1392,7 @@ async@^1.4.0:
   version "1.5.2"
   resolved "https://registry.yarnpkg.com/async/-/async-1.5.2.tgz#ec6a61ae56480c0c3cb241c95618e20892f9672a"
 
-async@^2.1.2, async@^2.1.4, async@^2.4.1:
+async@^2.1.2, async@^2.1.4:
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/async/-/async-2.6.0.tgz#61a29abb6fcc026fea77e56d1c6ec53a795951f4"
   dependencies:
@@ -3329,14 +3329,13 @@ dom-serializer@0:
     domelementtype "~1.1.1"
     entities "~1.1.1"
 
-dom-testing-library@^2.6.0:
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/dom-testing-library/-/dom-testing-library-2.6.0.tgz#8bc38c63b41b10830e6a5034f9fc0ed78c8ba484"
+dom-testing-library@^3.1.0:
+  version "3.5.2"
+  resolved "https://registry.yarnpkg.com/dom-testing-library/-/dom-testing-library-3.5.2.tgz#364927f8ef56964601c8a179d9c3c059811beb0a"
   dependencies:
-    jest-dom "^1.0.0"
     mutationobserver-shim "^0.3.2"
     pretty-format "^22.4.3"
-    wait-for-expect "^0.4.0"
+    wait-for-expect "^1.0.0"
 
 dom-testing-library@^3.2.0:
   version "3.2.0"
@@ -4169,15 +4168,6 @@ extglob@^2.0.2, extglob@^2.0.4:
     regex-not "^1.0.0"
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
-
-extract-text-webpack-plugin@3.0.2:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/extract-text-webpack-plugin/-/extract-text-webpack-plugin-3.0.2.tgz#5f043eaa02f9750a9258b78c0a6e0dc1408fb2f7"
-  dependencies:
-    async "^2.4.1"
-    loader-utils "^1.1.0"
-    schema-utils "^0.3.0"
-    webpack-sources "^1.0.1"
 
 extract-zip@1.6.6:
   version "1.6.6"
@@ -5973,12 +5963,6 @@ jest-docblock@^22.4.0, jest-docblock@^22.4.3:
   dependencies:
     detect-newline "^2.1.0"
 
-jest-dom@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/jest-dom/-/jest-dom-1.0.0.tgz#775bbfc532e72adf6dfa589fc7cb057e196faff5"
-  dependencies:
-    jest-matcher-utils "^22.4.3"
-
 jest-dom@^1.12.0:
   version "1.12.0"
   resolved "https://registry.yarnpkg.com/jest-dom/-/jest-dom-1.12.0.tgz#afdb4eb72fc304fac4ced2c7c7e09d1a1ae1002e"
@@ -7070,6 +7054,14 @@ min-document@^2.19.0:
   resolved "https://registry.yarnpkg.com/min-document/-/min-document-2.19.0.tgz#7bd282e3f5842ed295bb748cdd9f1ffa2c824685"
   dependencies:
     dom-walk "^0.1.0"
+
+mini-css-extract-plugin@^0.4.1:
+  version "0.4.3"
+  resolved "https://registry.yarnpkg.com/mini-css-extract-plugin/-/mini-css-extract-plugin-0.4.3.tgz#98d60fcc5d228c3e36a9bd15a1d6816d6580beb8"
+  dependencies:
+    loader-utils "^1.1.0"
+    schema-utils "^1.0.0"
+    webpack-sources "^1.1.0"
 
 minimalistic-assert@^1.0.0:
   version "1.0.1"
