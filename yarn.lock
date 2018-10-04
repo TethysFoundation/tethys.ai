@@ -3329,14 +3329,13 @@ dom-serializer@0:
     domelementtype "~1.1.1"
     entities "~1.1.1"
 
-dom-testing-library@^2.6.0:
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/dom-testing-library/-/dom-testing-library-2.6.0.tgz#8bc38c63b41b10830e6a5034f9fc0ed78c8ba484"
+dom-testing-library@^3.1.0:
+  version "3.8.1"
+  resolved "https://registry.yarnpkg.com/dom-testing-library/-/dom-testing-library-3.8.1.tgz#8607ef2e911f14f594028d14bc9f44fd32446078"
   dependencies:
-    jest-dom "^1.0.0"
     mutationobserver-shim "^0.3.2"
-    pretty-format "^22.4.3"
-    wait-for-expect "^0.4.0"
+    pretty-format "^23.6.0"
+    wait-for-expect "^1.0.0"
 
 dom-testing-library@^3.2.0:
   version "3.2.0"
@@ -5973,15 +5972,9 @@ jest-docblock@^22.4.0, jest-docblock@^22.4.3:
   dependencies:
     detect-newline "^2.1.0"
 
-jest-dom@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/jest-dom/-/jest-dom-1.0.0.tgz#775bbfc532e72adf6dfa589fc7cb057e196faff5"
-  dependencies:
-    jest-matcher-utils "^22.4.3"
-
-jest-dom@^1.12.0:
-  version "1.12.0"
-  resolved "https://registry.yarnpkg.com/jest-dom/-/jest-dom-1.12.0.tgz#afdb4eb72fc304fac4ced2c7c7e09d1a1ae1002e"
+jest-dom@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/jest-dom/-/jest-dom-2.0.2.tgz#14a7def381cf0e3ae235f32b57056124c816d072"
   dependencies:
     chalk "^2.4.1"
     css "^2.2.3"
@@ -8604,6 +8597,13 @@ pretty-format@^22.4.0, pretty-format@^22.4.3:
 pretty-format@^23.0.1:
   version "23.0.1"
   resolved "https://registry.yarnpkg.com/pretty-format/-/pretty-format-23.0.1.tgz#d61d065268e4c759083bccbca27a01ad7c7601f4"
+  dependencies:
+    ansi-regex "^3.0.0"
+    ansi-styles "^3.2.0"
+
+pretty-format@^23.6.0:
+  version "23.6.0"
+  resolved "https://registry.yarnpkg.com/pretty-format/-/pretty-format-23.6.0.tgz#5eaac8eeb6b33b987b7fe6097ea6a8a146ab5760"
   dependencies:
     ansi-regex "^3.0.0"
     ansi-styles "^3.2.0"
